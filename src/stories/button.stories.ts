@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { IonicModule } from '@ionic/angular';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { ButtonComponent } from './button.component';
 
@@ -6,6 +7,11 @@ const meta: Meta<ButtonComponent> = {
   title: 'Example/Button (Ionic)',
   component: ButtonComponent,
   tags: ['autodocs'],
+  decorators: [
+    moduleMetadata({
+      imports: [IonicModule.forRoot()],
+    }),
+  ],
   argTypes: {
     color: {
       control: 'select',

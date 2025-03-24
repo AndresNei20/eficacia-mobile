@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonButton } from '@ionic/angular/standalone';
 
@@ -9,14 +9,17 @@ import { IonButton } from '@ionic/angular/standalone';
   template: `
     <ion-button
       type="button"
+      [ngClass]="{ 'storybook-button--primary ': primary, 'storybook-button--secondary': !primary }"
       (click)="onClick.emit($event)"
       [color]="getColor()"
       [fill]="fill"
       [size]="size"
     >
-      {{ label }}
+      button-text
     </ion-button>
   `,
+  styleUrls: ['./button.css'],
+  encapsulation: ViewEncapsulation.None, // o ViewEncapsulation.Emulated según tus necesidades
 })
 export class ButtonComponent {
   /** 
