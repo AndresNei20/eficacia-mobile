@@ -29,7 +29,7 @@ const meta: Meta<ButtonComponent> = {
       defaultValue: 'medium'
     },
     primary: {
-      control: 'boolean',
+      control: 'select',
       description: 'Atajo para color="primary"'
     },
     onClick: {
@@ -49,6 +49,7 @@ export const Primary: Story = {
   args: {
     primary: true,
     label: 'Primary',
+    size: 'medium',
   },
 };
 
