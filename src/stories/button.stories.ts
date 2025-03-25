@@ -1,7 +1,7 @@
 import { IonicModule } from '@ionic/angular';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from '../components/buttons/button.component';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Example/Button (Ionic)',
