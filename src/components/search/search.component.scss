@@ -1,36 +1,17 @@
-ion-searchbar {
-    --background: #ffffff;
-    --color: #333333;
-    --placeholder-color: #999999;
-    --border-radius: 8px;
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 8px;
-  }
-  
-  ion-searchbar.custom-searchbar {
-    --background: #f5f5f5;
-    --border-radius: 20px;
-    --box-shadow: none;
-    
-    .searchbar-input-container {
-      .searchbar-input {
-        font-size: 14px;
-        padding-left: 15px;
-      }
-      
-      .searchbar-search-icon {
-        left: 8px;
-        color: var(--ion-color-medium);
-      }
-      
-      .searchbar-clear-button {
-        right: 8px;
-      }
-    }
-  }
+.storybook-search{
+  display: flex;
+  height: 40px;
+}
+
+.search-input::part(native) {
+  border: none !important;
+  outline: none !important;
+  --border-width: 0;
+  --border-color: transparent;
+}
 
 
-  #search_container {
-    background-color: blue;
-    
-  }
+.image{
+  width: 20px;
+  height: 20px;
+}

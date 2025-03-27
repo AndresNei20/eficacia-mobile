@@ -1,7 +1,7 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { SearchComponent } from '../components/search/search.component';
-import { IonSearchbar } from '@ionic/angular/standalone';
+import { IonInput } from '@ionic/angular/standalone';
 
 const meta: Meta<SearchComponent> = {
   title: 'Components/Search (Ionic)',
@@ -9,7 +9,7 @@ const meta: Meta<SearchComponent> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [IonSearchbar],
+      imports: [IonInput],
     }),
   ],
   argTypes: {
@@ -17,11 +17,14 @@ const meta: Meta<SearchComponent> = {
       control: 'text',
       description: 'Texto del placeholder para el campo de búsqueda',
     },
+    ionInput: {
+      action: 'ionInput',
+      description: 'Evento emitido cuando el valor de búsqueda cambia',
+    },
   },
   args: {
     placeholder: 'Buscar...',
-    onChange: fn(),
-    onCancel: fn()
+    ionInput: fn(),
   },
 };
 
@@ -31,8 +34,6 @@ type Story = StoryObj<SearchComponent>;
 export const Default: Story = {
   args: {
     placeholder: 'Buscar...',
-    // Storybook 7+ maneja automáticamente los eventos si los nombras correctamente
-    onChange: fn(),
-    onCancel: fn()
+    
   },
 };
