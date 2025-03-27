@@ -1,44 +1,47 @@
-import { IonicModule } from '@ionic/angular';
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { fn } from '@storybook/test';
-import { ButtonComponent } from '../components/buttons/button.component';
+import type { Meta, StoryObj } from '@storybook/angular';
+import { ButtonComponent } from '../app/button/button.component'; 
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button (Ionic)',
+  title: 'Components/Buttons/Button',
   component: ButtonComponent,
-  tags: ['autodocs'],
-  decorators: [
-    moduleMetadata({
-      imports: [IonicModule.forRoot()],
-    }),
-  ],
-  argTypes: {
-    color: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'light', 'medium', 'dark'],
-      description: 'Color del botón según la paleta de Ionic'
-    },
-    fill: {
-      control: 'select',
-      options: ['solid', 'outline', 'clear'],
-      defaultValue: 'solid'
-    },
-    size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-      defaultValue: 'medium'
-    },
-    primary: {
-      control: 'select',
-      description: 'Atajo para color="primary"'
-    },
-    onClick: {
-      action: 'clicked'
-    }
+  parameters: {
+    layout: 'centered',
   },
-  args: { 
-    label: 'Button',
-    onClick: fn() 
+  tags: ['autodocs'],
+  argTypes: {
+    type: {
+      control: {
+        type: 'radio'
+      },
+      options: ['primary', 'secondary'],
+    },
+    appearance: {
+      control: {
+        type: 'radio'
+      },
+      options: ['filled', 'outline'],
+    },
+    state: {
+      control: {
+        type: 'radio'
+      },
+      options: ['enabled', 'hovered', 'disabled', 'clicked', 'focused'],
+    },
+    iconSrc: {
+      control: {
+        type: 'select',
+      },
+      options: ['add', 'arrowRight', 'shop'], // <-- Nueva sintaxis
+    },
+    iconPosition: {
+      control: {
+        type: 'radio',
+      },
+      options: ['left', 'right'], // <-- Nueva sintaxis
+    },
+  },
+  args: {
+    onClick: () => console.log('Button clicked!'), 
   },
 };
 
@@ -47,44 +50,31 @@ type Story = StoryObj<ButtonComponent>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Primary',
-    size: 'medium',
+    type: 'primary',
+    appearance: 'filled',
+    state: 'enabled',
+    iconSrc: 'add',
+    iconPosition: 'left',
+    children: 'Primary Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    color: 'secondary',
-    label: 'Secondary',
+    type: 'secondary',
+    appearance: 'filled',
+    state: 'enabled',
+    iconSrc: 'arrowRight',
+    iconPosition: 'right',
+    children: 'Secondary Button',
   },
 };
 
-export const DangerOutline: Story = {
+export const Disabled: Story = {
   args: {
-    color: 'danger',
-    fill: 'outline',
-    label: 'Danger Outline',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Large',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Small',
-  },
-};
-
-export const CustomColor: Story = {
-  args: {
-    color: 'success',
-    label: 'Success',
+    type: 'primary',
+    appearance: 'filled',
+    state: 'disabled',
+    children: 'Disabled Button',
   },
 };

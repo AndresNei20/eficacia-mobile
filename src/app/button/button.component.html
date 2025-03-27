@@ -1,1 +1,21 @@
-<p>button works!</p>
+<button 
+  [class]="getStyles(type, appearance, state, iconPosition)" 
+  (click)="onClick.emit($event)">
+  
+  <!-- Icono izquierdo -->
+  @if (iconSrc && iconPosition === 'left') {
+    <span class="icon-left">
+      <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
+    </span>
+  }
+
+  <!-- Contenido principal -->
+  {{ children }}
+
+  <!-- Icono derecho -->
+  @if (iconSrc && iconPosition === 'right') {
+    <span class="icon-right">
+      <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
+    </span>
+  }
+</button>

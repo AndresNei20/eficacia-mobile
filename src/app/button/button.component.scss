@@ -1,0 +1,141 @@
+// _variables.scss
+$primary-darkBlue-300: #0041A3;
+$primary-darkBlue-200: #B1CEE2;
+$primary-darkBlue-50: #E6F0F7;
+$extended-purple-400: #283583;
+$extended-purple-300: #3A4A9A;
+$neutral-50: #FFFFFF;
+$neutral-200: #E6E6E6;
+$neutral-300: #CCCCCC;
+$neutral-400: #BFBFBF;
+$neutral-500: #B8B8B8;
+$neutral-700: #737373;
+$focus-shadow: inset 0 0 0 1px #42C0F0;
+
+// Espaciados personalizados (equivalentes a tus clases custom)
+$custom-sm: 0.5rem;  // 8px
+$custom-md: 1rem;    // 16px
+$custom-xs: 0.25rem; // 4px
+
+// Mixin para estados comunes
+@mixin button-state($bg-color, $text-color, $border: none) {
+  background-color: $bg-color;
+  color: $text-color;
+  outline: $border;
+}
+
+// Estilos base
+.button {
+  min-width: 11rem; // min-w-44 (44*0.25rem = 11rem)
+  height: 3rem; // h-12 (12*0.25rem = 3rem)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $custom-xs $custom-md; // px-custom-md py-custom-xs
+  border-radius: 0.5rem; // rounded-lg
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem; // text-lg
+  font-weight: 500; // font-medium
+  font-family: sans-serif; // font-sans
+  width: auto;
+  white-space: nowrap;
+
+  // Íconos
+  .icon-left, .icon-right {
+    display: inline-flex;
+    align-items: center;
+    
+    img {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .icon-left {
+    margin-right: $custom-sm; // mr-custom-sm
+  }
+
+  .icon-right {
+    margin-left: $custom-sm; // ml-custom-sm
+  }
+
+  // Variante Primary
+  &.primary {
+    @include button-state($primary-darkBlue-300, $neutral-50);
+
+    &.hovered {
+      @include button-state($extended-purple-400, $neutral-50);
+    }
+
+    &.disabled {
+      @include button-state($primary-darkBlue-200, $primary-darkBlue-50);
+      cursor: not-allowed;
+    }
+
+    &.clicked {
+      @include button-state($extended-purple-300, $neutral-50);
+    }
+
+    &.focused.filled {
+      box-shadow: $focus-shadow;
+    }
+
+    // Outline Primary
+    &.outline {
+      @include button-state(transparent, $primary-darkBlue-300, 1px solid $primary-darkBlue-300);
+
+      &.hovered {
+        @include button-state(transparent, darken($primary-darkBlue-300, 5%), 1px solid darken($primary-darkBlue-300, 5%));
+      }
+
+      &.disabled {
+        @include button-state(transparent, lighten($primary-darkBlue-300, 30%), 1px solid lighten($primary-darkBlue-300, 20%));
+      }
+
+      &.clicked {
+        @include button-state(transparent, $extended-purple-300, 1px solid $extended-purple-300);
+      }
+    }
+  }
+
+  // Variante Secondary
+  &.secondary {
+    @include button-state($neutral-400, $neutral-50);
+
+    &.hovered {
+      @include button-state($neutral-500, $neutral-50);
+    }
+
+    &.disabled {
+      @include button-state($neutral-300, $neutral-200);
+      cursor: not-allowed;
+    }
+
+    &.clicked {
+      @include button-state($neutral-700, $neutral-50);
+    }
+
+    &.focused.filled {
+      box-shadow: $focus-shadow;
+    }
+
+    // Outline Secondary
+    &.outline {
+      @include button-state(transparent, $neutral-400, 1px solid $neutral-400);
+
+      &.hovered {
+        @include button-state(transparent, $neutral-500, 1px solid $neutral-500);
+      }
+
+      &.disabled {
+        @include button-state(transparent, $neutral-300, 1px solid $neutral-300);
+      }
+
+      &.clicked {
+        @include button-state(transparent, $neutral-700, 1px solid $neutral-700);
+      }
+    }
+  }
+}

@@ -20,6 +20,7 @@
     "@angular/router": "^19.2.0",
     "@ionic/angular": "^8.5.1",
     "@ionic/angular-toolkit": "^12.1.1",
+    "@tailwindcss/postcss": "^4.0.17",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -35,7 +36,11 @@
     "@storybook/angular": "^8.6.8",
     "@storybook/blocks": "^8.6.8",
     "@storybook/test": "^8.6.8",
+    "@types/jest": "^29.5.14",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
     "storybook": "^8.6.8",
+    "tailwindcss": "^4.0.17",
     "typescript": "~5.7.2"
   }
 }
