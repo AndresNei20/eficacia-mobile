@@ -1,0 +1,38 @@
+<div class="slider-wrapper">
+  <label class="slider-label">{{ label }}</label>
+
+  <div
+    class="custom-slider"
+    (document:mousemove)="drag($event)"
+    (document:mouseup)="stopDrag()"
+    (document:touchmove)="drag($event.touches[0])"
+    (document:touchend)="stopDrag()"
+  >
+    <div class="track">
+      <div class="track-fill" [style.width.%]="(value / 5) * 100"></div>
+      <div
+      class="thumb"
+      [class.dragging]="isDragging"
+      [style.left.%]="(value / 5) * 100"
+      (mousedown)="startDrag($event)"
+      (touchstart)="startDrag($event)"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Números alineados debajo -->
+  <div class="ticks">
+    <span *ngFor="let mark of marks">{{ mark }}</span>
+  </div>
+
+  <!-- ion-range oculto -->
+  <ion-range
+    #hiddenRange
+    class="hidden-range"
+    [value]="value"
+    [min]="0"
+    [max]="5"
+    [step]="1"
+    (ionChange)="onIonChange($event)"
+  ></ion-range>
+</div>

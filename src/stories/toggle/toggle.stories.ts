@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/angular";
 import { ToggleComponent } from "../../components/toggle/toggle.component";
 
 export default {
-  title: "Components/Toggle",
+  title: "Components/Toggle/Toggle",
   component: ToggleComponent,
   tags: ["autodocs"],
   argTypes: {
