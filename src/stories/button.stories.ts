@@ -9,36 +9,34 @@ const meta: Meta<ButtonComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: {
-        type: 'radio'
-      },
-      options: ['primary', 'secondary'],
-    },
     appearance: {
       control: {
         type: 'radio'
       },
-      options: ['filled', 'outline'],
+      options: ['filled', 'outline', 'error'],
     },
     state: {
       control: {
         type: 'radio'
       },
-      options: ['enabled', 'hovered', 'disabled', 'clicked', 'focused'],
+      options: ['disabled', 'active', 'hovered', 'pressed'],
     },
     iconSrc: {
       control: {
         type: 'select',
       },
-      options: ['add', 'arrowRight', 'shop'], // <-- Nueva sintaxis
+      options: ['add', 'arrowRight', 'shop'], 
     },
-    iconPosition: {
+    iconLeft: {
       control: {
-        type: 'radio',
-      },
-      options: ['left', 'right'], // <-- Nueva sintaxis
+        type: 'boolean'
+    }
     },
+    iconRight: {
+      control: {
+        type: 'boolean'
+      }
+    }
   },
   args: {
     onClick: () => console.log('Button clicked!'), 
@@ -48,33 +46,28 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Primary: Story = {
+export const Filled: Story = {
   args: {
-    type: 'primary',
     appearance: 'filled',
-    state: 'enabled',
-    iconSrc: 'add',
-    iconPosition: 'left',
-    children: 'Primary Button',
+    state: 'active',
+    children: 'Button',
+    iconLeft: false,
+    iconRight: false
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
-    type: 'secondary',
-    appearance: 'filled',
-    state: 'enabled',
-    iconSrc: 'arrowRight',
-    iconPosition: 'right',
-    children: 'Secondary Button',
+    appearance: 'outline',
+    state: 'active',
+    children: 'Button',
   },
 };
 
-export const Disabled: Story = {
+export const Error: Story = {
   args: {
-    type: 'primary',
-    appearance: 'filled',
-    state: 'disabled',
-    children: 'Disabled Button',
+    appearance: 'error',
+    state: 'active',
+    children: 'Button',
   },
 };

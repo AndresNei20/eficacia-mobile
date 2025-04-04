@@ -1,38 +1,37 @@
 import { Component, Input, Output, EventEmitter, ContentChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../iconBtn/icon.component'; // Asume que tienes este componente
+import { IconComponent } from '../iconBtn/icon.component';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, IconComponent], // IconComponent debe ser standalone
+  imports: [CommonModule, IconComponent], 
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'] // Cambiado a .css para coincidir con tu ejemplo
+  styleUrls: ['./button.component.scss'] 
 })
 export class ButtonComponent {
-  // Inputs con tipos equivalentes a PropTypes
-  @Input() children?: string; // Angular usa <ng-content> en lugar de children
-  @Input() type!: 'primary' | 'secondary'; // ! indica requerido
-  @Input() appearance!: 'filled' | 'outline';
-  @Input() state?: 'enabled' | 'hovered' | 'disabled' | 'clicked' | 'focused';
-  @Input() iconSrc?: 'add' | 'arrowRight' | 'shop'; // Enumera todos los íconos
-  @Input() iconPosition?: 'left' | 'right' = 'left'; // Valor por defecto
 
-  // Evento onClick
+  @Input() children?: string; 
+  @Input() appearance!: 'filled' | 'outline' | 'error';
+  @Input() state?: 'disabled' | 'active' | 'hovered' | 'pressed';
+  @Input() iconSrc?: 'add' | 'arrowRight' | 'shop' = 'add' ;
+  @Input() iconLeft?: true | false = false;
+  @Input() iconRight?: true | false = false;
+
   @Output() onClick = new EventEmitter<Event>();
 
   getStyles(
-    type: 'primary' | 'secondary',
-    appearance: 'filled' | 'outline',
-    state?: 'enabled' | 'hovered' | 'disabled' | 'clicked' | 'focused',
-    iconPosition?: 'left' | 'right'
+    appearance: 'filled' | 'outline' | 'error',
+    state?: 'disabled' | 'active' | 'hovered' | 'pressed',
+    iconLeft?: true | false,
+    iconRight?: true | false
   ): string {
     return [
       'button',
-      type,
       appearance,
       state,
-      iconPosition
+      iconLeft,
+      iconRight
     ].filter(Boolean).join(' ');
   }
 }

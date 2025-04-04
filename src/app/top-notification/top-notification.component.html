@@ -1,18 +1,15 @@
 <button 
-  [class]="getStyles(appearance, state, iconLeft, iconRight)" 
+  [class]="getStyles(state, iconSrc)" 
   (click)="onClick.emit($event)">
   
-  @if (iconSrc && iconLeft) {
     <span class="icon-left">
       <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
     </span>
-  }
 
   {{ children }}
 
-  @if (iconSrc && iconRight) {
     <span class="icon-right">
-      <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
+        <app-icon [name]="'arrowRight'" fill="currentColor"></app-icon>
     </span>
-  }
+
 </button>

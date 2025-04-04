@@ -7,6 +7,7 @@ export type IconName =
   | 'gestion'
   | 'portafolio'
   | 'perfil'
+  | 'question'
 //   | 'helpQuestion'
 //   | 'shop'
 //   | 'arrowSimpleLeft'

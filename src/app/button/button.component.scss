@@ -1,141 +1,111 @@
-// _variables.scss
-$primary-darkBlue-300: #0041A3;
-$primary-darkBlue-200: #B1CEE2;
-$primary-darkBlue-50: #E6F0F7;
-$extended-purple-400: #283583;
-$extended-purple-300: #3A4A9A;
-$neutral-50: #FFFFFF;
-$neutral-200: #E6E6E6;
-$neutral-300: #CCCCCC;
-$neutral-400: #BFBFBF;
-$neutral-500: #B8B8B8;
-$neutral-700: #737373;
-$focus-shadow: inset 0 0 0 1px #42C0F0;
 
-// Espaciados personalizados (equivalentes a tus clases custom)
-$custom-sm: 0.5rem;  // 8px
-$custom-md: 1rem;    // 16px
-$custom-xs: 0.25rem; // 4px
+// Variables de color (ajusta según tu tema)
+$primary-filled: #1976d2;
+$primary-hover: #1565c0;
+$primary-active: #0d47a1;
+$error-filled: #d32f2f;
+$error-hover: #c62828;
+$error-active: #b71c1c;
+$outline-border: #1976d2;
+$outline-text: #1976d2;
+$disabled-color: #9e9e9e;
+$disabled-bg: #e0e0e0;
 
-// Mixin para estados comunes
-@mixin button-state($bg-color, $text-color, $border: none) {
-  background-color: $bg-color;
-  color: $text-color;
-  outline: $border;
-}
-
-// Estilos base
+// Estilos base para todos los botones
 .button {
-  min-width: 11rem; // min-w-44 (44*0.25rem = 11rem)
-  height: 3rem; // h-12 (12*0.25rem = 3rem)
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: $custom-xs $custom-md; // px-custom-md py-custom-xs
-  border-radius: 0.5rem; // rounded-lg
-  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
   cursor: pointer;
-  font-size: 1.125rem; // text-lg
-  font-weight: 500; // font-medium
-  font-family: sans-serif; // font-sans
-  width: auto;
-  white-space: nowrap;
-
-  // Íconos
-  .icon-left, .icon-right {
-    display: inline-flex;
-    align-items: center;
-    
-    img {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-    }
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  position: relative;
+  gap: 8px;
+  
+  // Estado disabled (común para todas las variantes)
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
-  .icon-left {
-    margin-right: $custom-sm; // mr-custom-sm
-  }
+  // Variante FILLED
+  &.filled {
+    background-color: $primary-filled;
+    border-color: $primary-filled;
+    color: white;
 
-  .icon-right {
-    margin-left: $custom-sm; // ml-custom-sm
-  }
+    &:not(.disabled) {
+      &:hover, &.hovered {
+        background-color: $primary-hover;
+        border-color: $primary-hover;
+      }
 
-  // Variante Primary
-  &.primary {
-    @include button-state($primary-darkBlue-300, $neutral-50);
-
-    &.hovered {
-      @include button-state($extended-purple-400, $neutral-50);
+      &:active, &.pressed {
+        background-color: $primary-active;
+        border-color: $primary-active;
+      }
     }
 
     &.disabled {
-      @include button-state($primary-darkBlue-200, $primary-darkBlue-50);
-      cursor: not-allowed;
-    }
-
-    &.clicked {
-      @include button-state($extended-purple-300, $neutral-50);
-    }
-
-    &.focused.filled {
-      box-shadow: $focus-shadow;
-    }
-
-    // Outline Primary
-    &.outline {
-      @include button-state(transparent, $primary-darkBlue-300, 1px solid $primary-darkBlue-300);
-
-      &.hovered {
-        @include button-state(transparent, darken($primary-darkBlue-300, 5%), 1px solid darken($primary-darkBlue-300, 5%));
-      }
-
-      &.disabled {
-        @include button-state(transparent, lighten($primary-darkBlue-300, 30%), 1px solid lighten($primary-darkBlue-300, 20%));
-      }
-
-      &.clicked {
-        @include button-state(transparent, $extended-purple-300, 1px solid $extended-purple-300);
-      }
+      background-color: $disabled-bg;
+      border-color: $disabled-bg;
+      color: $disabled-color;
     }
   }
 
-  // Variante Secondary
-  &.secondary {
-    @include button-state($neutral-400, $neutral-50);
+  // Variante OUTLINE
+  &.outline {
+    background-color: transparent;
+    border-color: $outline-border;
+    color: $outline-text;
 
-    &.hovered {
-      @include button-state($neutral-500, $neutral-50);
+    &:not(.disabled) {
+      &:hover, &.hovered {
+        border-color: rgba($primary-filled, 0.08);
+      }
+
+      &:active, &.pressed {
+        border-color: rgba($primary-filled, 0.16);
+      }
     }
 
     &.disabled {
-      @include button-state($neutral-300, $neutral-200);
-      cursor: not-allowed;
+      border-color: $disabled-color;
+      color: $disabled-color;
     }
+  }
 
-    &.clicked {
-      @include button-state($neutral-700, $neutral-50);
-    }
+  // Variante ERROR
+  &.error {
+    background-color: $error-filled;
+    border-color: $error-filled;
+    border: 2px;
+    color: white;
 
-    &.focused.filled {
-      box-shadow: $focus-shadow;
-    }
-
-    // Outline Secondary
-    &.outline {
-      @include button-state(transparent, $neutral-400, 1px solid $neutral-400);
-
-      &.hovered {
-        @include button-state(transparent, $neutral-500, 1px solid $neutral-500);
+    &:not(.disabled) {
+      &:hover, &.hovered {
+        background-color: $error-hover;
+        border-color: $error-hover;
       }
 
-      &.disabled {
-        @include button-state(transparent, $neutral-300, 1px solid $neutral-300);
+      &:active, &.pressed {
+        background-color: $error-active;
+        border-color: $error-active;
       }
+    }
 
-      &.clicked {
-        @include button-state(transparent, $neutral-700, 1px solid $neutral-700);
-      }
+    &.disabled {
+      background-color: $disabled-bg;
+      border-color: $disabled-bg;
+      color: $disabled-color;
     }
   }
 }
