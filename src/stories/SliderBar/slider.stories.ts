@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/angular";
 import { SliderComponent } from "../../components/SlideBar/slider.component";
 
 export default {
-  title: "Components/Slider",
+  title: "Components/Slider/Slider",
   component: SliderComponent,
   tags: ["autodocs"],
   argTypes: {

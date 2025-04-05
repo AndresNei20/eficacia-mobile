@@ -4,7 +4,7 @@ import { SearchComponent } from '../components/search/search.component';
 import { IonInput } from '@ionic/angular/standalone';
 
 const meta: Meta<SearchComponent> = {
-  title: 'Components/Search (Ionic)',
+  title: 'Components/Search/Search (Ionic)',
   component: SearchComponent,
   tags: ['autodocs'],
   decorators: [

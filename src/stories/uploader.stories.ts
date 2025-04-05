@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/angular';
 import { FileUploaderComponent } from '../components/uploader/uploader.component';
 
 export default {
-  title: 'Components/File Uploader',
+  title: 'Components/File Uploader/File Uploader',
   component: FileUploaderComponent,
   tags: ['autodocs'],
   parameters: {
