@@ -1,22 +1,24 @@
 import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { IonIcon } from "@ionic/angular/standalone";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-file-uploader',
   standalone: true,
-  imports: [IonIcon],
+  imports: [IonIcon, CommonModule],
   templateUrl: './uploader.component.html',
   styleUrls: ['./uploader.component.scss']
 })
 export class FileUploaderComponent {
   @ViewChild('fileInput') fileInput!: ElementRef;
   
-  @Input() title = 'Drag & drop files here';
-  @Input() hint = 'or click to browse';
+  @Input() title = 'Cargar Archivo';
+  @Input() hint = 'Adjuntar desde archivo';
   @Input() buttonText = 'Upload Files';
   @Input() multiple = true;
   @Input() accept = '*';
   @Input() maxFileSize = 10 * 1024 * 1024; // 10MB default
+  @Input() title2 = 'Imagen Cargada';
   
   @Output() filesSelected = new EventEmitter<File[]>();
   @Output() filesUploaded = new EventEmitter<File[]>();
@@ -48,6 +50,7 @@ export class FileUploaderComponent {
   }
 
   onFileSelected(event: Event) {
+    console.log(event)
     const input = event.target as HTMLInputElement;
     if (input.files) {
       this.handleFiles(input.files);

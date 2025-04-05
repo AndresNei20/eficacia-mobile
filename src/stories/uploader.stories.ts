@@ -87,14 +87,23 @@ validación de tipos y tamaño. Perfecto para formularios que requieren adjuntar
       },
       action: 'filesUploaded',
     },
+    title2: {
+      description: 'Título principal del componente en su segundo estado',
+      control: 'text',
+      table: {
+        category: 'Content',
+        defaultValue: { summary: 'Imagen Cargada' },
+      },
+    },
   },
   args: {
-    title: 'Drag & drop files here',
-    hint: 'or click to browse',
+    title: 'Cargar archivo',
+    hint: 'Adjuntar desde archivo',
     buttonText: 'Upload Files',
     multiple: true,
     accept: 'image/*,.pdf',
     maxFileSize: 10 * 1024 * 1024, // 10MB
+    title2: 'Imagen Cargada'
   },
 } as Meta<FileUploaderComponent>;
 
@@ -124,6 +133,7 @@ DocumentUpload.args = {
   buttonText: 'Submit Documents',
   accept: '.pdf,.doc,.docx',
   maxFileSize: 20 * 1024 * 1024,
+  title2: 'Imagen Cargada'
 };
 DocumentUpload.parameters = {
   docs: {

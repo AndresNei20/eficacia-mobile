@@ -1,85 +1,57 @@
 .uploader-container {
     cursor: pointer;
     display: flex;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    margin: 20px 0;
+    width: 342px;
+    height:54px;
     transition: all 0.3s ease;
-  
+    background-color: #F4F7F9;
+    border-radius: 8px;
+
     &.drag-over {
-      border-color: #4285f4;
-      background-color: rgba(66, 133, 244, 0.1);
+      background-color: rgba(0, 61, 160, 0.1);
     }
   }
-  
-  
-  .empty-state {
-    .upload-icon {
-      font-size: 24px;
-      margin-bottom: 10px;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6px;
+
+  }
+
+  .newcontent {
+    display: flex;
+    padding-top: 4px;
+  }
+
+  .icon {
+    display: flex;
+    padding: 10px;
+  }
+
+  .uploader-content {
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: small;
+      margin: 0%;
+      color: #696969;
+      font-weight: 400;
     }
-  
-    h3 {
-      margin: 0 0 8px;
-    }
-  
+
     .hint {
-      color: #666;
-      margin: 0 0 4px;
-    }
-  
-    .sub-hint {
-      color: #999;
-      font-size: 12px;
-      margin: 0;
+      padding-top: 6px;
+      font-size: medium;
+      color: #696969;
+      font-weight: 600;
     }
   }
   
-  .files-preview {
-    text-align: left;
-    margin-top: 15px;
   
-    .file-item {
-      display: flex;
-      align-items: center;
-      padding: 8px;
-      border-bottom: 1px solid #eee;
-  
-      .file-name {
-        flex-grow: 1;
-        margin-right: 10px;
-      }
-  
-      .file-size {
-        color: #777;
-        font-size: 12px;
-        margin-right: 10px;
-      }
-  
-      .remove-btn {
-        background: none;
-        border: none;
-        color: #f44336;
-        cursor: pointer;
-        font-size: 18px;
-        padding: 0 5px;
-      }
-    }
-  }
-  
-  .upload-btn {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  
-    &:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-  }
