@@ -1,0 +1,11 @@
+<button 
+  [class]="getStyles(state)" 
+  (click)="onClick.emit($event)">
+  
+    <span class="icon">
+      <app-icon [name]="'arrowRight'" fill="#3BD4AE"></app-icon>
+    </span>
+
+  {{ children }}
+
+</button>

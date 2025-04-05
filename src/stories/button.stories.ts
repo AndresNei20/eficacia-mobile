@@ -1,90 +1,73 @@
-import { IonicModule } from '@ionic/angular';
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { fn } from '@storybook/test';
-import { ButtonComponent } from '../components/buttons/button.component';
+import type { Meta, StoryObj } from '@storybook/angular';
+import { ButtonComponent } from '../app/button/button.component'; 
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button (Ionic)',
+  title: 'Components/Buttons/Button',
   component: ButtonComponent,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ['autodocs'],
-  decorators: [
-    moduleMetadata({
-      imports: [IonicModule.forRoot()],
-    }),
-  ],
   argTypes: {
-    color: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'light', 'medium', 'dark'],
-      description: 'Color del botón según la paleta de Ionic'
+    appearance: {
+      control: {
+        type: 'radio'
+      },
+      options: ['filled', 'outline', 'error'],
     },
-    fill: {
-      control: 'select',
-      options: ['solid', 'outline', 'clear'],
-      defaultValue: 'solid'
+    state: {
+      control: {
+        type: 'radio'
+      },
+      options: ['disabled', 'active', 'hovered', 'pressed'],
     },
-    size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-      defaultValue: 'medium'
+    iconSrc: {
+      control: {
+        type: 'select',
+      },
+      options: ['add', 'arrowRight', 'shop'], 
     },
-    primary: {
-      control: 'select',
-      description: 'Atajo para color="primary"'
+    iconLeft: {
+      control: {
+        type: 'boolean'
+    }
     },
-    onClick: {
-      action: 'clicked'
+    iconRight: {
+      control: {
+        type: 'boolean'
+      }
     }
   },
-  args: { 
-    label: 'Button',
-    onClick: fn() 
+  args: {
+    onClick: () => console.log('Button clicked!'), 
   },
 };
 
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Primary: Story = {
+export const Filled: Story = {
   args: {
-    primary: true,
-    label: 'Primary',
-    size: 'medium',
+    appearance: 'filled',
+    state: 'active',
+    children: 'Button',
+    iconLeft: false,
+    iconRight: false
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
-    color: 'secondary',
-    label: 'Secondary',
+    appearance: 'outline',
+    state: 'active',
+    children: 'Button',
   },
 };
 
-export const DangerOutline: Story = {
+export const Error: Story = {
   args: {
-    color: 'danger',
-    fill: 'outline',
-    label: 'Danger Outline',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Large',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Small',
-  },
-};
-
-export const CustomColor: Story = {
-  args: {
-    color: 'success',
-    label: 'Success',
+    appearance: 'error',
+    state: 'active',
+    children: 'Button',
   },
 };
