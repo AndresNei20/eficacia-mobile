@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ButtonComponent } from '../../app/button/button.component'; 
-import { TopNotificationComponent } from '../../app/top-notification/top-notification.component';
+import { TopNotificationComponent } from '../../app/components/top-notification/top-notification.component';
 
 const meta: Meta<TopNotificationComponent> = {
   title: 'Components/Buttons/Top Notification',

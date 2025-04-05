@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/angular';
-import { FileUploaderComponent } from '../../components/uploader/uploader.component';
+import { FileUploaderComponent } from '../../app/components/uploader/uploader.component';
 
 export default {
   title: 'Components/File Uploader/File Uploader',

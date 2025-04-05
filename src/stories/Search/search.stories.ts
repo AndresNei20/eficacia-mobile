@@ -1,7 +1,7 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { SearchComponent } from '../../components/search/search.component';
 import { IonInput } from '@ionic/angular/standalone';
+import { SearchComponent } from '../../app/components/search/search.component';
 
 const meta: Meta<SearchComponent> = {
   title: 'Components/Search/Search (Ionic)',

@@ -1,5 +1,5 @@
-@import "../../styles/colors"; 
-@import "../../styles/spacings"; 
+@use "../../../styles/colors" as colors; 
+@use "../../../styles/spacings" as spacings; 
 
 .slider-wrapper {
   width: 355px;
@@ -18,7 +18,7 @@
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: $color-text-titles;
+  color: colors.$color-text-titles;
 }
 
 .custom-slider {

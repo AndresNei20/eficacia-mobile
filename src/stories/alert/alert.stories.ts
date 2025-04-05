@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import { AlertComponent } from '../../components/alert/alert.component';
+import { AlertComponent } from '../../app/components/alert/alert.component';
 
 const meta: Meta<AlertComponent> = {
   title: 'Components/Alertas/Estado',

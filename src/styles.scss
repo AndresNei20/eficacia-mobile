@@ -1,12 +1,42 @@
-@import "@ionic/angular/css/core.css";
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+@use "@ionic/angular/css/core.css";
+@use "@ionic/angular/css/normalize.css";
+@use "@ionic/angular/css/structure.css";
+@use "@ionic/angular/css/typography.css";
+@use "@ionic/angular/css/display.css";
 
 
 
 /* You can add global styles to this file, and also import other style files */
-@import './styles/colors';
-@import './styles/radius';
-@import './styles/spacings';
+@use './styles/colors';
+@use './styles/radius';
+@use './styles/spacings';
+
+@font-face {
+    font-family: 'Solomon';
+    src: url('./assets/fonts/SolomonSansRegular.otf') format('opentype');
+    font-weight: 00;
+    font-style: normal;
+    font-display: swap; 
+  }
+  
+  @font-face {
+    font-family: 'Solomon';
+    src: url('./assets/fonts/SolomonSansBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* Aplicar la fuente globalmente */
+  :root {
+    --font-primary: 'Solomon', sans-serif;
+  }
+  
+  body, html {
+    font-family: var(--font-primary) !important;
+  }
+  
+  /* Forzar Storybook a heredar la fuente */
+  .sb-show-main, .docs-story {
+    font-family: var(--font-primary) !important;
+  }

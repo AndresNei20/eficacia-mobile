@@ -1,4 +1,4 @@
-import { IconName, IconProps } from '../app/iconBtn/icon.types'
+import { IconName, IconProps } from "../app/components/iconBtn/icon.types";
 
 export const IconComponents: Record<IconName, (props: IconProps) => string> = {
   inicio: ({ fill }) => `

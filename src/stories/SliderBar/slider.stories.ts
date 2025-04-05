@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/angular";
-import { SliderComponent } from "../../components/SlideBar/slider.component";
+import { SliderComponent } from "../../app/components/SlideBar/slider.component";
 
 export default {
   title: "Components/Slider/Slider",

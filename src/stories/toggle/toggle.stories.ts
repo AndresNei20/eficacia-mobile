@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/angular";
-import { ToggleComponent } from "../../components/toggle/toggle.component";
+import { ToggleComponent } from "../../app/components/toggle/toggle.component";
 
 export default {
   title: "Components/Toggle/Toggle",

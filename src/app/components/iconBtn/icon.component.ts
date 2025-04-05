@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { IconComponents } from '../../utils/icons';
 import { IconName, IconProps } from './icon.types';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { IconComponents } from '../../../utils/icons';
 
 @Component({
   selector: 'app-icon',
