@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { QuestionButtonComponent } from '../app/question-button/question-button.component';
+import { QuestionButtonComponent } from '../../app/question-button/question-button.component';
 
 const meta: Meta<QuestionButtonComponent> = {
   title: 'Components/Buttons/Question Button',
