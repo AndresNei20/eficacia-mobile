@@ -1,0 +1,17 @@
+.storybook-search{
+  display: flex;
+  height: 40px;
+}
+
+.search-input::part(native) {
+  border: none !important;
+  outline: none !important;
+  --border-width: 0;
+  --border-color: transparent;
+}
+
+
+.image{
+  width: 20px;
+  height: 20px;
+}
