@@ -1,111 +1,97 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
 
-// Variables de color (ajusta según tu tema)
-$primary-filled: #1976d2;
-$primary-hover: #1565c0;
-$primary-active: #0d47a1;
-$error-filled: #d32f2f;
-$error-hover: #c62828;
-$error-active: #b71c1c;
-$outline-border: #1976d2;
-$outline-text: #1976d2;
-$disabled-color: #9e9e9e;
-$disabled-bg: #e0e0e0;
-
-// Estilos base para todos los botones
 .button {
   display: inline-flex;
+  width: 338px;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  padding: spacings.$paddng-sm spacings.$paddng-sm;
   border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: typography.$text-btn-size;
+  font-weight: typography.$text-btn-weight;
   line-height: 1.5;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: none;
-  outline: none;
-  position: relative;
-  gap: 8px;
+  gap: spacings.$spacing-sm;
   
-  // Estado disabled (común para todas las variantes)
   &.disabled {
     cursor: not-allowed;
-    opacity: 0.7;
     transform: none !important;
     box-shadow: none !important;
   }
 
-  // Variante FILLED
   &.filled {
-    background-color: $primary-filled;
-    border-color: $primary-filled;
+    background-color: colors.$primary-blue;
     color: white;
 
-    &:not(.disabled) {
-      &:hover, &.hovered {
-        background-color: $primary-hover;
-        border-color: $primary-hover;
+      &.active {
+        background-color: colors.$primary-blue;
       }
 
-      &:active, &.pressed {
-        background-color: $primary-active;
-        border-color: $primary-active;
+      &.hovered {
+        background-color: #1A54AC;
+      }
+
+      &.pressed {
+        background-color: colors.$blue-scale-600;
+      }
+
+      &.disabled {
+        background-color: colors.$sh-gray;
+        color: colors.$ns-gray;
       }
     }
 
-    &.disabled {
-      background-color: $disabled-bg;
-      border-color: $disabled-bg;
-      color: $disabled-color;
-    }
-  }
-
-  // Variante OUTLINE
   &.outline {
     background-color: transparent;
-    border-color: $outline-border;
-    color: $outline-text;
-
-    &:not(.disabled) {
-      &:hover, &.hovered {
-        border-color: rgba($primary-filled, 0.08);
-      }
-
-      &:active, &.pressed {
-        border-color: rgba($primary-filled, 0.16);
-      }
+    color: colors.$color-text-titles;
+    border: 1px solid colors.$primary-blue;
+  
+    &.active {
+      border-color: colors.$primary-blue;
     }
-
+  
+    &.hovered {
+      border-color: colors.$primary-blue;
+      background-color: transparentize(colors.$blue-scale-300, 0.9); 
+    }
+  
+    &.pressed {
+      border-color: colors.$primary-blue;
+      background-color: transparentize(colors.$blue-scale-300, 0.7); 
+    }
+  
     &.disabled {
-      border-color: $disabled-color;
-      color: $disabled-color;
+      border-color: colors.$ns-gray;
+      color: colors.$ns-gray;
     }
   }
 
-  // Variante ERROR
   &.error {
-    background-color: $error-filled;
-    border-color: $error-filled;
-    border: 2px;
-    color: white;
-
-    &:not(.disabled) {
-      &:hover, &.hovered {
-        background-color: $error-hover;
-        border-color: $error-hover;
-      }
-
-      &:active, &.pressed {
-        background-color: $error-active;
-        border-color: $error-active;
-      }
+    background-color: transparent;
+    border: 1px solid colors.$sh-red; 
+    color: colors.$sh-red;
+  
+    &.active {
+      border-color: colors.$sh-red;
     }
-
+  
+    &.hovered {
+      border-color: colors.$sh-red;
+      background-color: transparentize(colors.$sh-red, 0.9); 
+    }
+  
+    &.pressed {
+      border-color: colors.$sh-red;
+      background-color: transparentize(colors.$sh-red, 0.8); 
+    }
+  
     &.disabled {
-      background-color: $disabled-bg;
-      border-color: $disabled-bg;
-      color: $disabled-color;
+      border-color: colors.$ns-gray;
+      color: colors.$ns-gray;
     }
   }
 }
+
