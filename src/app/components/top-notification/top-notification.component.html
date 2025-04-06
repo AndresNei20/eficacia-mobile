@@ -10,9 +10,12 @@
     {{ children }}
   </div>
   
-  <app-icon 
-    [name]="'arrowRight'" 
-    [fill]="state == 'completed' ? '#FFFFFF' : '#0041A3'">
-  </app-icon>
+  <span class="icon-right">
+    <app-icon 
+      [name]="'arrowRight'" 
+      [fill]="state == 'completed' ? '#FFFFFF' : '#0041A3'">
+    </app-icon>
+  </span>
+  
 
 </button>

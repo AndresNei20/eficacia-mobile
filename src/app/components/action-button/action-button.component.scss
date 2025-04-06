@@ -1,17 +1,25 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
 .button {
     display: inline-flex;
+    width: auto;
     align-items: center;
     justify-content: center;
-    padding: 10px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-    position: relative;
-    gap: 8px;
+    padding: 0;
+    border-radius: spacings.$radius-sm;
+    font-size: typography.$text-btn-size;
+    font-weight: typography.$text-btn-weight;
+    gap: spacings.$spacing-sm;
+    background-color: transparent;
+    color: colors.$primary-blue;
 
+    &.hovered {
+        font-size: typography.$text-btn-size;
+        color: colors.$blue-scale-600;
+        text-decoration: underline;
+        text-decoration-thickness: 1px; 
+        text-underline-offset: 4px; 
+    }
 }

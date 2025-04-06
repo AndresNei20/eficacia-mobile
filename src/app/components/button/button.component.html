@@ -3,16 +3,12 @@
   (click)="onClick.emit($event)">
   
   @if (iconSrc && iconLeft) {
-    <span class="icon-left">
       <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
-    </span>
   }
 
   {{ children }}
 
   @if (iconSrc && iconRight) {
-    <span class="icon-right">
       <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
-    </span>
   }
 </button>

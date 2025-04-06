@@ -6,6 +6,7 @@
 .button {
     display: inline-flex;
     width: 338px;
+    height: 50px;
     align-items: center;
     justify-content: space-between;
     padding: spacings.$paddng-sm spacings.$paddng-sm;
@@ -29,4 +30,5 @@
     align-items: center;
     justify-content: center;
     gap: spacings.$spacing-sm;
+    padding: spacings.$paddng-sm spacings.$paddng-sm;
 }

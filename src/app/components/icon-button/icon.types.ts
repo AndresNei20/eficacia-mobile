@@ -13,6 +13,7 @@ export type IconName =
   | 'started'
   | 'finished'
   | 'triangle'
+  | 'logout'
 
 export interface IconProps {
   fill: string;

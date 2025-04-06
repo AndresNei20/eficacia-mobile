@@ -6,6 +6,7 @@
 .button {
   display: inline-flex;
   width: 338px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   padding: spacings.$paddng-sm spacings.$paddng-sm;
@@ -16,6 +17,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   gap: spacings.$spacing-sm;
+  line-height: 1;
   
   &.disabled {
     cursor: not-allowed;
