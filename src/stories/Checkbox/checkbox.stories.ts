@@ -34,20 +34,13 @@ El **Checkbox** en Eficacia se utiliza para permitir a los usuarios seleccionar 
 
 ## ✅ Mejores prácticas
 
-### ✔️ Sí:
-
-- Mantener la estructura del componente en Figma usando variantes y propiedades predefinidas.
-- Elegir estilos adecuados según el contexto.
-- Configurar etiquetas y estados mediante variantes (activo, deshabilitado, indeterminado).
-- Respetar espaciado, alineación, tipografía y jerarquía visual.
-- Usar Auto Layout para escalabilidad y adaptabilidad.
-
-### ❌ No:
-
-- ❌ No modificar el tamaño del checkbox manualmente.
-- ❌ No agregar íconos, textos o decoraciones fuera del diseño.
-- ❌ No cambiar colores o estilos sin seguir la librería UI.
-- ❌ No desactivar Auto Layout, ya que afecta la adaptabilidad del componente.
+| ✔️ Sí | ❌ No |
+|------|------|
+| Mantener la estructura del componente en Figma. Usar variantes y propiedades predefinidas sin modificar la base. | No modificar el tamaño del checkbox manualmente. Usar las variantes predefinidas para garantizar coherencia en la UI. |
+| Elegir estilos adecuados según el contexto. Usar checkboxes individuales o agrupados correctamente. | No agregar elementos externos dentro del componente. Evitar íconos, textos o decoraciones fuera de la librería. |
+| Activar o desactivar etiquetas y estados (activo, deshabilitado, indeterminado) desde las propiedades del componente. | No cambiar los colores o estilos fuera de las configuraciones establecidas. |
+| Asegurar que el checkbox mantenga la tipografía, tamaño y jerarquía visual de la UI. | No alterar la alineación del contenido interno. Mantener disposición del checkbox + etiqueta según el diseño original. |
+| Usar Auto Layout para escalabilidad y adaptabilidad. | No desactivar Auto Layout. Afectará la adaptabilidad y responsividad del checkbox. |
 
 ---
 
@@ -63,11 +56,12 @@ El **Checkbox** en Eficacia se utiliza para permitir a los usuarios seleccionar 
 
 ## 🧱 Elementos clave
 
-| Elemento        | Descripción                                                        |
-|-----------------|--------------------------------------------------------------------|
-| Contenedor      | Define el tamaño y forma del checkbox (18x18px, borde redondeado). |
-| Icono Check     | SVG que aparece al estar marcado.                                  |
-| Estados Visuales| Cambian color de fondo y borde según estado del checkbox.          |
+| Elemento              | Descripción                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| Contenedor del botón   | Estructura principal que define su tamaño y forma.                         |
+| Etiqueta               | Texto que describe la acción del botón.                                    |
+| Ícono (opcional)       | Elemento gráfico que refuerza visualmente la acción del botón.             |
+| Estado                 | Variantes como activo, inactivo o en carga que afectan la interacción.     |
 
 ---
 
