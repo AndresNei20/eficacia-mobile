@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: spacings.$paddng-sm spacings.$paddng-sm;
-  border-radius: 8px;
+  border-radius: spacings.$radius-sm;
   font-size: typography.$text-btn-size;
   font-weight: typography.$text-btn-weight;
   line-height: 1.5;

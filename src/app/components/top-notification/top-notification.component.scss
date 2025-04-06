@@ -1,13 +1,7 @@
 @use "../../../styles/colors" as colors;
 @use '../../../styles/spacings' as spacings;
 @use '../../../styles/typography' as typography;
-
-$shadow-x: 6px;
-$shadow-y: 9px;
-$shadow-blur: 19px;
-$shadow-spread: -7px;
-$shadow-color: rgba(105, 105, 105, 0.15);
-$drop-shadow: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
+@use '../../../styles/shadow' as shadow;
 
 .button {
     display: inline-flex;
@@ -15,13 +9,13 @@ $drop-shadow: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
     align-items: center;
     justify-content: space-between;
     padding: spacings.$paddng-sm spacings.$paddng-sm;
-    border-radius: 8px;
+    border-radius: spacings.$radius-sm;
     font-size: typography.$text-btn-size;
     font-weight: typography.$text-btn-weight;
     color: colors.$ns-gray;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: $drop-shadow;
+    box-shadow: shadow.$drop-shadow;
     background-color: colors.$sh-white;
 
     &.completed{

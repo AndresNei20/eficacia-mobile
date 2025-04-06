@@ -14,10 +14,7 @@ const meta: Meta<QuestionButtonComponent> = {
         type: 'boolean'
       },
     },
-  },
-  args: {
-    onClick: () => console.log('Button clicked!'), 
-  },
+  }
 };
 
 export default meta;
@@ -25,6 +22,6 @@ type Story = StoryObj<QuestionButtonComponent>;
 
 export const Default: Story = {
   args: {
-    isTooltipVisible: 'false',
+    isTooltipVisible: false,
   },
 };

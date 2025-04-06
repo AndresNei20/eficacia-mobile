@@ -12,11 +12,7 @@ export type IconName =
   | 'error'
   | 'started'
   | 'finished'
-//   | 'helpQuestion'
-//   | 'shop'
-//   | 'arrowSimpleLeft'
-//   | 'checkIcon'
-//   | 'alert';
+  | 'triangle'
 
 export interface IconProps {
   fill: string;

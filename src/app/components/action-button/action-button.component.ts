@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IconComponent } from '../iconBtn/icon.component';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-action-button',

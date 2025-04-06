@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IconComponent } from '../iconBtn/icon.component';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-help-question',
@@ -9,8 +9,11 @@ import { IconComponent } from '../iconBtn/icon.component';
   styleUrls: ['./question-button.component.scss']
 })
 export class QuestionButtonComponent {
-  @Input() isTooltipVisible?: 'true' | 'false' = 'false';
+  @Input() isTooltipVisible?: true | false = false;
 
-  @Output() onClick = new EventEmitter<Event>();
+  toggleTooltip(event: Event) {
+    event.stopPropagation();
+    this.isTooltipVisible = !this.isTooltipVisible;
+  }
 
 }
