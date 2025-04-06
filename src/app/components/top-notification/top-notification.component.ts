@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { IconComponent } from '../iconBtn/icon.component';
 
 @Component({
@@ -12,19 +12,42 @@ export class TopNotificationComponent {
 
   @Input() children?: string; 
   @Input() state!: 'default' | 'started' | 'finished' | 'error' | 'completed';
-  @Input() iconSrc!: 'add' | 'arrowRight' | 'shop'; 
+  @Input() iconSrc: 'started' | 'finished' | 'error' | 'completed' = 'completed'; 
 
-  // Evento onClick
   @Output() onClick = new EventEmitter<Event>();
 
+  currentIconSrc: 'started' | 'finished' | 'error' | 'completed' = 'completed';
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['state']) {
+      this.updateIconSrc();
+    }
+  }
+
+  private updateIconSrc() {
+    this.currentIconSrc = this.getDefaultIconForState();
+  }
+
+  private getDefaultIconForState(): 'started' | 'finished' | 'error' | 'completed' {
+    switch (this.state) {
+      case 'started': return 'started';
+      case 'error': return 'error';
+      case 'finished': return 'finished';
+      default: return 'completed'; 
+    }
+  }
+
   getStyles(
-    state: 'default' | 'started' | 'finished' | 'error' | 'completed',
-    iconSrc: 'add' | 'arrowRight' | 'shop'
+    state?: 'default' | 'started' | 'finished' | 'error' | 'completed',
   ): string {
-    return [
-      'button',
-      state,
-      iconSrc
-    ].filter(Boolean).join(' ');
+    if( state == 'completed'){
+      return [
+        'button',
+        state,
+      ].filter(Boolean).join(' ');
+    } else {
+      return 'button'
+    }
   }
 }
+

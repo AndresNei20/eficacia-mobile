@@ -2,13 +2,14 @@
 @use '../../../styles/spacings' as spacings;
 @use '../../../styles/typography' as typography;
 
+
 .button {
   display: inline-flex;
   width: 338px;
   align-items: center;
   justify-content: center;
   padding: spacings.$paddng-sm spacings.$paddng-sm;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: typography.$text-btn-size;
   font-weight: typography.$text-btn-weight;
   line-height: 1.5;

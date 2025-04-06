@@ -1,17 +1,38 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+$shadow-x: 6px;
+$shadow-y: 9px;
+$shadow-blur: 19px;
+$shadow-spread: -7px;
+$shadow-color: rgba(105, 105, 105, 0.15);
+$drop-shadow: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
+
 .button {
+    display: inline-flex;
+    width: 338px;
+    align-items: center;
+    justify-content: space-between;
+    padding: spacings.$paddng-sm spacings.$paddng-sm;
+    border-radius: 8px;
+    font-size: typography.$text-btn-size;
+    font-weight: typography.$text-btn-weight;
+    color: colors.$ns-gray;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: $drop-shadow;
+    background-color: colors.$sh-white;
+
+    &.completed{
+        background-color: colors.$primary-blue;
+        color: colors.$sh-white;
+    }
+}
+
+.content {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-    position: relative;
-    gap: 8px;
-
+    gap: spacings.$spacing-sm;
 }

@@ -26,7 +26,7 @@ type Story = StoryObj<TopNotificationComponent>;
 
 export const Default: Story = {
   args: {
-    state: 'default',
+    state: "started",
     children: 'Label',
   },
 };
