@@ -1,0 +1,13 @@
+<div class="info-card" (click)="toggleSelection()">
+    <app-icon [name]="iconSrc" fill="currentColor" class="icon"></app-icon>
+    <div class="text-content">
+      <h3 class="title">{{ title }}</h3>
+      <p class="subtitle">{{ subtitle }}</p>
+    </div>
+    <storybook-checkbox
+      class="checkbox"
+      [checked]="selected"
+      (checkedChange)="toggleSelection()"
+    ></storybook-checkbox>
+  </div>
+  

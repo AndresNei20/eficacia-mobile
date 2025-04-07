@@ -14,6 +14,7 @@ export type IconName =
   | 'finished'
   | 'triangle'
   | 'logout'
+  | 'mosaic'
 
 export interface IconProps {
   fill: string;
