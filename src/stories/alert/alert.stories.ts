@@ -2,42 +2,51 @@ import { Meta, StoryObj } from '@storybook/angular';
 import { AlertComponent } from '../../app/components/alert/alert.component';
 
 const meta: Meta<AlertComponent> = {
-  title: 'Components/Alertas/Estado',
+  title: 'Components/Alerts/EstadoAlert',
   component: AlertComponent,
   tags: ['autodocs'],
+  argTypes: {
+    appearance: {
+      control: 'radio',
+      options: ['light', 'success', 'warning', 'danger'],
+    },
+    state: {
+      control: 'radio',
+      options: ['active', 'hovered', 'pressed', 'disabled'],
+    },
+    showClose: {
+      control: 'boolean',
+    }
+  },
+  args: {
+    text: 'Estado',
+    showClose: true,
+  },
 };
 
 export default meta;
 type Story = StoryObj<AlertComponent>;
 
+export const Blanco: Story = {
+  args: {
+    appearance: 'light',
+  },
+};
+
 export const Verde: Story = {
   args: {
-    label: 'Estado',
-    color: 'success',
-    showClose: true,
+    appearance: 'success',
   },
 };
 
 export const Amarillo: Story = {
   args: {
-    label: 'Estado',
-    color: 'warning',
-    showClose: true,
+    appearance: 'warning',
   },
 };
 
 export const Rojo: Story = {
   args: {
-    label: 'Estado',
-    color: 'danger',
-    showClose: true,
-  },
-};
-
-export const Blanco: Story = {
-  args: {
-    label: 'Estado',
-    color: 'light',
-    showClose: true,
+    appearance: 'danger',
   },
 };

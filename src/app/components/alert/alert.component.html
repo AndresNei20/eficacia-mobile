@@ -1,5 +1,8 @@
-<div class="alert" [style.background-color]="backgroundColor" [style.color]="textColor">
+<div [class]="getStyles()">
     <div class="circle"></div>
-    <span class="label">{{ label }}</span>
-    <span *ngIf="showClose" class="close-icon">✕</span>
-</div>   
+    <span class="label">{{ text }}</span>
+    @if (showClose) {
+      <app-icon name="inicio" fill="currentColor" class="close-icon" />
+    }
+  </div>
+  

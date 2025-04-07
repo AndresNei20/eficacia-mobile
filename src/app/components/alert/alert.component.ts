@@ -1,25 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-estado-alert',
+  standalone: true,
+  imports: [CommonModule, IconComponent],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  @Input() label: string = 'Estado';
-  @Input() color: 'success' | 'warning' | 'danger' | 'light' = 'light';
+  @Input() text: string = 'Estado';
+  @Input() appearance!: 'success' | 'warning' | 'danger' | 'light';
+  @Input() state?: 'active' | 'hovered' | 'pressed' | 'disabled';
   @Input() showClose: boolean = true;
 
-  get backgroundColor(): string {
-    switch (this.color) {
-      case 'success': return '#2dd36f'; // verde
-      case 'warning': return '#ffc409'; // amarillo
-      case 'danger': return '#eb445a'; // rojo
-      case 'light': default: return '#ffffff'; // blanco
-    }
-  }
-
-  get textColor(): string {
-    return this.color === 'light' ? '#000' : '#fff';
+  getStyles(): string {
+    return ['estado-alert', this.appearance, this.state].filter(Boolean).join(' ');
   }
 }
