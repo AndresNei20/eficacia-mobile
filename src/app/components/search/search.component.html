@@ -13,7 +13,28 @@
 </div>
 -->
 
-<div>
-  
-</div>
 
+<!-- From Uiverse.io by satyamchaudharydev --> 
+<form class="form">
+    <label for="search">
+        <input 
+        required="" 
+        autocomplete="off" 
+        class="search" 
+        type="text"
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        [value]="value"
+        (input)="onSearchChange($event)">
+        <div class="icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+              <path d="M11 11L14.4286 14.4286M12.7143 7.14284C12.7143 10.2199 10.2199 12.7143 7.14284 12.7143C4.06582 12.7143 1.57141 10.2199 1.57141 7.14284C1.57141 4.06582 4.06582 1.57141 7.14284 1.57141C10.2199 1.57141 12.7143 4.06582 12.7143 7.14284Z" stroke-width="1.5"/>
+            </svg>              
+        </div>
+        <button type="reset" class="clear-button" (click)="clearSearch()">
+            <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+            </svg>
+        </button>
+    </label>
+</form>

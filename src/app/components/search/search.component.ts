@@ -1,28 +1,35 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IonInput } from '@ionic/angular/standalone';
+import { Component, Output, EventEmitter, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'storybook-search',
-  standalone: true,
-  imports: [IonInput],
+  selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  @Input() 
-  placeholder: string = 'Buscar...';
-  @Output() 
-  ionInput = new EventEmitter<string>();
+  @Input() placeholder: string = 'Buscar';
+  @Input() disabled: boolean = false;
+  @Input() value: string = '';
+  @Input() ariaLabel: string = 'Search input';
+  @Input() iconPosition: 'left' | 'right' = 'left';
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  
+  @Output() searchChange = new EventEmitter<string>();
+  
+  @ViewChild('searchInput') searchInput!: ElementRef;
 
-  private lastValue = '';
+  onSearchChange(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.value = value;
+    this.searchChange.emit(value);
+  }
 
-  handleChange(event: Event) {
-    const customEvent = event as CustomEvent;
-    const value = customEvent.detail.value || '';
-    // Solo emitir si el valor realmente cambió
-    if (value !== this.lastValue) {
-      this.ionInput.emit(value);
-      this.lastValue = value;
-    }
+  clearSearch(): void {
+    this.value = '';
+    this.searchChange.emit('');
+    this.searchInput.nativeElement.focus();
+  }
+
+  get containerClasses(): string {
+    return `search-container ${this.size} icon-${this.iconPosition}`;
   }
 }
