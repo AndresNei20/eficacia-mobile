@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     backgrounds: {
-      default: 'light', // o el nombre que quieras
+      default: 'light', 
       values: [
         { name: 'light', value: '#f5f5f5' },
         { name: 'dark', value: '#333333' },
@@ -84,15 +84,6 @@ Un componente de búsqueda altamente personalizable con funcionalidades avanzada
         defaultValue: { summary: 'left' },
       },
     },
-    size: {
-      description: 'Tamaño del componente',
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-      table: {
-        category: 'Styling',
-        defaultValue: { summary: 'medium' },
-      },
-    },
   },
   args: {
     placeholder: 'Buscar',
@@ -100,7 +91,6 @@ Un componente de búsqueda altamente personalizable con funcionalidades avanzada
     value: '',
     ariaLabel: 'Search input',
     iconPosition: 'left',
-    size: 'medium'
   },
 } as Meta<SearchComponent>;
 

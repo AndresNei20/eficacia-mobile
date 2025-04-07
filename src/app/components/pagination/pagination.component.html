@@ -1,0 +1,64 @@
+<div class="pagination-container">
+    <div class="pagination-controls">
+      <button 
+        class="pagination-button" 
+        [disabled]="currentPage === 1" 
+        (click)="changePage(1)"
+        aria-label="First page"
+      >
+        &laquo;
+      </button>
+      <button 
+        class="pagination-button" 
+        [disabled]="currentPage === 1" 
+        (click)="changePage(currentPage - 1)"
+        aria-label="Previous page"
+      >
+        &lsaquo;
+      </button>
+  
+      <ng-container *ngFor="let page of pages">
+        <button 
+          class="pagination-button" 
+          [class.active]="page === currentPage" 
+          (click)="changePage(page)"
+          [attr.aria-label]="'Page ' + page"
+          [attr.aria-current]="page === currentPage ? 'page' : null"
+        >
+          {{ page }}
+        </button>
+      </ng-container>
+  
+      <button 
+        class="pagination-button" 
+        [disabled]="currentPage === totalPages" 
+        (click)="changePage(currentPage + 1)"
+        aria-label="Next page"
+      >
+        &rsaquo;
+      </button>
+      <button 
+        class="pagination-button" 
+        [disabled]="currentPage === totalPages" 
+        (click)="changePage(totalPages)"
+        aria-label="Last page"
+      >
+        &raquo;
+      </button>
+    </div>
+  
+    <div class="page-size-selector" *ngIf="totalPages > 1">
+      <label for="pageSize">Items per page:</label>
+      <select 
+        id="pageSize" 
+        [(ngModel)]="pageSize" 
+        (change)="changePageSize(pageSize)"
+        aria-label="Items per page"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </div>
+  </div>
