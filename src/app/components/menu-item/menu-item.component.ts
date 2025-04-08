@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../icon-button/icon.component';
+import { MenuName } from './menu-item.types';
 
 @Component({
   selector: 'app-item-menu',
@@ -9,13 +10,13 @@ import { IconComponent } from '../icon-button/icon.component';
   styleUrl: './menu-item.component.scss'
 })
 export class MenuItemComponent {
-  @Input() name!: | 'inicio' | 'agenda' | 'gestion' | 'portafolio' | 'perfil';
-  @Input() state!: 'selected' | 'notSelected';
+  @Input() name!: MenuName;
+  @Input() selected!: true | false;
 
   @Output() onClick = new EventEmitter<Event>();
 
   getStyles(
-    state: 'selected' | 'notSelected' ,
+    state: true | false ,
   ): string {
     return [
       'button',

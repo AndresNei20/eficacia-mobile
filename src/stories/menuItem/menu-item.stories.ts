@@ -9,11 +9,10 @@ const meta: Meta<MenuItemComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    state: {
+    selected: {
       control: {
-        type: 'radio'
+        type: 'boolean'
       },
-      options: ['selected', 'notSelected'],
     },
     name: {
       control: 'text',
@@ -30,7 +29,7 @@ type Story = StoryObj<MenuItemComponent>;
 
 export const Default: Story = {
   args: {
-    state: 'selected',
+    selected: false,
     name: 'portafolio',
   },
 };

@@ -14,17 +14,22 @@
     height: 44px;
     border-radius: spacings.$radius-xs;
     gap: 0;
-    color: colors.$blue-scale-600;
     padding: spacings.$padding-xs spacings.$padding-xs;
     font-size: typography.$text-body-sm-size;
     font-weight: typography.$text-body-sm-weight;
+    background-color: colors.$sh-white;
+    color: colors.$blue-scale-300;
 
-    &.selected {
+
+    &.true {
         background-color: colors.$blue-scale-200;
+        color: colors.$blue-scale-600;
+        
     }
 
-    &.nonSelected{
+    &.false{
         background-color: colors.$sh-white;
+        color: colors.$blue-scale-300;
     }
 
     app-icon {
