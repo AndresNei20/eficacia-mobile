@@ -71,48 +71,13 @@ Un componente de paginación flexible y accesible para navegar entre conjuntos d
       },
       action: 'pageChange',
     },
-    pageSizeChange: {
-      description: 'Evento emitido cuando cambia el tamaño de página',
-      table: {
-        category: 'Events',
-      },
-      action: 'pageSizeChange',
-    },
-    showPageSizeSelector: {
-      description: 'Mostrar selector de items por página',
-      control: 'boolean',
-      table: {
-        category: 'Behavior',
-        defaultValue: { summary: 'true' },
-      },
-    },
-    size: {
-      description: 'Tamaño del componente',
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-      table: {
-        category: 'Styling',
-        defaultValue: { summary: 'medium' },
-      },
-    },
-    variant: {
-      description: 'Variante de estilo',
-      control: 'select',
-      options: ['default', 'minimal', 'rounded'],
-      table: {
-        category: 'Styling',
-        defaultValue: { summary: 'default' },
-      },
-    },
+  
   },
   args: {
     currentPage: 1,
     totalPages: 10,
     pageSize: 10,
     maxVisiblePages: 5,
-    showPageSizeSelector: true,
-    size: 'medium',
-    variant: 'default'
   },
 } as Meta<PaginationComponent>;
 
@@ -126,25 +91,4 @@ export const ManyPages = Template.bind({});
 ManyPages.args = {
   currentPage: 5,
   totalPages: 20,
-};
-
-export const MinimalVariant = Template.bind({});
-MinimalVariant.args = {
-  variant: 'minimal',
-  showPageSizeSelector: false
-};
-
-export const SmallSize = Template.bind({});
-SmallSize.args = {
-  size: 'small'
-};
-
-export const LargeSize = Template.bind({});
-LargeSize.args = {
-  size: 'large'
-};
-
-export const DarkBackground = Template.bind({});
-DarkBackground.parameters = {
-  backgrounds: { default: 'dark' }
 };

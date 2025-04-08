@@ -1,68 +1,63 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+
 .pagination-container {
   display: flex;
+  padding: spacings.$paddng-xs;
+  width: 344px;
+  height: 81px;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
   font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
 
-  
-      &.small {
-        font-size: 0.8rem;
-        
-        .pagination-button {
-          padding: 0.3rem 0.6rem;
-        }
-      }
-    
-      &.large {
-        font-size: 1.2rem;
-        
-        .pagination-button {
-          padding: 0.7rem 1.4rem;
-        }
-      }
-    
-      &.minimal {
-        .pagination-button {
-          border: none;
-          background: transparent;
-          
-          &.active {
-            font-weight: bold;
-            text-decoration: underline;
-          }
-        }
-      }
-    
-      &.rounded {
-        .pagination-button {
-          border-radius: 50%;
-          width: 2.5rem;
-          height: 2.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          
-          &.active {
-            border-radius: 50%;
-          }
-        }
-      }
+  .number-pages{
+    display: flex;
+    height: 100%;
+    p{
+      font-weight: typography.$text-h3-weight;
+      font-size: typography.$text-btn-size;
+      color: colors.$color-text-titles;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0;
+    }
+
+  }
 
   .pagination-controls {
+    width: 336px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
     display: flex;
     gap: 0.5rem;
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 
   .pagination-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #333;
+    width: 37px;
+    height: 37px;
+
+    font-weight: typography.$text-caption-weight ;
+    font-size: typography.$text-body-size;
+    background-color: transparent;
+    color: #696969;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
 
     &:hover:not(:disabled) {
       background-color: #f0f0f0;
@@ -74,10 +69,45 @@
     }
 
     &.active {
-      background-color: #007bff;
-      color: white;
-      border-color: #007bff;
+      color: colors.$color-text-titles;
+      font-weight: typography.$text-h1-weight ;
+      font-size: typography.$text-h4-size;
     }
+  }
+
+
+  .pagination-pages{
+    width: 37px;
+    height: 37px;
+    font-weight: typography.$text-caption-weight ;
+    font-size: typography.$text-body-size;
+    background-color: transparent;
+    color: #696969;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background-color: #f0f0f0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      color: colors.$color-text-titles;
+      font-weight: typography.$text-h1-weight ;
+      font-size: typography.$text-h4-size;
+    }
+  }
+
+  .pages-buttons{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
   }
 
   .page-size-selector {

@@ -1,4 +1,7 @@
 <div class="pagination-container">
+    <div class="number-pages">
+      <p>00-00</p>
+    </div>
     <div class="pagination-controls">
       <button 
         class="pagination-button" 
@@ -6,7 +9,10 @@
         (click)="changePage(1)"
         aria-label="First page"
       >
-        &laquo;
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.21149 1.68074L7.05392 0.571406L0.285732 7.05758L7.05392 13.5438L8.21149 12.4344L2.60087 7.05758L8.21149 1.68074Z" fill="#0041A3"/>
+      </svg>
+        
       </button>
       <button 
         class="pagination-button" 
@@ -14,20 +20,21 @@
         (click)="changePage(currentPage - 1)"
         aria-label="Previous page"
       >
-        &lsaquo;
+      <svg width="6" height="9" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.21149 1.68074L7.05392 0.571406L0.285732 7.05758L7.05392 13.5438L8.21149 12.4344L2.60087 7.05758L8.21149 1.68074Z" fill="#0041A3"/>
+      </svg>
       </button>
   
-      <ng-container *ngFor="let page of pages">
+      <div class="pages-buttons">
         <button 
-          class="pagination-button" 
+          *ngFor="let page of pages" 
+          class="pagination-pages" 
           [class.active]="page === currentPage" 
           (click)="changePage(page)"
-          [attr.aria-label]="'Page ' + page"
-          [attr.aria-current]="page === currentPage ? 'page' : null"
         >
           {{ page }}
         </button>
-      </ng-container>
+      </div>
   
       <button 
         class="pagination-button" 
@@ -35,7 +42,9 @@
         (click)="changePage(currentPage + 1)"
         aria-label="Next page"
       >
-        &rsaquo;
+      <svg width="6" height="9" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.142882 12.4344L1.30045 13.5438L8.06864 7.05759L1.30045 0.571411L0.142883 1.68075L5.7535 7.05759L0.142882 12.4344Z" fill="#0041A3"/>
+      </svg>    
       </button>
       <button 
         class="pagination-button" 
@@ -43,22 +52,9 @@
         (click)="changePage(totalPages)"
         aria-label="Last page"
       >
-        &raquo;
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.142882 12.4344L1.30045 13.5438L8.06864 7.05759L1.30045 0.571411L0.142883 1.68075L5.7535 7.05759L0.142882 12.4344Z" fill="#0041A3"/>
+      </svg>        
       </button>
-    </div>
-  
-    <div class="page-size-selector" *ngIf="totalPages > 1">
-      <label for="pageSize">Items per page:</label>
-      <select 
-        id="pageSize" 
-        [(ngModel)]="pageSize" 
-        (change)="changePageSize(pageSize)"
-        aria-label="Items per page"
-      >
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-      </select>
     </div>
   </div>
