@@ -1,0 +1,68 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+$avatar-size: 84px; 
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  gap: spacings.$spacing-xs;
+
+  .avatar-image-wrapper {
+    position: relative;
+    width: fit-content;
+    padding-left: spacings.$paddng-xs;
+    padding-right: spacings.$paddng-xs;
+
+    .avatar-image-default {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        border: 1px solid white;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+
+    .avatar-image-small {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid white;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+
+    .avatar-badge {
+        display:flex;
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+    }
+  }
+
+  .avatar-name {
+    font-weight: typography.$text-h3-weight; 
+    font-size:  typography.$text-h3-size;
+    color: colors.$primary-blue;
+    margin: 0.25rem 0;
+  }
+
+  .avatar-points {
+    font-weight: typography.$text-caption-weight; 
+    font-size:  typography.$text-caption-size;
+    color: colors.$color-texts-captions;
+    margin: 0;
+  }
+
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+  }
+  
+}

@@ -13,6 +13,7 @@ import { IconComponents } from '../../../utils/icons';
 export class IconComponent implements OnChanges {
   @Input() name!: IconName;
   @Input() fill: string = 'currentColor';
+  @Input() size: string = '18';
   safeSvg!: SafeHtml;
 
   constructor(private sanitizer: DomSanitizer) {}
@@ -30,7 +31,7 @@ export class IconComponent implements OnChanges {
     }
 
     this.safeSvg = this.sanitizer.bypassSecurityTrustHtml(
-      iconGenerator({ fill: this.fill })
+      iconGenerator({ fill: this.fill, size: this.size })
     );
   }
 }
