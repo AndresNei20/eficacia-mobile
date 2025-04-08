@@ -3,23 +3,23 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
-  selector: 'app-action-button',
+  selector: 'app-item-menu',
   imports: [ CommonModule, IconComponent],
-  templateUrl: './action-button.component.html',
-  styleUrl: './action-button.component.scss'
+  templateUrl: './menu-item.component.html',
+  styleUrl: './menu-item.component.scss'
 })
-export class ActionButtonComponent {
-  @Input() children!: string;
-  @Input() apperance!: 'small' | 'big';
+export class MenuItemComponent {
+  @Input() name!: | 'inicio' | 'agenda' | 'gestion' | 'portafolio' | 'perfil';
+  @Input() state!: 'selected' | 'notSelected';
 
   @Output() onClick = new EventEmitter<Event>();
 
   getStyles(
-    apperance: 'small' | 'big' ,
+    state: 'selected' | 'notSelected' ,
   ): string {
     return [
       'button',
-      apperance,
+      state,
     ].filter(Boolean).join(' ');
   }
 }

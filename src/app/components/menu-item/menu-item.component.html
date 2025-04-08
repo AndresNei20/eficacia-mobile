@@ -1,0 +1,16 @@
+<button 
+  [class]="getStyles(state)" 
+  (click)="onClick.emit($event)">
+
+  <app-icon 
+    [name]="name" 
+    size="14"
+    [fill]="'#003482'">
+  </app-icon>
+  
+  <p>
+    {{ name }}
+  </p>
+  
+  
+</button>

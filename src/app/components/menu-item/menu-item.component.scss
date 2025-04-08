@@ -1,0 +1,39 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.button {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 47px;
+    height: 44px;
+    border-radius: 4px;
+    gap: 0;
+    color: colors.$blue-scale-600;
+    font-size: typography.$text-body-sm-size;
+    font-weight: typography.$text-body-sm-weight;
+
+    &.selected {
+        background-color: colors.$blue-scale-200;
+    }
+
+    &.nonSelected{
+        background-color: colors.$sh-white;
+    }
+
+    app-icon {
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+    }
+
+    p{
+        margin: 0;
+    }
+
+}

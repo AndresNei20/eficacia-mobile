@@ -38,6 +38,6 @@ export const Default: Story = {
   args: {
     name: 'Amanda Miguel',
     points: '120',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQ6YhyYv_Dmjz8XHVOA5axDOuNeslz9uh8A&s'
+    image: 'https://i.ytimg.com/vi/fSAF_Ro0bhY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO3Qu4sLBQF5_vcwf6OBDYHTQ36A'
   },
 };
