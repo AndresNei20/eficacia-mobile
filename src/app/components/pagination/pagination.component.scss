@@ -59,9 +59,9 @@
     align-items: center;
     justify-content: center;
 
-    &:hover:not(:disabled) {
-      background-color: #f0f0f0;
-    }
+    // &:hover:not(:disabled) {
+    //   background-color: #f0f0f0;
+    // }
 
     &:disabled {
       opacity: 0.5;
@@ -87,9 +87,9 @@
     align-items: center;
     justify-content: center;
 
-    &:hover:not(:disabled) {
-      background-color: #f0f0f0;
-    }
+    // &:hover:not(:disabled) {
+    //   background-color: #f0f0f0;
+    // }
 
     &:disabled {
       opacity: 0.5;
