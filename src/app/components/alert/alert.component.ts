@@ -3,19 +3,26 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
-  selector: 'app-estado-alert',
+  selector: 'app-alert',
   standalone: true,
   imports: [CommonModule, IconComponent],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  @Input() text: string = 'Estado';
-  @Input() appearance!: 'success' | 'warning' | 'danger' | 'light';
-  @Input() state?: 'active' | 'hovered' | 'pressed' | 'disabled';
-  @Input() showClose: boolean = true;
+  @Input() style: 'default' | 'success' | 'pending' | 'warning' = 'default';
+  @Input() textAlert: string = 'Estado';
+  @Input() showIcon: boolean = true;
 
   getStyles(): string {
-    return ['estado-alert', this.appearance, this.state].filter(Boolean).join(' ');
+    return ['alert', this.style].filter(Boolean).join(' ');
+  }
+
+  getCircleColor(): string {
+    return this.style === 'default' ? '#3BD4AE' : 'white';
+  }
+
+  getCloseColor(): string {
+    return this.style === 'default' ? '#0041A3' : 'white';
   }
 }

@@ -2,23 +2,25 @@
 @use "../../../styles/spacings" as spacings;
 @use "../../../styles/typography" as typography;
 
-.estado-alert {
+.alert {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: spacings.$paddng-sm;
+  padding-left: spacings.$spacing-md;
+  padding-right: spacings.$spacing-md;
+  padding-top: spacings.$spacing-sm;
+  padding-bottom: spacings.$spacing-sm;
   border-radius: spacings.$radius-sm;
-  font-size: typography.$text-btn-size;
-  font-weight: typography.$text-btn-weight;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
   gap: spacings.$spacing-sm;
-  width: 100%;
+  width: 339px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
   .circle {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: white;
   }
 
   .label {
@@ -30,28 +32,27 @@
     font-size: 20px;
   }
 
-  &.light {
-    background-color: white;
-    color: colors.$primary-blue;
+  &.default {
+    background-color: colors.$sh-white;
+    color: colors.$color-texts-body;
+
+    .close-icon {
+      color: colors.$primary-blue;
+    }
   }
 
   &.success {
     background-color: colors.$sh-green;
-    color: white;
+    color: colors.$sh-white;
+  }
+
+  &.pending {
+    background-color: colors.$ps-yellow;
+    color: colors.$sh-white;
   }
 
   &.warning {
-    background-color: colors.$ps-yellow;
-    color: white;
-  }
-
-  &.danger {
     background-color: colors.$sh-red;
-    color: white;
-  }
-
-  &.disabled {
-    opacity: 0.6;
-    pointer-events: none;
+    color: colors.$sh-white;
   }
 }

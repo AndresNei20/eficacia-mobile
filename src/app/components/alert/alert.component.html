@@ -1,8 +1,7 @@
 <div [class]="getStyles()">
-    <div class="circle"></div>
-    <span class="label">{{ text }}</span>
-    @if (showClose) {
-      <app-icon name="inicio" fill="currentColor" class="close-icon" />
-    }
-  </div>
-  
+  @if (showIcon) {
+    <div class="circle" [style.backgroundColor]="getCircleColor()"></div>
+  }
+  <span class="label">{{ textAlert }}</span>
+  <app-icon name="close" [style.color]="getCloseColor()" class="close-icon" />
+</div>
