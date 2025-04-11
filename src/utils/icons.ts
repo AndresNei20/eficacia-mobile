@@ -87,7 +87,7 @@ export const IconComponents: Record<IconName, (props: IconProps) => string> = {
   `,
   close: ({fill}) => `
   <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 1.5L11 11.5M11 1.5L1 11.5" stroke="white" stroke-width="2" stroke-linecap="round" fill=${fill}/>
+    <path d="M1 1.5L11 11.5M11 1.5L1 11.5" stroke=${fill} stroke-width="2" stroke-linecap="round"/>
   </svg>
   `
 };
