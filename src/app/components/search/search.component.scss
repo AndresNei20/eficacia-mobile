@@ -4,13 +4,15 @@
 
 
 .form {
-  --input-bg: #FFf;
-  --padding: 1.5em;
-  --gap: 1em;
-  height: 40px;
-  width: 222px;
+  --padding: 1em;
+  --gap: 1.5em;
+  --width: 222px; /* Valor por defecto */
+  --height: 40px; /* Valor por defecto */
+  
+  height: var(--height);
+  width: var(--width);
   padding-inline-end: 1em;
-  background: var(--input-bg);
+  background: colors.$sh-white;
   position: relative;
   border-radius: 4px;
   display: flex;
@@ -18,13 +20,12 @@
   justify-content: center;
 }
 
-
 .form label {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: var(--height);
+  height: 100%;
 }
 
 .form input {

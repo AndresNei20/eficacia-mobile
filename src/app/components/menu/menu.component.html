@@ -1,0 +1,13 @@
+<div class="all-container">
+    <app-icon class="icon" (click)="handleDisplayClick($event)" name="display" fill="currentColor"></app-icon>
+    
+    <app-search
+      [placeholder]="'Buscar'"
+      [width]="'236px'"
+      [height]="'25px'"
+      [value]="searchValue"
+      (searchChange)="onSearchChange($event)"
+    ></app-search>
+    
+    <app-icon class="icon" (click)="handleBellClick($event)" name="bell" fill="currentColor"></app-icon>
+  </div>

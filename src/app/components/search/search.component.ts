@@ -1,21 +1,41 @@
-import { Component, Output, EventEmitter, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-search',
+  standalone: true,
+  imports: [IconComponent], 
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
+export class SearchComponent implements AfterViewInit {
   @Input() placeholder: string = 'Buscar';
   @Input() disabled: boolean = false;
   @Input() value: string = '';
-  @Input() ariaLabel: string = 'Search input';
-  @Input() iconPosition: 'left' | 'right' = 'left';
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
-  
+  @Input() width: string = '222px'; // Valor por defecto
+  @Input() height: string = '40px'; // Valor por defecto
+
   @Output() searchChange = new EventEmitter<string>();
   
   @ViewChild('searchInput') searchInput!: ElementRef;
+  @ViewChild('formElement') formElement!: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.applyCustomDimensions();
+  }
+
+  ngOnChanges(): void {
+    if (this.formElement) {
+      this.applyCustomDimensions();
+    }
+  }
+
+  private applyCustomDimensions(): void {
+    if (this.formElement?.nativeElement) {
+      this.formElement.nativeElement.style.setProperty('--width', this.width);
+      this.formElement.nativeElement.style.setProperty('--height', this.height);
+    }
+  }
 
   onSearchChange(event: Event): void {
     const value = (event.target as HTMLInputElement).value;
@@ -27,9 +47,5 @@ export class SearchComponent {
     this.value = '';
     this.searchChange.emit('');
     this.searchInput.nativeElement.focus();
-  }
-
-  get containerClasses(): string {
-    return `search-container ${this.size} icon-${this.iconPosition}`;
   }
 }

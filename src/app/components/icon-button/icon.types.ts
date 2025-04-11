@@ -16,6 +16,10 @@ export type IconName =
   | 'logout'
   | 'upload'
   | 'file'
+  | 'search'
+  | 'display'
+  | 'bell'
+  | 'list'
 
 export interface IconProps {
   fill: string;

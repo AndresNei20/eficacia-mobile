@@ -23,7 +23,7 @@ Un componente de búsqueda altamente personalizable con funcionalidades avanzada
 - ✖️ Botón para limpiar la búsqueda
 - ⌨️ Emite eventos en tiempo real mientras se escribe
 - ♿ Accesibilidad mejorada
-- 🎨 Estilos personalizables
+- 🎨 Estilos personalizables (tamaño configurable)
 - ⏳ Soporte para estados deshabilitados
 - 📱 Diseño responsive
 
@@ -60,6 +60,22 @@ Un componente de búsqueda altamente personalizable con funcionalidades avanzada
         category: 'State',
       },
     },
+    width: {
+      description: 'Ancho del campo de búsqueda (ej: "300px", "50%")',
+      control: 'text',
+      table: {
+        category: 'Styling',
+        defaultValue: { summary: '222px' },
+      },
+    },
+    height: {
+      description: 'Altura del campo de búsqueda (ej: "40px", "2rem")',
+      control: 'text',
+      table: {
+        category: 'Styling',
+        defaultValue: { summary: '40px' },
+      },
+    },
     searchChange: {
       description: 'Evento emitido cuando cambia el valor de búsqueda',
       table: {
@@ -67,30 +83,13 @@ Un componente de búsqueda altamente personalizable con funcionalidades avanzada
       },
       action: 'searchChange',
     },
-    ariaLabel: {
-      description: 'Etiqueta ARIA para accesibilidad',
-      control: 'text',
-      table: {
-        category: 'Accessibility',
-        defaultValue: { summary: 'Search input' },
-      },
-    },
-    iconPosition: {
-      description: 'Posición del icono de búsqueda',
-      control: 'select',
-      options: ['left', 'right'],
-      table: {
-        category: 'Styling',
-        defaultValue: { summary: 'left' },
-      },
-    },
   },
   args: {
     placeholder: 'Buscar',
     disabled: false,
     value: '',
-    ariaLabel: 'Search input',
-    iconPosition: 'left',
+    width: '222px',
+    height: '40px',
   },
 } as Meta<SearchComponent>;
 
@@ -99,3 +98,21 @@ const Template: StoryFn<SearchComponent> = (args) => ({
 });
 
 export const Default = Template.bind({});
+
+export const CustomSize = Template.bind({});
+CustomSize.args = {
+  width: '300px',
+  height: '50px'
+};
+
+export const SmallSize = Template.bind({});
+SmallSize.args = {
+  width: '150px',
+  height: '30px'
+};
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  width: '100%',
+  height: '45px'
+};
