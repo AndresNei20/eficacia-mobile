@@ -10,17 +10,18 @@ import { CommonModule } from '@angular/common';
 })
 export class ProgressBarComponent {
   @Input() value: number = 0;
-  @Input() color: 'green' | 'yellow' | 'red' = 'green';
+  @Input() status: 'green' | 'yellow' | 'red' = 'green';
+  @Input() showPercent: boolean = true;
 
   get progressWidth(): string {
     return `${this.clamp(this.value)}%`;
   }
 
   get badgePosition(): string {
-    return `calc(${this.clamp(this.value)}% - 16px)`; 
+    return `calc(${this.clamp(this.value)}% - 24px)`;
   }
 
-  private clamp(val: number): number {
-    return Math.min(Math.max(val, 0), 100);
+  private clamp(value: number): number {
+    return Math.min(Math.max(value, 0), 100);
   }
 }

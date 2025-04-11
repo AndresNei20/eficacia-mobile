@@ -59,19 +59,43 @@ Se usa para:
     value: {
       control: { type: 'range', min: 0, max: 100 },
     },
-    color: {
+    status: {
       control: 'radio',
       options: ['green', 'yellow', 'red'],
-    }
+    },
+    showPercent: {
+      control: 'boolean',
+    },
   },
   args: {
     value: 65,
-    color: 'green',
+    status: 'green',
+    showPercent: true,
   },
 } as Meta<ProgressBarComponent>;
 
 type Story = StoryObj<ProgressBarComponent>;
 
-export const Green: Story = { args: { color: 'green' } };
-export const Yellow: Story = { args: { color: 'yellow' } };
-export const Red: Story = { args: { color: 'red' } };
+export const Green: Story = {
+  args: {
+    status: 'green',
+    value: 65,
+    showPercent: true,
+  },
+};
+
+export const Yellow: Story = {
+  args: {
+    status: 'yellow',
+    value: 65,
+    showPercent: true,
+  },
+};
+
+export const Red: Story = {
+  args: {
+    status: 'red',
+    value: 65,
+    showPercent: true,
+  },
+};
