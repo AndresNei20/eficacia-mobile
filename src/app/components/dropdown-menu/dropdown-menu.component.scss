@@ -1,0 +1,24 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
+
+.dropdown-label {
+  display: block;
+  font-weight: typography.$text-body-sm-weight;
+  font-size: typography.$text-body-sm-size;
+  margin-bottom: spacings.$spacing-xs;
+  color: colors.$color-texts-body;
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: spacings.$paddng-sm spacings.$spacing-md;
+  font-size: typography.$text-body-sm-size;
+  border: 1px solid colors.$primary-blue;
+  border-radius: 8px;
+  color: colors.$primary-blue;
+  appearance: none;
+  background: url('/assets/icons/arrow-down.svg') no-repeat right 1rem center;
+  background-color: white;
+  background-size: 1rem;
+}
