@@ -1,0 +1,37 @@
+<div class="progress-card">
+    <section class="card-content">
+      <section class="card-head" *ngIf="showHeadText">
+        <span class="text-left">{{ headLeftText }}</span>
+        <span class="text-right">{{ headRightText }}</span>
+      </section>
+  
+      <section class="card-title" *ngIf="showTitle">
+        <h4>{{ title }}</h4>
+        <app-icon
+            *ngIf="showCheck"
+            name="completed"
+            fill="#3BD4AE"
+            class="check-icon"
+        />
+      </section>
+  
+      <app-progress-bar
+        [value]="percentValue"
+        color="green"
+        [showPercent]="showPercent"
+      />
+  
+      <section class="card-bottom">
+        <span class="text-left">{{ activitiesText }}</span>
+        <span class="text-right">{{ goalsText }}</span>
+      </section>
+    </section>
+  
+    <app-icon
+      *ngIf="showArrow"
+      name="arrowRight"
+      fill="#0041A3"
+      class="arrow-icon"
+    />
+</div>
+  
