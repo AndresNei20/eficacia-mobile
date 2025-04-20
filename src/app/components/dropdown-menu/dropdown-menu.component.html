@@ -1,16 +1,16 @@
 <div class="dropdown-container">
-  <label class="dropdown-label">{{ label }}</label>
+  <label class="dropdown-label">{{ textField }}</label>
 
   <div class="dropdown-wrapper" [class.open]="isOpen">
     <div class="dropdown-header" (click)="toggleDropdown()">
-      <span class="dropdown-placeholder" [class.selected]="selected">
-        {{ selected || label }}
+      <span class="dropdown-placeholder" [class.selected]="selectedOption">
+        {{ selectedOption || textField }}
       </span>
-      <img
-        src="/assets/icons/arrow-down.svg"
+      <app-icon
+        name="arrowDrop"
+        fill="#0041A3"
         class="dropdown-icon"
         [class.open]="isOpen"
-        alt="Toggle dropdown"
       />
     </div>
 

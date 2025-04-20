@@ -89,6 +89,11 @@ export const IconComponents: Record<IconName, (props: IconProps) => string> = {
   <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M1 1.5L11 11.5M11 1.5L1 11.5" stroke=${fill} stroke-width="2" stroke-linecap="round"/>
   </svg>
+  `,
+  arrowDrop: ({fill}) => `
+  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.0415 0.452209L0.297276 1.19643L4.64864 5.54779L9 1.19643L8.25578 0.452209L4.64864 4.05935L1.0415 0.452209Z" fill="#0041A3"/>
+  </svg>
   `
 };
 

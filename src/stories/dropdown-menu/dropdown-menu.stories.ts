@@ -6,20 +6,21 @@ export default {
   component: DropdownMenuComponent,
   tags: ['autodocs'],
   argTypes: {
-    label: {
+    state: {
+      control: 'radio',
+      options: ['label', 'select'],
+    },
+    textField: {
       control: 'text',
     },
     options: {
       control: 'object',
     },
-    selected: {
-      control: 'text',
-    },
   },
   args: {
-    label: 'Label',
+    state: 'label',
+    textField: 'Label',
     options: ['Label 1', 'Label 2', 'Label 3'],
-    selected: '',
   },
 } as Meta<DropdownMenuComponent>;
 

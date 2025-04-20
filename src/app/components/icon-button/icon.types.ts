@@ -15,6 +15,7 @@ export type IconName =
   | 'triangle'
   | 'logout'
   | 'close'
+  | 'arrowDrop'
 
 
 export interface IconProps {
