@@ -6,50 +6,17 @@ export default {
   component: ProgressCardComponent,
   tags: ['autodocs'],
   argTypes: {
-    headLeftText: {
-      control: 'text',
-      description: 'Texto de la izquierda en el encabezado',
-    },
-    headRightText: {
-      control: 'text',
-      description: 'Texto de la derecha en el encabezado',
-    },
-    showHeadText: {
-      control: 'boolean',
-      description: 'Mostrar sección de encabezado superior',
-    },
-    title: {
-      control: 'text',
-      description: 'Título principal de la tarjeta',
-    },
-    showTitle: {
-      control: 'boolean',
-      description: 'Mostrar título principal',
-    },
-    showCheck: {
-      control: 'boolean',
-      description: 'Mostrar ícono de check al lado del título',
-    },
-    percentValue: {
-      control: { type: 'range', min: 0, max: 100 },
-      description: 'Porcentaje de progreso',
-    },
-    showPercent: {
-      control: 'boolean',
-      description: 'Mostrar el valor del porcentaje en la barra',
-    },
-    activitiesText: {
-      control: 'text',
-      description: 'Texto inferior izquierdo (actividades)',
-    },
-    goalsText: {
-      control: 'text',
-      description: 'Texto inferior derecho (meta)',
-    },
-    showArrow: {
-      control: 'boolean',
-      description: 'Mostrar ícono de flecha a la derecha',
-    },
+    headLeftText: { control: 'text' },
+    headRightText: { control: 'text' },
+    showHeadText: { control: 'boolean' },
+    title: { control: 'text' },
+    showTitle: { control: 'boolean' },
+    showCheck: { control: 'boolean' },
+    percentValue: { control: { type: 'range', min: 0, max: 100 } },
+    showPercent: { control: 'boolean' },
+    activitiesText: { control: 'text' },
+    goalsText: { control: 'text' },
+    showArrow: { control: 'boolean' },
   },
   args: {
     headLeftText: 'Faltan 2 actividades',
