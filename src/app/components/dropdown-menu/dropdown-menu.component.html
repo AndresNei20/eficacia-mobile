@@ -1,5 +1,27 @@
-<label class="dropdown-label">{{ label }}</label>
-<select class="dropdown-select" [(ngModel)]="selected">
-  <option value="" disabled selected hidden>Label</option>
-  <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-</select>
+<div class="dropdown-container">
+  <label class="dropdown-label">{{ label }}</label>
+
+  <div class="dropdown-wrapper" [class.open]="isOpen">
+    <div class="dropdown-header" (click)="toggleDropdown()">
+      <span class="dropdown-placeholder" [class.selected]="selected">
+        {{ selected || label }}
+      </span>
+      <img
+        src="/assets/icons/arrow-down.svg"
+        class="dropdown-icon"
+        [class.open]="isOpen"
+        alt="Toggle dropdown"
+      />
+    </div>
+
+    <ul class="dropdown-list" *ngIf="isOpen">
+      <li
+        class="dropdown-item"
+        *ngFor="let option of options"
+        (click)="selectOption(option)"
+      >
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+</div>

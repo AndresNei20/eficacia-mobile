@@ -1,24 +1,73 @@
 @use "../../../styles/colors" as colors;
 @use "../../../styles/typography" as typography;
-@use "../../../styles/spacings" as spacings;
+
+.dropdown-container {
+  width: 100%;
+  max-width: 300px;
+}
 
 .dropdown-label {
   display: block;
-  font-weight: typography.$text-body-sm-weight;
+  margin-bottom: 8px;
   font-size: typography.$text-body-sm-size;
-  margin-bottom: spacings.$spacing-xs;
-  color: colors.$color-texts-body;
+  font-weight: typography.$text-body-sm-weight;
+  color: colors.$color-text-titles;
 }
 
-.dropdown-select {
-  width: 100%;
-  padding: spacings.$paddng-sm spacings.$spacing-md;
-  font-size: typography.$text-body-sm-size;
+.dropdown-wrapper {
   border: 1px solid colors.$primary-blue;
   border-radius: 8px;
+  background-color: colors.$sh-white;
+  overflow: hidden; 
+  transition: all 0.2s ease-in-out;
+
+  &.open {
+    border-radius: 8px; 
+  }
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.dropdown-placeholder {
+  color: colors.$color-texts-captions;
+
+  &.selected {
+    color: colors.$primary-blue;
+  }
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  background-color: colors.$sh-white;
+}
+
+
+.dropdown-item {
+  padding: 8px 16px;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
   color: colors.$primary-blue;
-  appearance: none;
-  background: url('/assets/icons/arrow-down.svg') no-repeat right 1rem center;
-  background-color: white;
-  background-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$blue-scale-100;
+  }
 }
