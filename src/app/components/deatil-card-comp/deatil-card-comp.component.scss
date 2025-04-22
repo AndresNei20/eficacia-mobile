@@ -1,0 +1,26 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+
+.content{
+    display: flex;
+    flex-direction: row;
+    width: 278px;
+    gap: 8px;
+}
+
+.icon{
+    display: flex;
+    width: 24px;
+    height: 24px;
+}
+
+.text{
+    display: flex;
+    align-items: start;
+    padding-top: 0;
+    margin-top: 0; 
+    font-size: typography.$text-body-size;
+    font-weight: typography.$text-body-weight;
+}
