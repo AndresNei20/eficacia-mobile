@@ -1,3 +1,7 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
 .info-card {
     background-color: white;
     border-radius: 8px;
@@ -10,60 +14,80 @@
   
     .card-content {
       display: flex;
-      flex-direction: column;
-    }
-  
-    .title {
-      color: #333;
-      font-size: 1.5rem;
-      margin: 0;
-    }
-  
-    .subtitle {
-      color: #666;
-      font-size: 1.2rem;
-      margin: 0;
-    }
-  
-    .text, .alt-text {
-      color: #666;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin: 0;
-    }
-  
-    .button-container{
-      display: flex;
-      width: 100%;
-      justify-content: end;
-      padding: 8px;
+
+
+      .card-content2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .title{
+       margin: 0;
+       display: flex;
+       font-size: typography.$text-subtitle-size; 
+       color: colors.$color-text-titles;
+       font-weight: typography.$text-subtitle-weight;
+      }
+
+      .text{
+        font-size: typography.$text-body-size; 
+        color: colors.$color-texts-body;
+        font-weight: typography.$text-body-weight;
+        margin: 0;
+        display: flex;
+        height: 34px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .button-container{
+        display: flex;
+        margin: 0px;
+      }
+
+      .alternate-state {
+        display: flex;
+        gap: 12px;
+
+        .subtitle {
+          margin: 0;
+          margin-top: 4px;
+          margin-bottom: 16px;
+          font-size: 10px; 
+          color: colors.$color-texts-body;
+          font-weight: typography.$text-overline-weight;
+        }
+
+
+        .card-image {
+          width: 97px;
+          height: 108px;
+          border-radius: 4px;
+        }
+
+        .text2{
+          font-size: typography.$text-body-size; 
+          color: colors.$color-texts-body;
+          font-weight: typography.$text-body-weight;
+          margin: 0;
+          display: flex;
+          height: 51px;
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
     }
 
-    .action-button {
-      background-color: #4285f4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 16px;
-      font-size: 1rem;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: #3367d6;
-      }
-    }
-  
-    .card-image {
-      width: 100%;
-      border-radius: 4px;
-      margin-top: 12px;
-    }
-  
-    &.alternate {
-      .title {
-        color: #4285f4;
-      }
+    .default-state {
+      display: flex;
+      width: 323px;
+      height: 100%;
+      flex-direction: column;
+      gap: 4px;
     }
   }

@@ -51,14 +51,6 @@ Toggle between states using the \`isAlternateState\` input property. The default
         defaultValue: { summary: '' },
       },
     },
-    altText: {
-      description: 'Text content for the alternate state',
-      control: 'text',
-      table: {
-        category: 'Content',
-        defaultValue: { summary: '' },
-      },
-    },
     imageUrl: {
       description: 'URL of the image to display in alternate state',
       control: 'text',
@@ -95,7 +87,6 @@ Toggle between states using the \`isAlternateState\` input property. The default
     title: 'Welcome to Our Service',
     text: 'Discover all the amazing features we offer to help you achieve your goals.',
     subtitle: 'Success Story',
-    altText: 'Our customers have seen a 200% increase in productivity after using our solution.',
     imageUrl: 'https://picsum.photos/400/200',
     buttonLabel: 'Get Started',
     isAlternateState: false
@@ -123,36 +114,6 @@ AlternateState.parameters = {
   docs: {
     description: {
       story: 'The alternate state showing title, subtitle, detailed text and an image for richer content display.',
-    },
-  },
-};
-
-export const WithCustomImage = Template.bind({});
-WithCustomImage.args = {
-  isAlternateState: true,
-  imageUrl: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=200'
-};
-WithCustomImage.parameters = {
-  docs: {
-    description: {
-      story: 'Example with a custom image URL showing how to integrate real images into the card.',
-    },
-  },
-};
-
-export const MinimalContent = Template.bind({});
-MinimalContent.args = {
-  title: 'Minimal Card',
-  text: 'Just the basics',
-  subtitle: '',
-  altText: '',
-  imageUrl: '',
-  buttonLabel: 'OK'
-};
-MinimalContent.parameters = {
-  docs: {
-    description: {
-      story: 'Demonstrates the card with minimal content, showing how it handles missing optional elements.',
     },
   },
 };
