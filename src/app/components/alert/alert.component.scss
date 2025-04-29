@@ -1,58 +1,41 @@
 @use "../../../styles/colors" as colors;
-@use "../../../styles/spacings" as spacings;
 @use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
 
 .alert {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: spacings.$spacing-md;
-  padding-right: spacings.$spacing-md;
-  padding-top: spacings.$spacing-sm;
-  padding-bottom: spacings.$spacing-sm;
+  padding: spacings.$spacing-sm spacings.$spacing-md;
   border-radius: spacings.$radius-sm;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 339px;
   font-size: typography.$text-body-sm-size;
   font-weight: typography.$text-body-sm-weight;
-  gap: spacings.$spacing-sm;
-  width: 339px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .circle {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: spacings.$spacing-sm;
+
+  .circle-icon {
+    width: 12px;
+    height: 12px;
   }
+}
 
-  .label {
-    flex: 1;
-  }
+.label {
+  flex: 1;
+  color: colors.$color-texts-body;
+}
 
-  .close-icon {
-    cursor: pointer;
-    font-size: 20px;
-  }
-
-  &.default {
-    background-color: colors.$sh-white;
-    color: colors.$color-texts-body;
-
-    .close-icon {
-      color: colors.$primary-blue;
-    }
-  }
-
-  &.success {
-    background-color: colors.$sh-green;
-    color: colors.$sh-white;
-  }
-
-  &.pending {
-    background-color: colors.$ps-yellow;
-    color: colors.$sh-white;
-  }
-
-  &.warning {
-    background-color: colors.$sh-red;
-    color: colors.$sh-white;
-  }
+.close-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }

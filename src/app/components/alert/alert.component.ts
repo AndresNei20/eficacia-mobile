@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../icon-button/icon.component';
+import { IconComponent } from '../../components/icon-button/icon.component';
 
 @Component({
   selector: 'app-alert',
@@ -10,19 +10,42 @@ import { IconComponent } from '../icon-button/icon.component';
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  @Input() style: 'default' | 'success' | 'pending' | 'warning' = 'default';
   @Input() textAlert: string = 'Estado';
   @Input() showIcon: boolean = true;
 
-  getStyles(): string {
-    return ['alert', this.style].filter(Boolean).join(' ');
+  @Input() style: 'default' | 'success' | 'warning' | 'error' = 'default'; // Fondo de la alerta
+  @Input() type: 'alert' | 'check' | 'x' = 'alert'; // Tipo de ícono en el círculo
+  @Input() color: 'green' | 'yellow' | 'red' = 'green'; // Color del círculo
+
+  @Output() onClose = new EventEmitter<void>();
+
+  closeAlert() {
+    this.onClose.emit();
+  }
+
+  getStyleBackground(): string {
+    switch (this.style) {
+      case 'success':
+        return '#3BD4AE';
+      case 'warning':
+        return '#FFCD00';
+      case 'error':
+        return '#CA4949';
+      default:
+        return '#FFFFFF';
+    }
   }
 
   getCircleColor(): string {
-    return this.style === 'default' ? '#3BD4AE' : 'white';
-  }
-
-  getCloseColor(): string {
-    return this.style === 'default' ? '#0041A3' : 'white';
+    switch (this.color) {
+      case 'green':
+        return '#3BD4AE';
+      case 'yellow':
+        return '#FFCD00';
+      case 'red':
+        return '#CA4949';
+      default:
+        return '#3BD4AE';
+    }
   }
 }

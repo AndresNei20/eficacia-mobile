@@ -16,6 +16,9 @@ export type IconName =
   | 'logout'
   | 'close'
   | 'arrowDrop'
+  | 'alert'
+  | 'check'
+  | 'x'
 
 
 export interface IconProps {
