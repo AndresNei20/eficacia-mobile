@@ -11,8 +11,8 @@ import { AvatarComponent } from '../avatar/avatar.component';
 })
 export class ProfileComponent {
   @Input() name?: string;
-  @Input() showName?: true | false = true;
+  @Input() showName?: boolean = true;
   @Input() points?: string;
-  @Input() showPoints?: true | false = true;
+  @Input() showPoints?: boolean = true;
   @Input() image?: string;
 }

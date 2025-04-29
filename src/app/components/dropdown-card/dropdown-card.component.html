@@ -1,0 +1,35 @@
+<div class="dropdown-container">
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    <app-icon
+      name="alertInfo"
+      size="24"
+    />
+    <div class="headers">
+      <h2 class="dropdown-title">Verificación de limpieza en góndola</h2>
+      <span class="dropdown-subtitle">Única ejecución</span>
+    </div>
+    <app-icon
+      [name]="isOpen ? 'arrowLeft' : 'arrowRight'"
+    />
+  </div>
+  
+  @if (isOpen) {
+    <div class="dropdown-content">
+      
+      <div class="dropdown-section">
+        <h4 class="section-subtitle">Estado</h4>
+        <p class="section-text">Text state</p>
+      </div>
+      
+      <div class="dropdown-section">
+        <h4 class="section-subtitle">Detalle</h4>
+        <p class="section-text">Visita comercial completa</p>
+        <p class="section-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu blandit diam amet, 
+          ac commodo blandit facilisis. Tincidunt ultricies congue cras habitasse sem eu. 
+          Ut rutrum non malesuada est. Augue egestas vestibulum dolor, lectus mauris, odio ut.
+        </p>
+      </div>
+    </div>
+  }
+</div>

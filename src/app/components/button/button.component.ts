@@ -31,8 +31,8 @@ export class ButtonComponent {
     orientation?: 'center' | 'left',
     iconStart?: 'add' | 'arrowLeft' | 'shop',
     iconEnd?: 'add' | 'arrowRight' | 'shop' ,
-    showIconStart?: true | false,
-    showIconEnd?: true | false,
+    showIconStart?: boolean,
+    showIconEnd?: boolean,
     style?: 'filled' | 'outline' | 'text',
   ): string {
     return [

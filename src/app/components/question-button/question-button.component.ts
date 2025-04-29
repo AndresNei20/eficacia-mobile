@@ -9,7 +9,7 @@ import { IconComponent } from '../icon-button/icon.component';
   styleUrls: ['./question-button.component.scss']
 })
 export class QuestionButtonComponent {
-  @Input() isTooltipVisible?: true | false = false;
+  @Input() isTooltipVisible?: boolean = false;
 
   toggleTooltip(event: Event) {
     event.stopPropagation();

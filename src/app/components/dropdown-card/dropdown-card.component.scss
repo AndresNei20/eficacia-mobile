@@ -1,0 +1,91 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  padding: spacings.$padding-lg;
+  margin: 0;
+  width: 342px;
+  background-color: colors.$primary-white-bg;
+  
+}
+
+.dropdown-header {
+
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: spacings.$spacing-md;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.headers{
+  display: flex;
+  flex-direction: column;
+  gap: spacings.$spacing-xs;
+}
+
+.dropdown-title {
+  font-size: typography.$text-subtitle-size;
+  margin: 0 0 4px 0;
+  color: colors.$primary-blue;
+}
+
+.dropdown-subtitle {
+  font-size: typography.$text-caption-size;
+  color: colors.$sh-gray;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #666;
+}
+
+.dropdown-content {
+  padding: 16px;
+}
+
+.dropdown-section {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin: 0 0 8px 0;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin: 0 0 4px 0;
+}
+
+.section-text {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 8px 0 0 0;
+}

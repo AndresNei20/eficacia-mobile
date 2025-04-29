@@ -17,6 +17,7 @@ export type IconName =
   | 'oro'
   | 'arrowLeft'
   | 'star'
+  | 'alertInfo'
 
 export interface IconProps {
   fill: string;

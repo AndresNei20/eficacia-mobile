@@ -18,9 +18,9 @@ export class InputComponent {
   @Input() size!: 'small' | 'medium';
   @Input() type!: 'textField' | 'multiline';
   @Input() state!: 'enable' | 'selected' | 'error';
-  @Input() showIcon?: true | false = false;
-  @Input() showRequired!: true | false;
-  @Input() ShowAlert?: true | false = false;
+  @Input() showIcon?: boolean = false;
+  @Input() showRequired!: boolean;
+  @Input() ShowAlert?: boolean = false;
   @Input() alertText?: string = 'Alert text'; 
   @Input() errorText?: string = 'Error text'; 
 

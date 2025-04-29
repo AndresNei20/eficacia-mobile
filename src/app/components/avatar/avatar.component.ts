@@ -14,7 +14,7 @@ export class AvatarComponent {
 
   @Input() size!: 'extra-large' | 'large' | 'medium' | 'small' | 'extra-small';
   @Input() content!: 'image' | 'text';
-  @Input() showBadge!: true | false;
+  @Input() showBadge!: boolean;
   @Input() avatarText?: string = 'AA';
   @Input() image?: string = this.defaultImage;
 
