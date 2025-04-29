@@ -1,0 +1,39 @@
+<div class="input-container">
+
+    <label class="input-label">{{label}}
+      @if (showRequired) {
+        *
+      }
+    </label>
+    
+  @if (type === 'textField') {
+    <div class="input-wrapper">
+      <input
+        class="input-field"
+        [type]="type"
+        [value]="valueText"
+        [placeholder]="placeholder"
+      />
+      @if (showIcon) {
+        <span class="input-icon">
+          <app-icon name="star"></app-icon>
+        </span>
+      }
+    </div>
+  }
+  
+  @if (type === 'multiline') {
+    <textarea
+      class="input-field multiline"
+      [placeholder]="placeholder"
+    >{{multilineText}}</textarea>
+  }
+  
+  @if (state == 'error') {
+    <div class="error-message">{{errorText}}</div>
+  }
+
+  @if (ShowAlert) {
+    <div class="error-message">{{alertText}}</div>
+  }
+</div>
