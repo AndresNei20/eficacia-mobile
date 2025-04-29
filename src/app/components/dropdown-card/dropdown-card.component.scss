@@ -9,12 +9,12 @@
   padding: spacings.$padding-lg;
   margin: 0;
   width: 342px;
-  background-color: colors.$primary-white-bg;
+  background-color: colors.$sh-white;
+  gap: spacings.$spacing-sm;
   
 }
 
 .dropdown-header {
-
   display: flex;
   flex-direction: row;
   position: relative;
@@ -22,7 +22,17 @@
   justify-content: center;
   align-items: center;
   
+}
 
+.divider-line{
+  border: 0;
+  height: 1px;            
+  background-color: colors.$sh-gray;  
+  margin: 0; 
+}
+
+.header-text{
+  color: colors.$primary-blue !important;
 }
 
 .headers{
@@ -31,28 +41,17 @@
   gap: spacings.$spacing-xs;
 }
 
-.dropdown-title {
-  font-size: typography.$text-subtitle-size;
-  margin: 0 0 4px 0;
-  color: colors.$primary-blue;
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: spacings.$spacing-xs;
 }
 
-.dropdown-subtitle {
-  font-size: typography.$text-caption-size;
-  color: colors.$sh-gray;
-}
-
-.dropdown-icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: #666;
-}
-
-.dropdown-content {
-  padding: 16px;
+.state-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
 }
 
 .dropdown-section {
@@ -64,28 +63,33 @@
 }
 
 .section-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #444;
-  margin: 0 0 8px 0;
+  font-size: typography.$text-subtitle-size;
+  font-weight: typography.$text-subtitle-weight;
+  color: colors.$ns-gray;
+  margin: 0;
 }
 
 .section-subtitle {
-  font-size: 14px;
-  font-weight: 500;
-  color: #555;
-  margin: 0 0 4px 0;
+  font-size: typography.$text-caption-size;
+  font-weight: typography.$text-caption-weight;
+  color: colors.$sh-gray;
+  margin: 0;
+
 }
 
-.section-text {
-  font-size: 14px;
-  color: #333;
-  margin: 0 0 8px 0;
+.section-body {
+  font-size: typography.$text-body-size;
+  font-weight: typography.$text-body-weight;
+  color: colors.$sh-gray;
+  margin: 0;
+
 }
 
-.section-description {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-  margin: 8px 0 0 0;
+.section-state {
+  font-size: typography.$text-btn-size;
+  font-weight: typography.$text-btn-weight;
+  color: colors.$sh-green;
+  margin: 0;
+
 }
+

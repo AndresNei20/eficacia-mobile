@@ -9,10 +9,18 @@ const meta: Meta<DropdownCardComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    header: {
+      control: 'text',
+      description: 'Header',
+    },
     title: {
         control: 'text',
         description: 'Title',
       },
+    subtitle: {
+      control: 'text',
+      description: 'Subtitle',
+    },
     body: {
         control: 'text',
         description: 'Body description',
@@ -20,7 +28,12 @@ const meta: Meta<DropdownCardComponent> = {
     caption: {
       control: 'text',
       description: 'Caption',
-    }
+    },
+    stateText: {
+      control: 'text',
+      description: 'state Text',
+    },
+    
     
   },
 };
@@ -30,8 +43,11 @@ type Story = StoryObj<DropdownCardComponent>;
 
 export const Default: Story = {
   args: {
-    title: '¡Nuevo equipo en tu portafolio',
-    body: 'Échale un vistazo al nuevo Motorola G20',
-    caption: 'Hace unos segundos',
+    header: 'Verificación de limpieza en góndola',
+    caption: 'Única ejecución',
+    title: 'Detalle',
+    subtitle: 'Visita comecial completa',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu blandit diam amet, ac commodo blandit facilisis. Tincidunt ultricies congue cras habitasse sem eu. Ut rutrum non malesuada est. Augue egestas vestibulum dolor, lectus mauris, odio ut.',
+    stateText: 'Text state'
   },
 };
