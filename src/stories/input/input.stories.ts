@@ -5,50 +5,77 @@ const meta: Meta<InputComponent> = {
   title: 'Components/Form/Input',
   component: InputComponent,
   parameters: {
-    layout: 'centered',
+    layout: 'padded', // Cambiado a 'padded' para mejor visualización
+    docs: {
+      description: {
+        component: 'Componente de input que soporta texto simple y multilínea con varios estados y opciones de visualización.'
+      }
+    }
   },
   tags: ['autodocs'],
   argTypes: {
-    state: {
-      control: {
-        type: 'radio'
-      },
-      options: ['enable', 'selected', 'error'],
-    },
     type: {
-      control: {
-        type: 'radio'
-      },
+      control: 'radio',
       options: ['textField', 'multiline'],
+      description: 'Tipo de input',
+      table: {
+        defaultValue: { summary: 'textField' }
+      }
     },
-    showIcon: {
-      control: {
-        type: 'boolean'
-      } 
+    state: {
+      control: 'radio',
+      options: ['enable', 'selected', 'error'],
+      description: 'Estado del input',
+      table: {
+        defaultValue: { summary: 'enable' }
+      }
     },
     label: {
       control: 'text',
-      description: 'Label',
+      description: 'Texto del label',
     },
-    valueText: {
+    placeholder: {
       control: 'text',
-      description: 'Value text',
+      description: 'Texto de placeholder',
+      table: {
+        defaultValue: { summary: 'Introduce' }
+      }
     },
-    multilineText: {
-      control: 'text',
-      description: 'Multiline text',
+    showIcon: {
+      control: 'boolean',
+      description: 'Mostrar icono',
     },
     showRequired: {
-      control: {
-        type: 'boolean'
-      } 
+      control: 'boolean',
+      description: 'Mostrar indicador de campo requerido',
     },
-    ShowAlert: {
-      control: {
-        type: 'boolean'
-      } 
+    ShowAlert: { 
+      control: 'boolean',
+      description: 'Mostrar mensaje de alerta',
+    },
+    alertText: {
+      control: 'text',
+      description: 'Texto de alerta',
+      table: {
+        defaultValue: { summary: 'Alert text' }
+      }
+    },
+    errorText: {
+      control: 'text',
+      description: 'Texto de error',
+      table: {
+        defaultValue: { summary: 'Error text' }
+      }
     },
   },
+  args: { 
+    type: 'textField',
+    state: 'enable',
+    placeholder: 'Introduce tu texto',
+    showIcon: false,
+    showRequired: false,
+    ShowAlert: false
+  }
 };
 
 export default meta;
@@ -56,9 +83,6 @@ type Story = StoryObj<InputComponent>;
 
 export const Default: Story = {
   args: {
-    state: 'enable',
-    type: 'textField',
-    label: 'Name',
-    valueText: 'Anne'
-  },
+    label: 'Nombre completo',
+  }
 };

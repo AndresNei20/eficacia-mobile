@@ -12,10 +12,7 @@ import { IconComponent } from '../icon-button/icon.component';
 export class InputComponent {
 
   @Input() label?: string; 
-  @Input() valueText?: string; 
-  @Input() multilineText?: string; 
   @Input() placeholder?: string = 'Introduce'; 
-  @Input() size!: 'small' | 'medium';
   @Input() type!: 'textField' | 'multiline';
   @Input() state!: 'enable' | 'selected' | 'error';
   @Input() showIcon?: boolean = false;
@@ -24,16 +21,28 @@ export class InputComponent {
   @Input() alertText?: string = 'Alert text'; 
   @Input() errorText?: string = 'Error text'; 
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+
+  handleInput(event: Event): void {
+    const target = event.target as HTMLInputElement | HTMLTextAreaElement;
+    if (target) {
+      this.updateValue(target.value);
+    }
+  }
+
+  updateValue(newValue: string): void {
+    this.value = newValue;
+    this.valueChange.emit(newValue);
+    console.log('Valor actualizado:', this.value);
+  }
 
   getStyles(
-    size: 'small' | 'medium',
-    type: 'textFiel' | 'multiline',
+    type: 'textField' | 'multiline',
     state: 'enable' | 'selected' | 'error',
   ): string {
     return [
-      'button',
-      size,
+      'input-field',
       type,
       state, 
     ].filter(Boolean).join(' ');

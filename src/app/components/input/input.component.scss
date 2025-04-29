@@ -7,29 +7,12 @@
   flex-direction: column;
   gap: spacings.$spacing-xs;
   width: 100%;
-
-  &.error {
-    .input-field {
-      border-color: colors.$sh-red;
-    }
-    .input-label {
-      color: colors.$sh-red;
-    }
-  }
-
-  &.disabled {
-    opacity: 0.6;
-    .input-field {
-      cursor: not-allowed;
-      background-color: colors.$sh-gray;
-    }
-  }
 }
 
 .input-label {
-  font-size: typography.$text-body-size;
+  font-size: typography.$text-btn-size;
   color: colors.$primary-blue;
-  font-weight: typography.$text-body-weight;
+  font-weight: typography.$text-btn-weight;
 }
 
 .input-wrapper {
@@ -41,21 +24,27 @@
 .input-field {
   width: 100%;
   padding: spacings.$spacing-sm spacings.$spacing-sm;
-  border: 1px solid colors.$sh-gray;
-  border-radius: spacings.$radius-md;
+  border-radius: spacings.$radius-xs;
   font-size: typography.$text-body-size;
-  transition: all 0.3s ease;
+  font-weight: typography.$text-body-weight;
+  border: 1px solid colors.$sh-gray;
 
-  &:focus {
-    outline: none;
+  &.enabled {
+    border-color: colors.$sh-gray;
+    color: colors.$primary-blue;
+  }
+
+
+  &.selected {
     border-color: colors.$primary-blue;
-    box-shadow: 0 0 0 2px rgba(colors.$primary-blue, 0.2);
+    color: colors.$primary-blue;
   }
 
-  &.multiline {
-    min-height: 100px;
-    resize: vertical;
+  &.error {
+    border-color: colors.$sh-red;
+    color: colors.$sh-red;;
   }
+
 }
 
 .input-icon {
