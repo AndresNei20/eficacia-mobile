@@ -1,1 +1,5 @@
-<p>table-row works!</p>
+<div class="container" [class.top-border]="showTopBorder" [style.border-top-style]="showTopBorder ? borderStyle : 'none'">
+    <h3 class="header">{{title1}}</h3>
+    <h3 class="header">{{title2}}</h3>
+    <h3 class="header">{{title3}}</h3>
+</div>
