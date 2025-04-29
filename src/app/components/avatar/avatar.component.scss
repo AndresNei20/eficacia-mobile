@@ -16,8 +16,6 @@ $badge-small: 12px;
   position: relative;
   width: fit-content;
   height: fit-content;
-  padding-left: spacings.$padding-xs;
-  padding-right: spacings.$padding-xs;
   
 }
 
@@ -41,6 +39,7 @@ $badge-small: 12px;
   font-weight: bold;
   overflow: hidden;
   box-shadow: shadow.$drop-shadow;
+  border: none;
 
 }
 
