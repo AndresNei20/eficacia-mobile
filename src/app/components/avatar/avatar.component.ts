@@ -3,15 +3,22 @@ import { Component, Input } from '@angular/core';
 import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-avatar',
   imports: [ CommonModule, IconComponent ],
   standalone: true,
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent {
-  @Input() name?: string;
-  @Input() points?: string;
-  @Input() image!: string;
-  @Input() apperance: 'default' | 'small' = 'default';
+  defaultImage = new URL('../../../assets/images/avatar-default-img.png', import.meta.url).href;
+
+  @Input() size!: 'extra-large' | 'large' | 'medium' | 'small' | 'extra-small';
+  @Input() content!: 'image' | 'text';
+  @Input() showBadge!: true | false;
+  @Input() avatarText?: string = 'AA';
+  @Input() image?: string = this.defaultImage;
+
+  get sizeIcon(): string {
+    return this.size === 'extra-large' ? '34px' : '12px';
+  }
 }

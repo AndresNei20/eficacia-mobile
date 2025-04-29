@@ -1,24 +1,24 @@
-<div class="avatar-container">
-  <div class="avatar-image-wrapper ">
+
+<div class="avatar-image-wrapper">
+  @if (content === 'image') {
     <img 
       [src]="image" 
       alt="profile image"
-      [class]="apperance == 'default' ? 'avatar-image-default' : 'avatar-image-small'"
+      [class]="['avatar-image', size]" 
     />
-    
+  } @else {
+    <div [class]="['avatar-text', size]">
+      {{ avatarText }}
+    </div>
+  }
+  
+  @if (showBadge) {
     <app-icon
       name="oro" 
-      [size]="apperance == 'default' ? '34' : '11'"
+      [size]="sizeIcon"
       alt="oro category icon" 
       class="avatar-badge"
     />
-  </div>
-  
-  @if (apperance == 'default') {
-    <div class="info">
-      <h2 class="avatar-name">{{name}}</h2>
-      <p class="avatar-points">{{points}} pts</p>
-    </div>
   }
   
 </div>

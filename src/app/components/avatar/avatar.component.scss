@@ -1,68 +1,87 @@
 @use "../../../styles/colors" as colors;
 @use '../../../styles/spacings' as spacings;
 @use '../../../styles/typography' as typography;
+@use '../../../styles/shadow' as shadow;
 
-$avatar-size: 84px; 
+$extra-large: 92px; 
+$large: 40px; 
+$medium: 32px; 
+$small: 24px; 
+$extra-small: 18px; 
 
-.avatar-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+$badge-large: 34px;
+$badge-small: 12px;
+
+.avatar-image-wrapper {
+  position: relative;
   width: fit-content;
-  gap: spacings.$spacing-xs;
-
-  .avatar-image-wrapper {
-    position: relative;
-    width: fit-content;
-    padding-left: spacings.$padding-xs;
-    padding-right: spacings.$padding-xs;
-
-    .avatar-image-default {
-        width: 84px;
-        height: 84px;
-        border-radius: 50%;
-        border: 1px solid white;
-        object-fit: cover;
-        box-sizing: border-box;
-    }
-
-    .avatar-image-small {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 1px solid white;
-        object-fit: cover;
-        box-sizing: border-box;
-    }
-
-    .avatar-badge {
-        display:flex;
-        position: absolute;
-        bottom: 0;
-        right: 4px;
-    }
-  }
-
-  .avatar-name {
-    font-weight: typography.$text-h3-weight; 
-    font-size:  typography.$text-h3-size;
-    color: colors.$primary-blue;
-    margin: 0.25rem 0;
-  }
-
-  .avatar-points {
-    font-weight: typography.$text-caption-weight; 
-    font-size:  typography.$text-caption-size;
-    color: colors.$color-texts-captions;
-    margin: 0;
-  }
-
-  .info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    margin: 0;
-  }
+  height: fit-content;
+  padding-left: spacings.$padding-xs;
+  padding-right: spacings.$padding-xs;
   
 }
+
+.avatar-image{
+  display:flex;
+  border-radius: 50%;
+  border: 1px solid white;
+  object-fit: cover;
+  box-sizing: border-box;
+  box-shadow: shadow.$drop-shadow;
+
+}
+
+.avatar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ccc; 
+  color: white;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: shadow.$drop-shadow;
+
+}
+
+.extra-large{
+  width: $extra-large;
+  height: $extra-large;
+  font-size: typography.$text-display-size;
+  
+}
+
+.large{
+  width: $large;
+  height: $large;
+  font-size: typography.$text-h4-size;
+}
+
+.medium{
+  width: $medium;
+  height: $medium;
+  font-size: typography.$text-subtitle-size;
+}
+
+.small{
+  width: $small;
+  height: $small;
+  font-size: typography.$text-overline-size;
+}
+
+.extra-small{
+  width: $extra-small;
+  height: $extra-small;
+  font-size: typography.$text-overline-size;
+}
+
+
+
+.avatar-badge{
+  display: flex;
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+}
+
+
