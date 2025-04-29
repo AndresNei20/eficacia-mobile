@@ -75,12 +75,10 @@ $badge-small: 12px;
   font-size: typography.$text-overline-size;
 }
 
-
-
 .avatar-badge{
   display: flex;
   position: absolute;
-  bottom: 2px;
+  bottom: 0px;
   right: 4px;
 }
 
