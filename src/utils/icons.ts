@@ -39,7 +39,7 @@ export const IconComponents: Record<IconName, (props: IconProps) => string> = {
   `,
   arrowLeft: ({fill, size}) => `
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9629 14.3768L11.8053 15.4861L5.03714 8.99997L11.8053 2.51379L12.9629 3.62313L7.35227 8.99997L12.9629 14.3768Z" fill="#0041A3"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9629 14.3768L11.8053 15.4861L5.03714 8.99997L11.8053 2.51379L12.9629 3.62313L7.35227 8.99997L12.9629 14.3768Z" fill="${fill}"/>
   </svg>
   `,
   shop: ({ fill, size }) => `
