@@ -61,14 +61,23 @@ const meta: Meta<TableRowComponent> = {
         defaultValue: { summary: 'solid' },
       },
     },
-  },
-  args: {
+    boldHeaders: {
+      description: 'Make all headers bold',
+      control: 'boolean',
+      table: {
+        category: 'Appearance',
+        defaultValue: { summary: 'false' },
+      },
+    },
+},
+args: {
     title1: 'Nombre de categorias',
     title2: 'Cantidad',
     title3: 'Precio',
     showTopBorder: false,
     borderStyle: 'solid',
-  },
+    boldHeaders: false, // Valor por defecto
+},
 };
 
 export default meta;
@@ -87,5 +96,11 @@ export const WithDottedBorder: Story = {
   args: {
     showTopBorder: true,
     borderStyle: 'dotted'
+  }
+};
+
+export const WithBoldHeaders: Story = {
+  args: {
+    boldHeaders: true
   }
 };

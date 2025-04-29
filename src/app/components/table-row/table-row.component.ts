@@ -11,5 +11,6 @@ export class TableRowComponent {
   @Input() title2: string = '1';
   @Input() title3: string = '300.000';
   @Input() showTopBorder: boolean = false;
-  @Input() borderStyle: 'solid' | 'dotted' = 'solid'; // Puedes añadir más estilos si lo necesitas
+  @Input() borderStyle: 'solid' | 'dotted' = 'solid';
+  @Input() boldHeaders: boolean = false; // Nueva propiedad para negrita
 }
