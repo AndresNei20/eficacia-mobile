@@ -1,0 +1,63 @@
+@use "../../../../styles/colors" as colors;
+@use '../../../../styles/spacings' as spacings;
+@use '../../../../styles/typography' as typography;
+@use '../../../../styles/shadow' as shadows;
+@use '../../../../styles/radius' as radius;
+
+.card-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: radius.$radiues-sm;
+    background: white;
+    box-shadow: shadows.$drop-shadow;
+    width: 100%;
+    max-width: 100%;
+    min-width: 285px;
+    gap: spacings.$spacing-sm;
+  }
+  
+  .left-content {
+    display: flex;
+    align-items: center;
+    gap: spacings.$spacing-sm;
+  
+    .icon {
+      font-size: 24px;
+      color: colors.$blue-scale-500;
+    }
+  
+    .text-content {
+      display: flex;
+      align-items: center;
+      gap: spacings.$spacing-xs;
+  
+      .title {
+        font-size: typography.$text-body-size;
+        color: colors.$ns-gray;
+      }
+  
+      .label {
+        font-size: typography.$text-caption-size;
+        color: colors.$ns-gray;
+      }
+    }
+  }
+  
+  .right-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  
+    .number {
+      font-size: typography.$text-subtitle-size;;
+      color: colors.$ns-gray;
+    }
+  
+    .arrow {
+      font-size: 20px;
+      color: colors.$blue-scale-500;
+    }
+  }
+  

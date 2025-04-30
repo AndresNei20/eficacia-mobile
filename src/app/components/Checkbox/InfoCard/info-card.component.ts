@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { IconComponent } from '../../icon-button/icon.component';
+import { IconName } from '../../icon-button/icon.types';
 
 @Component({
   selector: 'storybook-info-card',
@@ -13,7 +14,7 @@ import { IconComponent } from '../../icon-button/icon.component';
 export class InfoCardComponent {
   @Input() title: string = 'Nombre Categoría';
   @Input() subtitle: string = '# Marca | # Propias';
-  @Input() iconSrc?: 'mosaic' = 'mosaic' ;
+  @Input() iconSrc:IconName = 'mosaic' ;
   @Input() selected: boolean = false;
   @Output() selectedChange = new EventEmitter<boolean>();
 
