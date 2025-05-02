@@ -14,6 +14,11 @@ export type IconName =
   | 'finished'
   | 'triangle'
   | 'logout'
+  | 'close'
+  | 'arrowDrop'
+  | 'alert'
+  | 'check'
+  | 'x'
   | 'mosaic'
 
 export interface IconProps {

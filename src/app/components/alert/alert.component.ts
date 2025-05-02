@@ -1,25 +1,51 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon-button/icon.component';
 
 @Component({
-  selector: 'app-estado-alert',
+  selector: 'app-alert',
+  standalone: true,
+  imports: [CommonModule, IconComponent],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  @Input() label: string = 'Estado';
-  @Input() color: 'success' | 'warning' | 'danger' | 'light' = 'light';
-  @Input() showClose: boolean = true;
+  @Input() textAlert: string = 'Estado';
+  @Input() showIcon: boolean = true;
 
-  get backgroundColor(): string {
-    switch (this.color) {
-      case 'success': return '#2dd36f'; // verde
-      case 'warning': return '#ffc409'; // amarillo
-      case 'danger': return '#eb445a'; // rojo
-      case 'light': default: return '#ffffff'; // blanco
+  @Input() style: 'default' | 'success' | 'warning' | 'error' = 'default'; // Fondo de la alerta
+  @Input() type: 'alert' | 'check' | 'x' = 'alert'; // Tipo de ícono en el círculo
+  @Input() color: 'green' | 'yellow' | 'red' = 'green'; // Color del círculo
+
+  @Output() onClose = new EventEmitter<void>();
+
+  closeAlert() {
+    this.onClose.emit();
+  }
+
+  getStyleBackground(): string {
+    switch (this.style) {
+      case 'success':
+        return '#3BD4AE';
+      case 'warning':
+        return '#FFCD00';
+      case 'error':
+        return '#CA4949';
+      default:
+        return '#FFFFFF';
     }
   }
 
-  get textColor(): string {
-    return this.color === 'light' ? '#000' : '#fff';
+  getCircleColor(): string {
+    switch (this.color) {
+      case 'green':
+        return '#3BD4AE';
+      case 'yellow':
+        return '#FFCD00';
+      case 'red':
+        return '#CA4949';
+      default:
+        return '#3BD4AE';
+    }
   }
 }

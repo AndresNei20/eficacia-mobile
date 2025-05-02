@@ -1,28 +1,41 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
+
 .alert {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 12px;
-    padding: 12px 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: spacings.$spacing-sm spacings.$spacing-md;
+  border-radius: spacings.$radius-sm;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 339px;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: spacings.$spacing-sm;
+
+  .circle-icon {
+    width: 12px;
+    height: 12px;
   }
-  
-  .circle {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: white;
-    margin-right: 12px;
-  }
-  
-  .label {
-    flex: 1;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .close-icon {
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
+}
+
+.label {
+  flex: 1;
+  color: colors.$color-texts-body;
+}
+
+.close-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
