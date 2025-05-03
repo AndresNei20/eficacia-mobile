@@ -1,0 +1,19 @@
+<div class="avatar-container">
+  
+    <app-avatar
+      size="extra-large"
+      content="image"
+      [showBadge]="true"
+      [image]="image"
+    ></app-avatar>
+
+    <div class="info">
+      @if (showName) {
+        <h2 class="avatar-name">{{name}}</h2>
+      }
+      @if (showPoints) {
+        <p class="avatar-points">{{points}} pts</p>
+      }
+    </div>
+  
+</div>

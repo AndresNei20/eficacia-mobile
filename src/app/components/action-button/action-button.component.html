@@ -1,12 +1,13 @@
 <button 
-  [class]="getStyles(state)" 
+  [class]="getStyles(apperance)" 
   (click)="onClick.emit($event)">
 
   <app-icon 
-    [name]="'logout'" 
-    [fill]="state == 'hovered' ? '#003482' : '#0041A3'">
+    [name]="'arrowLeft'" 
+    [fill]="'#0041A3'">
   </app-icon>
   
   {{ children }}
+  
   
 </button>

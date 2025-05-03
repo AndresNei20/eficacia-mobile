@@ -3,6 +3,8 @@ export type IconName =
   | 'agenda'
   | 'add'
   | 'arrowRight'
+  | 'arrowLeft'
+  | 'arrowDrop'
   | 'shop'
   | 'gestion'
   | 'portafolio'
@@ -15,12 +17,15 @@ export type IconName =
   | 'triangle'
   | 'logout'
   | 'close'
-  | 'arrowDrop'
   | 'alert'
+  | 'alertInfo'
   | 'check'
   | 'x'
   | 'mosaic'
+  | 'oro'
+  | 'star';
 
 export interface IconProps {
   fill: string;
+  size?: string; // Optional if not always used
 }

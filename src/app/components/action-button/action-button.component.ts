@@ -10,16 +10,16 @@ import { IconComponent } from '../icon-button/icon.component';
 })
 export class ActionButtonComponent {
   @Input() children!: string;
-  @Input() state!: 'default' | 'hovered';
+  @Input() apperance!: 'small' | 'big';
 
   @Output() onClick = new EventEmitter<Event>();
 
   getStyles(
-    state: 'default' | 'hovered' ,
+    apperance: 'small' | 'big' ,
   ): string {
     return [
       'button',
-      state,
+      apperance,
     ].filter(Boolean).join(' ');
   }
 }

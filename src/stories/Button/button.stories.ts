@@ -9,30 +9,54 @@ const meta: Meta<ButtonComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    appearance: {
+    style: {
       control: {
         type: 'radio'
       },
-      options: ['filled', 'outline', 'error'],
+      options: ['filled', 'outline', 'text'],
     },
     state: {
       control: {
         type: 'radio'
       },
-      options: ['disabled', 'active', 'hovered', 'pressed'],
+      options: ['disabled', 'active', 'pressed'],
     },
-    iconSrc: {
+    orientation: {
+      control: {
+        type: 'radio'
+      },
+      options: ['center', 'left'],
+    },
+    size: {
+      control: {
+        type: 'radio'
+      },
+      options: ['small', 'medium'],
+    },
+    color: {
+      control: {
+        type: 'radio'
+      },
+      options: ['primary', 'error'],
+    },
+    iconStart: {
+      control: {
+        type: 'select',
+      },
+      options: ['add', 'arrowLeft', 'shop'], 
+    },
+    iconEnd: {
       control: {
         type: 'select',
       },
       options: ['add', 'arrowRight', 'shop'], 
     },
-    iconLeft: {
+    showIconStart: {
       control: {
         type: 'boolean'
     }
     },
-    iconRight: {
+    showIconEnd: {
       control: {
         type: 'boolean'
       }
@@ -46,28 +70,25 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Filled: Story = {
+export const Primary: Story = {
   args: {
-    appearance: 'filled',
+    style: 'filled',
+    color: 'primary',
+    size: 'small',
+    orientation: 'center',
     state: 'active',
-    children: 'Button',
-    iconLeft: false,
-    iconRight: false
-  },
-};
+    label: 'Button',
 
-export const Outline: Story = {
-  args: {
-    appearance: 'outline',
-    state: 'active',
-    children: 'Button',
   },
 };
 
 export const Error: Story = {
   args: {
-    appearance: 'error',
+    style: 'filled',
+    color: 'error',
+    size: 'small',
+    orientation: 'center',
     state: 'active',
-    children: 'Button',
+    label: 'Button',
   },
 };

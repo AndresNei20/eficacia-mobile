@@ -1,0 +1,45 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.button {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: fit-content;
+    height: 44px;
+    border-radius: spacings.$radius-xs;
+    gap: 0;
+    padding: spacings.$padding-xs spacings.$padding-xs;
+    font-size: typography.$text-body-sm-size;
+    font-weight: typography.$text-body-sm-weight;
+    background-color: colors.$sh-white;
+    color: colors.$blue-scale-300;
+
+
+    &.true {
+        background-color: colors.$blue-scale-200;
+        color: colors.$blue-scale-600;
+        
+    }
+
+    &.false{
+        background-color: colors.$sh-white;
+        color: colors.$blue-scale-300;
+    }
+
+    app-icon {
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+    }
+
+    p{
+        margin: 0;
+    }
+
+}

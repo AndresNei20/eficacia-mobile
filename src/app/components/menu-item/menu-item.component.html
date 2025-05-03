@@ -1,0 +1,13 @@
+<button 
+  [class]="getStyles(selected)" 
+  (click)="onClick.emit($event)">
+
+  <app-icon 
+    [name]="name" 
+    size="14"
+    [fill]="selected == true ? '#003482' : '#99B3DA'">
+  </app-icon>
+  
+  <p>{{ capitalizeFirstLetter(name) }}</p>
+  
+</button>

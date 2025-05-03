@@ -1,14 +1,29 @@
 <button 
-  [class]="getStyles(appearance, state, iconLeft, iconRight)" 
+  [class]="getStyles(
+    size,
+    color,
+    state,
+    orientation,
+    iconStart,
+    iconEnd,
+    showIconEnd,
+    showIconStart,
+    style)" 
   (click)="onClick.emit($event)">
+
+  <div class="content">
+    @if (showIconStart && iconStart) {
+      <span class="icon-left">
+        <app-icon [name]="iconStart" fill="currentColor"></app-icon>
+      </span>
+    }
   
-  @if (iconSrc && iconLeft) {
-      <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
-  }
+    {{ label }}
+  </div>
 
-  {{ children }}
-
-  @if (iconSrc && iconRight) {
-      <app-icon [name]="iconSrc" fill="currentColor"></app-icon>
+  @if (showIconEnd && iconEnd) {
+    <span class="icon-right">
+      <app-icon [name]="iconEnd" fill="currentColor"></app-icon>
+    </span>
   }
 </button>
