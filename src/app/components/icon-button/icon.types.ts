@@ -15,6 +15,10 @@ export type IconName =
   | 'triangle'
   | 'logout'
   | 'mosaic'
+  | 'close'
+  | 'basket'
+  | "tag"
+  | "checkRounded"
 
 export interface IconProps {
   fill: string;

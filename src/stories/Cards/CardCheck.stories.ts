@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/angular';
 import { CardCheckComponent } from '../../app/components/cards/CardCheck/CardCheck.component';
 
 export default {
-  title: 'Components/Card/Card Check',
+  title: 'Components/Cards/Card Check',
   component: CardCheckComponent,
   tags: ['autodocs'],
   argTypes: {
