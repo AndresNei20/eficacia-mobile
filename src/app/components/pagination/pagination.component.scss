@@ -52,16 +52,14 @@
     font-weight: typography.$text-caption-weight ;
     font-size: typography.$text-body-size;
     background-color: transparent;
-    color: #696969;
+    color: colors.$primary-blue;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
     align-items: center;
     justify-content: center;
 
-    // &:hover:not(:disabled) {
-    //   background-color: #f0f0f0;
-    // }
+ 
 
     &:disabled {
       opacity: 0.5;
@@ -87,9 +85,6 @@
     align-items: center;
     justify-content: center;
 
-    // &:hover:not(:disabled) {
-    //   background-color: #f0f0f0;
-    // }
 
     &:disabled {
       opacity: 0.5;
@@ -108,6 +103,7 @@
     align-items: center;
     width: fit-content;
     height: 100%;
+
   }
 
   .page-size-selector {

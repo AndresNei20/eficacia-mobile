@@ -1,8 +1,8 @@
-import { Meta, StoryFn, StoryObj } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 import { MenuItemComponent } from '../../app/components/menu-item/menu-item.component';
 
 export default {
-  title: 'Components/MenuItem/MenuItem',
+  title: 'Components/Navigation/Menu/MenuItem',
   component: MenuItemComponent,
   tags: ['autodocs'],
   parameters: {
@@ -54,6 +54,12 @@ Un componente de elemento de menú con icono SVG y texto.
         category: 'State',
         defaultValue: { summary: 'false' },
       },
+    },
+    icons: {
+      control: {
+        type: 'select',
+      },
+      options: ['arrowFile', 'diagonalFile', 'document', 'list'], 
     },
   },
   args: {

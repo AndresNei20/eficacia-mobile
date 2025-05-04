@@ -1,36 +1,56 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import { IconComponent } from '../icon-button/icon.component';
+import { AvatarComponent } from '../avatar/avatar.component';
+import { CommonModule } from '@angular/common';
+import { MenuItemComponent } from '../menu-item/menu-item.component';
 
 @Component({
   selector: 'app-menu',
-  imports: [SearchComponent, IconComponent], // Agrega el SearchComponent aquí
+  imports: [SearchComponent, IconComponent, AvatarComponent, MenuItemComponent, CommonModule], // Agrega el SearchComponent aquí
   standalone: true, // Esto indica que es un componente standalone
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
+  defaultImage = new URL('../../../assets/images/avatar-default-img.png', import.meta.url).href;
 
-  @Output() onClickDisplay = new EventEmitter<Event>();
+  @Input() content!: 'image' | 'text';
+  @Input() showBadge!: boolean;
+  @Input() avatarText?: string = 'AA';
+  @Input() image?: string = this.defaultImage;
+
+  @Output() searchChange = new EventEmitter<string>();
   @Output() onClickBell = new EventEmitter<Event>();
+  @Output() onClickProfile = new EventEmitter<Event>();
+
+  menuItems = [
+    { text: 'text', isActive: 'false', icons: 'arrowFile'},
+    { text: 'text', isActive: 'true', icons: 'list'},
+    { text: 'text', isActive: 'false', icons: 'list'},
+    { text: 'text', isActive: 'false', icons: 'list'},
+    { text: 'text', isActive: 'false', icons: 'list'},
+    { text: 'text', isActive: 'true', icons: 'document'}
+  ];
 
   searchValue: string = ''; 
+  isSidebarOpen = false;
 
   onSearchChange(value: string): void {
     this.searchValue = value;
-    // Aquí puedes agregar cualquier lógica adicional cuando cambia la búsqueda
-    console.log('Valor de búsqueda:', this.searchValue);
+    this.searchChange.emit(this.searchValue);
   }
 
-  // En tu MenuComponent
-handleDisplayClick(event: Event) {
-  console.log('Display icon clicked', event);
-  this.onClickDisplay.emit(event);
-}
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 
-handleBellClick(event: Event) {
-  console.log('Bell icon clicked', event);
-  this.onClickBell.emit(event);
-}
+  handleBellClick(event: Event) {
+    this.onClickBell.emit(event);
+  }
+
+  handleProfile(event: Event) {
+    this.onClickProfile.emit(event);
+  }
 
 }

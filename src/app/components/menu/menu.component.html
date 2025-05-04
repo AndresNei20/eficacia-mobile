@@ -1,13 +1,28 @@
 <div class="all-container">
-    <app-icon class="icon" (click)="handleDisplayClick($event)" name="display" fill="currentColor"></app-icon>
-    
-    <app-search
-      [placeholder]="'Buscar'"
-      [width]="'236px'"
-      [height]="'25px'"
-      [value]="searchValue"
-      (searchChange)="onSearchChange($event)"
-    ></app-search>
-    
-    <app-icon class="icon" (click)="handleBellClick($event)" name="bell" fill="currentColor"></app-icon>
+  <app-icon class="icon" (click)="toggleSidebar()" name="display" fill="currentColor"></app-icon>
+  
+  <app-search
+    [placeholder]="'Buscar'"
+    [width]="'236px'"
+    [height]="'25px'"
+    [value]="searchValue"
+    (searchChange)="onSearchChange($event)"
+  ></app-search>
+
+  <app-icon class="icon" (click)="handleBellClick($event)" name="bell" fill="currentColor"></app-icon>
+  
+  <app-avatar class="icon" size="medium" [content]='content' [showBadge]='showBadge' [avatarText]="avatarText" [image]="image" (click)="handleProfile($event)"></app-avatar>
+</div>
+
+<!-- Mueve el sidebar fuera del all-container pero justo después -->
+<div class="sidebar" *ngIf="isSidebarOpen">
+  <div class="sidebar-header">
+    <div class="image"></div>
+    <app-icon class="close-icon" (click)="toggleSidebar()" name="close" fill="white"></app-icon>
   </div>
+
+  <app-menu-item  *ngFor="let menuItem of menuItems" [text]="menuItem.text" [isActive]="menuItem.isActive" [icons]="menuItem.icons"></app-menu-item>
+  <div>
+
+  </div>
+</div>

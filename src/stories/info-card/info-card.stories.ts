@@ -2,93 +2,131 @@ import { Meta, StoryFn } from '@storybook/angular';
 import { InfoCardComponent } from '../../app/components/info-card/info-card.component';
 
 export default {
-  title: 'Components/InfoCard/InfoCard',
+  title: 'Components/Cards/InfoCard',
   component: InfoCardComponent,
   tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: `
-A versatile card component with two distinct states for displaying different types of information.
+### InfoCard Component
 
-### Features:
-- � Two display states in a single component
-- 🏷 Title and optional subtitle
-- 📝 Configurable text content for each state
-- 🖼 Image support in alternate state
-- 🛎 Button with click event in default state
-- 🎨 Clean white card design with subtle shadow
-- 🔄 Smooth transition between states
+A flexible dual-state card component designed to present information in two distinct layouts based on context requirements.
 
-### Usage:
-Toggle between states using the \`isAlternateState\` input property. The default state shows a title, text and button, while the alternate state displays a title, subtitle, text and image.
+#### Component Features
+
+**Layout Variants:**
+- **Default State**: Optimized for call-to-action scenarios with prominent button
+- **Alternate State**: Designed for detailed content presentation with visual media
+
+**Content Structure:**
+- Configurable title (shared across both states)
+- Dynamic text content
+- Optional subtitle (alternate state only)
+- Optional image (alternate state only)
+- Action button (default state only)
+
+**Design Attributes:**
+- Clean, modern card UI with subtle elevation
+- Responsive layout adapts to container
+- Smooth transition between states
+- Accessibility compliant
+
+#### Usage Guidelines
+
+1. **State Management**  
+   Control the display state via the \`isAlternateState\` input property:
+   - \`false\`: Shows default CTA layout
+   - \`true\`: Displays detailed content layout
+
+2. **Content Strategy**  
+   - Default state works best for actionable items
+   - Alternate state excels at feature showcases or case studies
+   - Maintain consistent title between states when toggling
+
+3. **Implementation Notes**  
+   Always provide alt text for images when using the alternate state
         `,
       },
     },
   },
   argTypes: {
     title: {
-      description: 'Main title displayed in both card states',
+      name: 'Title',
+      description: 'Primary headline text displayed in both card variants',
       control: 'text',
       table: {
         category: 'Content',
-        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+        defaultValue: { summary: '""' },
       },
     },
     text: {
-      description: 'Primary text content for the default state',
+      name: 'Content Text',
+      description: 'Main descriptive content for the card',
       control: 'text',
       table: {
         category: 'Content',
-        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+        defaultValue: { summary: '""' },
       },
     },
     subtitle: {
-      description: 'Subtitle displayed in the alternate state',
+      name: 'Subtitle',
+      description: 'Secondary headline (visible only in alternate state)',
       control: 'text',
       table: {
         category: 'Content',
-        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+        defaultValue: { summary: '""' },
       },
     },
     imageUrl: {
-      description: 'URL of the image to display in alternate state',
+      name: 'Image URL',
+      description: 'Source path for the optional display image (alternate state)',
       control: 'text',
       table: {
         category: 'Content',
-        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+        defaultValue: { summary: '""' },
       },
     },
     buttonLabel: {
-      description: 'Text for the button in default state',
+      name: 'Button Label',
+      description: 'Action button text (default state only)',
       control: 'text',
       table: {
         category: 'Content',
-        defaultValue: { summary: 'Learn More' },
+        type: { summary: 'string' },
+        defaultValue: { summary: '"Learn More"' },
       },
     },
     isAlternateState: {
-      description: 'Controls which state the card displays',
+      name: 'Alternate State',
+      description: 'Toggles between the two card layout variants',
       control: 'boolean',
       table: {
         category: 'Behavior',
+        type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
     },
     buttonClick: {
-      description: 'Event emitted when the button is clicked',
+      name: 'Button Click',
+      description: 'Event emitter for button interactions (default state)',
       table: {
         category: 'Events',
+        type: { summary: 'EventEmitter<void>' },
       },
       action: 'buttonClick',
     },
   },
   args: {
-    title: 'Welcome to Our Service',
-    text: 'Discover all the amazing features we offer to help you achieve your goals.',
-    subtitle: 'Success Story',
+    title: 'Service Overview',
+    text: 'Explore our comprehensive solution designed to streamline your operations and boost efficiency.',
+    subtitle: 'Customer Success Spotlight',
     imageUrl: 'https://picsum.photos/400/200',
-    buttonLabel: 'Get Started',
+    buttonLabel: 'Begin Trial',
     isAlternateState: false
   },
 } as Meta<InfoCardComponent>;
@@ -97,23 +135,50 @@ const Template: StoryFn<InfoCardComponent> = (args) => ({
   props: args,
 });
 
-export const DefaultState = Template.bind({});
-DefaultState.parameters = {
+export const Default = Template.bind({});
+Default.parameters = {
   docs: {
     description: {
-      story: 'The default state of the card showing title, text content and a call-to-action button.',
+      story: `
+**Default Variant**  
+
+Optimal for conversion-focused contexts. Features:
+- Clear, concise headline
+- Supporting descriptive text
+- Prominent call-to-action button
+- Minimalist layout for maximum focus
+
+**Usage Recommendations:**
+- Landing page feature highlights
+- Service introduction cards
+- Primary action prompts
+      `,
     },
   },
 };
 
-export const AlternateState = Template.bind({});
-AlternateState.args = {
+export const Alternate = Template.bind({});
+Alternate.args = {
   isAlternateState: true
 };
-AlternateState.parameters = {
+Alternate.parameters = {
   docs: {
     description: {
-      story: 'The alternate state showing title, subtitle, detailed text and an image for richer content display.',
+      story: `
+**Alternate Variant**  
+
+Designed for detailed content presentation. Features:
+- Expanded content area
+- Supporting visual media
+- Secondary headline for context
+- Rich text capacity
+
+**Usage Recommendations:**
+- Case study highlights
+- Product feature deep dives
+- Testimonial displays
+- Detailed service breakdowns
+      `,
     },
   },
 };

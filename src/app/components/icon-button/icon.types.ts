@@ -29,9 +29,19 @@ export type IconName =
   | 'x'
   | 'mosaic'
   | 'oro'
-  | 'star';
+  | 'star'
+  | 'arrowFile'
+  | 'diagonalFile'
+  | 'document'
+  | 'user'
+  | 'phone'
+  | 'email'
+  | 'work'
+  | 'location'
+  | 'info'
+  ;
 
 export interface IconProps {
   fill: string;
-  size?: string; // Optional if not always used
+  size?: string;
 }

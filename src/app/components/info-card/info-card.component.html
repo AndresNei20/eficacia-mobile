@@ -10,11 +10,10 @@
         
         <div class="button-container">
           <app-button 
-            [children]="buttonLabel" 
-            [appearance]="'outline'" 
+            [label]="buttonLabel" 
+            [color]="'primary'" 
+            [style]="'text'" 
             [state]="'active'"
-            [iconSrc]="'arrowRight'"
-            [iconRight]="true"
             (onClick)="onButtonClick()">
           </app-button>
         </div>

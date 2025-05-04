@@ -11,10 +11,6 @@
     transition: all 0.3s ease;
     background-color: colors.$primary-white-bg;
     border-radius: 8px;
-
-    // &.drag-over {
-    //   background-color: rgba(0, 61, 160, 0.1);
-    // }
   }
 
   .overlay {
@@ -29,11 +25,13 @@
 
   .newcontent {
     display: flex;
+    color: colors.$blue-scale-500 ;
     padding-top: 4px;
     gap: 4px;
   }
 
   .icon {
+    color: colors.$blue-scale-500 ;
     display: flex;
     padding: 10px;
   }
@@ -96,9 +94,4 @@
     font-size: 20px;
     padding: 0 4px;
   }
-  
-  // .remove-btn:hover {
-  //   color: #cc0000;
-  // }
-  
   

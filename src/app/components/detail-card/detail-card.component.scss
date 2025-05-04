@@ -12,7 +12,5 @@
     padding: 16px 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    /* O también puedes usar: */
-    /* justify-content: space-evenly; */ /* Distribuye el espacio uniformemente */
+    justify-content: space-between;
 }

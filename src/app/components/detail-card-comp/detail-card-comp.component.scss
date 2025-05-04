@@ -1,5 +1,4 @@
 @use "../../../styles/colors" as colors;
-@use '../../../styles/spacings' as spacings;
 @use '../../../styles/typography' as typography;
 
 
@@ -18,6 +17,7 @@
     justify-content: center;
     width: 24px;
     height: 24px;
+    color: colors.$sh-gray;
 }
 
 .text {
@@ -27,9 +27,9 @@
     padding-top: 4px;
     font-size: typography.$text-body-size;
     font-weight: typography.$text-body-weight;
-    flex-wrap: wrap; /* Permite saltos de línea */
-    overflow-wrap: break-word; /* Rompe palabras largas */
-    word-break: break-word; /* Alternativa para mejor compatibilidad */
+    flex-wrap: wrap; 
+    overflow-wrap: break-word; 
+    word-break: break-word; 
     color: colors.$sh-gray;
 }
 

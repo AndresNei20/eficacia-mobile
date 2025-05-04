@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
-import { IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
-import { IconComponents } from '../../../utils/icons';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-file-uploader',
   standalone: true,
-  imports: [IonIcon, CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './uploader.component.html',
   styleUrls: ['./uploader.component.scss']
 })

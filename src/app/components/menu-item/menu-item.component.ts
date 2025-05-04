@@ -8,6 +8,7 @@ import { IconComponent } from '../icon-button/icon.component';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent {
-  @Input() text: string = '';
-  @Input() isActive: boolean = false;
+  @Input() text: string = 'Text';
+  @Input() isActive: boolean = true;
+  @Input() icons?: 'arrowFile' | 'diagonalFile' | 'document' | 'list' = "list";
 }
