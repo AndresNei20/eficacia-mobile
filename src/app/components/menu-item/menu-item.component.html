@@ -1,13 +1,6 @@
-<button 
-  [class]="getStyles(selected)" 
-  (click)="onClick.emit($event)">
-
-  <app-icon 
-    [name]="name" 
-    size="14"
-    [fill]="selected == true ? '#003482' : '#99B3DA'">
-  </app-icon>
-  
-  <p>{{ capitalizeFirstLetter(name) }}</p>
-  
-</button>
+<div class="menu-item" [class.active]="isActive">
+  <div class="icon">
+    <app-icon (click)="handleBellClick($event)" name="list" fill="currentColor"></app-icon>
+  </div>
+  <div class="text">{{ text }}</div>
+</div>
