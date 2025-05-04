@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryFn, StoryObj } from '@storybook/angular';
 import { MenuItemComponent } from '../../app/components/menu-item/menu-item.component';
 
 export default {
@@ -62,26 +62,29 @@ Un componente de elemento de menú con icono SVG y texto.
   },
 } as Meta<MenuItemComponent>;
 
-const Template: StoryFn<MenuItemComponent> = (args) => ({
-  props: args,
-});
+type Story = StoryObj<MenuItemComponent>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  args: {},
+}
 
-export const DesactiveItem = Template.bind({});
-DesactiveItem.args = {
-  text: 'Desactive Item',
-  isActive: false,  
-};
+export const DesactiveItem: Story = {
+  args: {
+    text: 'Desactive Item',
+    isActive: false,  
+  },
+}
 
-export const ActiveLongText = Template.bind({});
-ActiveLongText.args = {
-  text: 'Active item with very long text that should be truncated',
-  isActive: true,
-};
+export const ActiveLongText: Story = {
+  args: {
+    text: 'Active item with very long text that should be truncated',
+    isActive: true,
+  },
+}
 
-export const LongTextItem = Template.bind({});
-LongTextItem.args = {
-  text: 'Menu Item with very long text that should be truncated',
-  isActive: false,
-};
+export const LongTextItem: Story = {
+  args: {
+    text: 'Menu Item with very long text that should be truncated',
+    isActive: false,
+  },
+}
