@@ -108,7 +108,7 @@ A flexible dual-state card component designed to present information in two dist
       table: {
         category: 'Behavior',
         type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
+        defaultValue: { summary: 'true' },
       },
     },
     buttonClick: {

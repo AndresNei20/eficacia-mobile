@@ -1,23 +1,31 @@
-<div>
-    <div>
-
+<div class="container">
+    <div class="image"></div>
+    
+    <div class="container2">
+        <app-caption-warning></app-caption-warning>
+        <div class="text-content">
+            <h1 class="title-incompl">Página incompleta</h1>
+            <span class="text-incompl">La página está incompleta, debes llenar todas las preguntas obligatorias *.</span>
+        </div>
     </div>
 
-    <div>
-        <div></div>
-        <p>Debes completar las preguntas (*)</p>
-        <div></div>
+    <div class="dropdown-section">
+        <app-dropdown-menu 
+            [state]="'label'"
+            [textField]="'Selecciona tu departamento'"
+            [options]="departments">
+        </app-dropdown-menu>
+        <app-dropdown-menu 
+            [state]="'label'"
+            [textField]="'Selecciona tu ciudad'"
+            [options]="cities">
+        </app-dropdown-menu>
     </div>
 
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <div>
+    <div class="map-section">
         <app-map-current-position/>
     </div>
-    <button></button>
-    <p>Contiuar sin completar</p>
+    
+    <button class="continue-button">Continuar</button>
+    <p class="skip-text">Continuar sin completar</p>
 </div>

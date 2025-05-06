@@ -1,0 +1,27 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.line-text {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  margin: 0;
+}
+
+.line {
+  display: flex;
+  height: 1px;
+  background-color: colors.$color-texts-captions;
+  width: 100%;
+  min-width: 45px;
+}
+
+.text {
+  display: flex;
+  font-size: typography.$text-overline-size;
+  font-weight: typography.$text-overline-weight;
+  color: colors.$color-texts-captions;
+  white-space: nowrap;
+}

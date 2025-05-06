@@ -1,0 +1,53 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    height: fit-content;
+    gap: 16px;
+
+    
+}
+
+.image{
+    display: flex;
+    height: 110px;
+    width: 100%;
+    background: colors.$color-texts-captions;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.title-incompl{
+    display: flex;
+    font-size: typography.$text-h3-size;
+    font-weight: typography.$text-h3-weight;
+    color: colors.$color-text-titles;
+    margin: 0;
+}
+
+
+.text-content{
+    display: flex;
+    width: 242px;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+
+    .text-incompl{
+        display: flex;
+        text-align: center;
+        font-size: typography.$text-overline-size;
+        font-weight: typography.$text-overline-weight;
+        color: colors.$color-texts-body;
+    }
+}
