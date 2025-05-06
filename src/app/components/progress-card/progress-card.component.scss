@@ -1,17 +1,20 @@
 @use "../../../styles/colors" as colors;
 @use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
 
 .progress-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid colors.$blue-scale-100;
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: spacings.$radius-sm;
+  padding-top: spacings.$padding-xxl;
+  padding-bottom: spacings.$padding-xxl;
+  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$padding-lg;
   background-color: colors.$sh-white;
   width: 100%;
-  max-width: 500px;
-  gap: 16px;
+  max-width: 330px;
+  gap: 8px;
 }
 
 .card-content {
@@ -42,13 +45,7 @@
     margin: 0;
   }
 
-  .check-icon {
-    background-color: white;
-    border-radius: 50%;
-    padding: 2px;
-    width: 20px;
-    height: 20px;
-  }  
+
 }
 
 .arrow-icon {
