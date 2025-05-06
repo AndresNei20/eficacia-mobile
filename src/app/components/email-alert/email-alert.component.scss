@@ -1,0 +1,35 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
+
+.email-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: colors.$primary-blue;
+  border-radius: spacings.$radius-sm;
+  padding-top: spacings.$padding-sm;
+  padding-bottom: spacings.$padding-sm;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
+  width: 100%;
+  max-width: 311px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .name {
+    font-size: typography.$text-caption-size;
+    font-weight: typography.$text-caption-weight;
+    color: colors.$sh-white;
+  }
+
+  .email {
+    font-size: typography.$text-body-size;
+    font-weight: typography.$text-body-weight;
+    color: colors.$sh-white;
+  }
+}
