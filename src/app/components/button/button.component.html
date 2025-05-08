@@ -8,7 +8,9 @@
     iconEnd,
     showIconEnd,
     showIconStart,
-    style)" 
+    style,
+    width)" 
+  [style]="getButtonStyles()"
   (click)="onClick.emit($event)">
 
   <div class="content">

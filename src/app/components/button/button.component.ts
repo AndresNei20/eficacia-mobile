@@ -12,6 +12,7 @@ import { IconComponent } from '../icon-button/icon.component';
 export class ButtonComponent {
 
   @Input() label?: string; 
+  @Input() width: string = '338px';
   @Input() size!: 'small' | 'medium';
   @Input() color!: 'primary' | 'error';
   @Input() style!: 'filled' | 'outline' | 'text';
@@ -34,6 +35,7 @@ export class ButtonComponent {
     showIconStart?: boolean,
     showIconEnd?: boolean,
     style?: 'filled' | 'outline' | 'text',
+    width: string = '338px'
   ): string {
     return [
       'button',
@@ -45,7 +47,14 @@ export class ButtonComponent {
       iconEnd,
       showIconEnd,
       showIconStart,
-      style
+      style,
+      width
     ].filter(Boolean).join(' ');
+  }
+
+  getButtonStyles(): { [key: string]: string } {
+    return {
+      'width': this.width
+    };
   }
 }
