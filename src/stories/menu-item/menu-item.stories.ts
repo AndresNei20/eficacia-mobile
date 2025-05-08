@@ -9,15 +9,31 @@ const meta: Meta<MenuItemComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    selected: {
-      control: {
-        type: 'boolean'
-      },
-    },
     name: {
       control: 'text',
-      description: 'Name of section',
+      description: 'Nombre/identificador del ítem del menú',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content'
+      }
     },
+    selected: {
+      control: 'boolean',
+      description: 'Estado de selección (estilo activo/inactivo)',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'State'
+      }
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'Evento al hacer clic en el ítem',
+      table: {
+        type: { summary: 'EventEmitter<Event>' },
+        category: 'Events'
+      }
+    }
   },
   args: {
     onClick: () => console.log('Button clicked!'), 
