@@ -6,6 +6,28 @@ const meta: Meta<NewsCardComponent> = {
   component: NewsCardComponent,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: String.raw`
+
+## 🧩 Uso
+- Informar al usuario sobre novedades o actualizaciones recientes.
+- Promover contenido nuevo dentro de la aplicación o sistema.
+- Utilizado en centros de notificaciones o secciones de novedades.
+- Ideal para alertas no críticas que requieren atención contextual.
+
+---
+
+## 🧱 Elementos clave
+
+- Contenedor con esquinas redondeadas y padding interno.
+- Avatar o imagen representativa alineada a la izquierda.
+- Título destacado en alto contraste (bold y color primario).
+- Subtítulo o mensaje descriptivo.
+- Marca de tiempo o metadata contextual en parte inferior.
+        `,
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
