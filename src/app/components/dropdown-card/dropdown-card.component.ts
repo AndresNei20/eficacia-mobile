@@ -22,6 +22,7 @@ export class DropdownCardComponent {
   @Input() title!: string;
   @Input() subtitle!: string;
   @Input() body!: string;
+  @Input() width: string = '342px';
 
   toggleDropdown(): void {
     this.isOpen = !this.isOpen;

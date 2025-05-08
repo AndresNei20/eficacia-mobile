@@ -1,4 +1,4 @@
-<div class="dropdown-container">
+<div class="dropdown-container" [style.width]="width">
   <div class="dropdown-header" (click)="toggleDropdown()">
     <app-icon
       name="alertInfo"
@@ -15,8 +15,6 @@
     />
   </div>
 
-  
-  
   @if (isOpen) {
       <hr class="divider-line">
 

@@ -46,6 +46,17 @@ const meta: Meta<DropdownCardComponent> = {
         category: 'State'
       }
     },
+
+    // Layout
+    width: {
+      control: 'text',
+      description: 'Ancho personalizado (ej: "100%", "300px", "50vw")',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '100%' },
+        category: 'Layout'
+      }
+    },
   
     // Contenido principal
     header: {
