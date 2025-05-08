@@ -15,17 +15,42 @@
             [textField]="'Selecciona tu departamento'"
             [options]="departments">
         </app-dropdown-menu>
-        <app-dropdown-menu 
-            [state]="'label'"
-            [textField]="'Selecciona tu ciudad'"
-            [options]="cities">
-        </app-dropdown-menu>
+        <app-input
+            [label]="'label'"
+            [type]="'textField'"
+            [state]="'enable'"
+            [placeholder]="'Texto input'"
+            [showIcon]="'true'"
+            [type]="'textField'"
+        ></app-input>
+        <app-input
+            [label]="'label'"
+            [type]="'textField'"
+            [state]="'enable'"
+            [placeholder]="'Texto input'"
+            [showIcon]="'true'"
+            [type]="'textField'"
+        ></app-input>
     </div>
 
     <div class="map-section">
         <app-map-current-position/>
     </div>
     
-    <button class="continue-button">Continuar</button>
-    <p class="skip-text">Continuar sin completar</p>
+        <app-button 
+        [label]="buttonText" 
+        [size]="'small'"
+        [color]="'primary'" 
+        [style]="'filled'" 
+        [state]="'active'"
+        (onClick)="onButtonClick()">
+        </app-button>
+        <app-button 
+            [label]="'Continuar sin completar'" 
+            [size]="'small'"
+            [color]="'error'" 
+            [style]="'text'" 
+            [state]="'active'"
+            (onClick)="onButtonClick2()">
+        </app-button>
 </div>

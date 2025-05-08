@@ -7,8 +7,9 @@
     flex-direction: column;
     align-items: center;
     width: 360px;
-    height: fit-content;
+    max-height: 908px;
     gap: 16px;
+    margin: 0;
 
     
 }
@@ -35,6 +36,14 @@
     margin: 0;
 }
 
+.dropdown-section {
+    display: flex;
+    padding-left: spacings.$spacing-lg;
+    padding-right: spacings.$spacing-lg;
+    flex-direction: column;
+    width: 100%;
+    gap: spacings.$spacing-md;
+}
 
 .text-content{
     display: flex;
