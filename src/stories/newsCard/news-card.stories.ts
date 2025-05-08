@@ -10,19 +10,41 @@ const meta: Meta<NewsCardComponent> = {
   tags: ['autodocs'],
   argTypes: {
     title: {
-        control: 'text',
-        description: 'Title',
-      },
+      control: 'text',
+      description: 'Título principal de la tarjeta.',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+        subcategory: 'Text'
+      }
+    },
     body: {
-        control: 'text',
-        description: 'Body description',
+      control: 'text',
+      description: 'Contenido descriptivo.',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+        subcategory: 'Text'
+      }
     },
     caption: {
       control: 'text',
-      description: 'Caption',
+      description: 'Texto secundario (fecha).',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+        subcategory: 'Metadata'
+      }
+    },
+    image: {
+      control: 'text',
+      description: 'URL de imagen destacada.',
+      table: {
+        type: { summary: 'string' },
+        category: 'Media'
+      }
     }
-    
-  },
+  }
 };
 
 export default meta;
