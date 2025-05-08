@@ -120,12 +120,11 @@ const meta: Meta<ButtonComponent> = {
     docs: {
       description: {
         component: String.raw`
-
-El botón en Eficacia se utiliza para desencadenar acciones dentro de la interfaz. Se implementa en:
-
 ---
 
 ## 🧩 Uso
+
+El botón en Eficacia se utiliza para desencadenar acciones dentro de la interfaz. Se implementa en:
 
 - Formularios y envíos de datos. Para confirmar o cancelar acciones del usuario.
 - Navegación y redirección. Para guiar a los usuarios a otras secciones o páginas.
