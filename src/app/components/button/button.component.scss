@@ -2,99 +2,166 @@
 @use '../../../styles/spacings' as spacings;
 @use '../../../styles/typography' as typography;
 
-
-.button {
+@mixin button-base {
   display: inline-flex;
-  width: 338px;
-  height: 50px;
   align-items: center;
   justify-content: center;
-  padding: spacings.$paddng-sm spacings.$paddng-sm;
+  padding: spacings.$padding-sm;
   border-radius: spacings.$radius-sm;
   font-size: typography.$text-btn-size;
   font-weight: typography.$text-btn-weight;
-  line-height: 1.5;
+  line-height: 1;
   cursor: pointer;
   transition: all 0.3s ease;
-  gap: spacings.$spacing-sm;
-  line-height: 1;
-  
+  gap: spacings.$padding-sm;
+  border: 1px solid transparent;
+  width: 338px;
+}
+
+.content {
+  display: flex;
+  width: fit-content;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  gap: spacings.$padding-sm;
+}
+
+@mixin button-size($size) {
+  @if $size == 'small' {
+    height: 48px;
+    padding: spacings.$padding-xs spacings.$padding-sm;
+  } @else if $size == 'medium' {
+    height: 56px;
+  }
+}
+
+@mixin button-states($color, $style) {
+  &.active {
+    @if $style == 'filled' {
+      background-color: map-get((
+        'primary': colors.$primary-blue,
+        'error': colors.$sh-red
+      ), $color);
+      color: colors.$sh-white;
+    }
+
+    @if $style == 'outline' {
+      background-color: transparent;
+      border-color: map-get((
+        'primary': colors.$blue-scale-600,
+        'error': colors.$sh-red
+      ), $color);
+      color: map-get((
+        'primary': colors.$primary-blue,
+        'error': colors.$sh-red
+      ), $color);
+    }
+
+    @if $style == 'text' {
+      background-color: transparent;
+      border: none;
+      color: map-get((
+        'primary': colors.$primary-blue,
+        'error': colors.$sh-red
+      ), $color);
+    }
+  }
+
+  &.pressed {
+    @if $style == 'filled' {
+      background-color: map-get((
+        'primary': colors.$blue-scale-600,
+        'error': colors.$sh-red-pressed
+      ), $color);
+      color: colors.$sh-white;
+      transform: translateY(1px);
+    }
+
+    @if $style == 'outline' {
+      background-color: map-get((
+        'primary': rgba(colors.$primary-blue, 0.2),
+        'error': rgba(colors.$sh-red, 0.2)
+      ), $color);
+      border-color: map-get((
+        'primary': colors.$blue-scale-600,
+        'error': colors.$sh-red
+      ), $color);
+      color: map-get((
+        'primary': colors.$primary-blue,
+        'error': colors.$sh-red
+      ), $color);
+    }
+
+    @if $style == 'text' {
+      background-color: map-get((
+        'primary': rgba(colors.$primary-blue, 0.2),
+        'error': rgba(colors.$sh-red, 0.2)
+      ), $color);
+      color: map-get((
+        'primary': colors.$primary-blue,
+        'error': colors.$sh-red
+      ), $color);
+
+    }
+  }
+
   &.disabled {
-    cursor: not-allowed;
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  &.filled {
-    background-color: colors.$primary-blue;
-    color: white;
-
-      &.active {
-        background-color: colors.$primary-blue;
-      }
-
-      &.hovered {
-        background-color: #1A54AC;
-      }
-
-      &.pressed {
-        background-color: colors.$blue-scale-600;
-      }
-
-      &.disabled {
-        background-color: colors.$sh-gray;
-        color: colors.$ns-gray;
-      }
+    @if $style == 'filled' {
+      background-color: map-get((
+        'primary': colors.$sh-gray,
+        'error': colors.$sh-gray
+      ), $color);
+      color: colors.$ns-gray;
+      transform: translateY(1px);
     }
 
-  &.outline {
-    background-color: transparent;
-    color: colors.$color-text-titles;
-    border: 1px solid colors.$primary-blue;
-  
-    &.active {
-      border-color: colors.$primary-blue;
-    }
-  
-    &.hovered {
-      border-color: colors.$primary-blue;
-      background-color: transparentize(colors.$blue-scale-300, 0.9); 
-    }
-  
-    &.pressed {
-      border-color: colors.$primary-blue;
-      background-color: transparentize(colors.$blue-scale-300, 0.7); 
-    }
-  
-    &.disabled {
-      border-color: colors.$ns-gray;
+    @if $style == 'outline' {
+      background-color: transparent;
+      border-color: map-get((
+        'primary': colors.$sh-gray,
+        'error': colors.$sh-gray
+      ), $color);
       color: colors.$ns-gray;
     }
-  }
 
-  &.error {
-    background-color: transparent;
-    border: 1px solid colors.$sh-red; 
-    color: colors.$sh-red;
-  
-    &.active {
-      border-color: colors.$sh-red;
-    }
-  
-    &.hovered {
-      border-color: colors.$sh-red;
-      background-color: transparentize(colors.$sh-red, 0.9); 
-    }
-  
-    &.pressed {
-      border-color: colors.$sh-red;
-      background-color: transparentize(colors.$sh-red, 0.8); 
-    }
-  
-    &.disabled {
-      border-color: colors.$ns-gray;
+    @if $style == 'text' {
+      background-color: transparent;
+      border: none;
       color: colors.$ns-gray;
+
     }
   }
 }
 
+@mixin button-color($color, $style) {
+  @include button-states($color, $style);
+}
+
+.button {
+  @include button-base;
+
+  &.small {
+    @include button-size('small');
+  }
+
+  &.medium {
+    @include button-size('medium');
+  }
+
+  &.left {
+    .content {
+      justify-content: flex-start;
+      gap: spacings.$padding-sm;
+    }
+    justify-content: space-between;
+  }
+}
+
+@each $color in ('primary', 'error') {
+  @each $style in ('filled', 'outline', 'text') {
+    .button.#{$color}.#{$style} {
+      @include button-color($color, $style);
+    }
+  }
+}

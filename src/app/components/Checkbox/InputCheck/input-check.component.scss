@@ -1,0 +1,30 @@
+@use '../../../../styles/typography' as typo;
+@use '../../../../styles/colors' as colors;
+
+.input-check {
+    width: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    cursor: pointer;
+  
+    .label {
+      font-size: typo.$text-body-size;
+      font-weight: 600;
+      color: colors.$color-texts-body;
+    }
+  }
+  
+  hr {
+    border: none;
+    border-bottom: 1px solid #757d85;
+    margin: 0;
+  }
+  
+  @media (max-width: 375px) {
+    .input-check {
+      width: 280px;
+    }
+  }
+  

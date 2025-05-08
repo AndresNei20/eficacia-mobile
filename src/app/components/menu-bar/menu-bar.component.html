@@ -1,0 +1,9 @@
+<div class="container">
+  @for (item of buttons; track $index) {
+    <app-item-menu 
+      [name]="item.name"
+      [selected]="$index === selectedIndex"
+      (click)="handleButtonClick($index)">
+    </app-item-menu>
+  }
+</div>

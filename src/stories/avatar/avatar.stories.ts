@@ -9,19 +9,31 @@ const meta: Meta<AvatarComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    name: {
-        control: 'text',
-        description: 'Overwritten description',
+    size: {
+      control: {
+        type: 'radio'
       },
-    points: {
-        control: 'text',
-        description: 'Overwritten description',
+      options: ['extra-large', 'large', 'medium', 'small', 'extra-small'],
+    },
+    content: {
+      control: {
+        type: 'radio'
+      },
+      options: ['image', 'text'],
+    },
+    showBadge: {
+      control: {
+        type: 'boolean'
+      } 
+    },
+    avatarText: {
+      control: 'text',
+      description: 'Avatar text',
     },
     image: {
-        control: 'text',
-        description: 'Overwritten description',
+      control: 'text',
+      description: 'image user profile',
     },
-    
   },
 };
 
@@ -30,8 +42,9 @@ type Story = StoryObj<AvatarComponent>;
 
 export const Default: Story = {
   args: {
-    name: 'Amanda Miguel',
-    points: '120',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQ6YhyYv_Dmjz8XHVOA5axDOuNeslz9uh8A&s'
+    size: 'medium',
+    content: 'image',
+    showBadge: true,
+    image: 'https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?cs=srgb&dl=pexels-pixabay-57416.jpg&fm=jpg'
   },
 };

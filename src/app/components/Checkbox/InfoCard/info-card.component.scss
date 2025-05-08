@@ -1,0 +1,57 @@
+@use '../../../../styles/typography' as typo;
+
+.info-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 280px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px transparent;
+    transition: background-color 0.2s ease;
+  
+    .icon {
+      font-size: 24px;
+      color: #0040c1;
+      margin-right: 16px;
+    }
+  
+    .text-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      .title {
+        font-size: typo.$text-subtitle-size;
+        font-weight: typo.$text-subtitle-weight;
+        margin: 0;
+        color: #70777B;
+      }
+    
+      .subtitle {
+        font-size: typo.$text-caption-size;
+        font-weight: typo.$text-caption-weight;
+        margin: 2px 0 0;
+        color: #696969;
+      }
+    }
+  
+    .checkbox {
+      flex-shrink: 0;
+    }
+  
+    // 👉 Ancho fijo en móviles menores o iguales a 375px
+    @media (max-width: 375px) {
+      width: 280px;
+    }
+    @media (min-width: 375px) {
+      width: 330px;
+    }
+  }
+  

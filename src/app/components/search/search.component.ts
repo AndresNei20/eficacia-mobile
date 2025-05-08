@@ -1,28 +1,51 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IonInput } from '@ionic/angular/standalone';
+import { Component, Output, EventEmitter, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
-  selector: 'storybook-search',
+  selector: 'app-search',
   standalone: true,
-  imports: [IonInput],
+  imports: [IconComponent], 
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
-  @Input() 
-  placeholder: string = 'Buscar...';
-  @Output() 
-  ionInput = new EventEmitter<string>();
+export class SearchComponent implements AfterViewInit {
+  @Input() placeholder: string = 'Buscar';
+  @Input() disabled: boolean = false;
+  @Input() value: string = '';
+  @Input() width: string = '222px'; // Valor por defecto
+  @Input() height: string = '40px'; // Valor por defecto
 
-  private lastValue = '';
+  @Output() searchChange = new EventEmitter<string>();
+  
+  @ViewChild('searchInput') searchInput!: ElementRef;
+  @ViewChild('formElement') formElement!: ElementRef;
 
-  handleChange(event: Event) {
-    const customEvent = event as CustomEvent;
-    const value = customEvent.detail.value || '';
-    // Solo emitir si el valor realmente cambió
-    if (value !== this.lastValue) {
-      this.ionInput.emit(value);
-      this.lastValue = value;
+  ngAfterViewInit(): void {
+    this.applyCustomDimensions();
+  }
+
+  ngOnChanges(): void {
+    if (this.formElement) {
+      this.applyCustomDimensions();
     }
+  }
+
+  private applyCustomDimensions(): void {
+    if (this.formElement?.nativeElement) {
+      this.formElement.nativeElement.style.setProperty('--width', this.width);
+      this.formElement.nativeElement.style.setProperty('--height', this.height);
+    }
+  }
+
+  onSearchChange(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.value = value;
+    this.searchChange.emit(value);
+  }
+
+  clearSearch(): void {
+    this.value = '';
+    this.searchChange.emit('');
+    this.searchInput.nativeElement.focus();
   }
 }

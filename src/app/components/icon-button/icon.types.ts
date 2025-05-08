@@ -3,6 +3,8 @@ export type IconName =
   | 'agenda'
   | 'add'
   | 'arrowRight'
+  | 'arrowLeft'
+  | 'arrowDrop'
   | 'shop'
   | 'gestion'
   | 'portafolio'
@@ -14,7 +16,20 @@ export type IconName =
   | 'finished'
   | 'triangle'
   | 'logout'
+  | 'upload'
+  | 'file'
+  | 'search'
+  | 'display'
+  | 'bell'
+  | 'list'
+  | 'close'
+  | 'alert'
+  | 'alertInfo'
+  | 'check'
+  | 'x'
+  | 'mosaic'
   | 'oro'
+  | 'star';
 
 export interface IconProps {
   fill: string;

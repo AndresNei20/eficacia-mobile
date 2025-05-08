@@ -9,11 +9,11 @@ const meta: Meta<ActionButtonComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    state: {
+    apperance: {
       control: {
         type: 'radio'
       },
-      options: ['default', 'hovered'],
+      options: ['small', 'big'],
     }
   },
   args: {
@@ -26,7 +26,7 @@ type Story = StoryObj<ActionButtonComponent>;
 
 export const Default: Story = {
   args: {
-    state: 'default',
+    apperance: 'small',
     children: 'Button',
   },
 };

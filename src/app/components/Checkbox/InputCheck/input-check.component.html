@@ -1,0 +1,21 @@
+<div class="input-check" (click)="toggle()">
+    <span class="label">{{ label }}</span>
+  
+    <!-- Renderiza dinámicamente el tipo de control -->
+    <storybook-checkbox
+      *ngIf="type === 'checkbox'"
+      [checked]="selected"
+      (checkedChange)="toggle()"
+      class="check-control"
+    ></storybook-checkbox>
+  
+    <storybook-radio-button
+      *ngIf="type === 'radio'"
+      [selected]="selected"
+      (selectedChange)="toggle()"
+      class="check-control"
+    ></storybook-radio-button>
+  </div>
+  
+  <hr class="divider" />
+  

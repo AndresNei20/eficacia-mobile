@@ -87,6 +87,13 @@ validación de tipos y tamaño. Perfecto para formularios que requieren adjuntar
       },
       action: 'filesUploaded',
     },
+    removeFiles: {
+      description: 'Evento emitido al eliminar un archivo',
+      table: {
+        category: 'Events',
+      },
+      action: 'removeFiles',
+    },
     title2: {
       description: 'Título principal del componente en su segundo estado',
       control: 'text',
@@ -126,33 +133,3 @@ SingleFile.parameters = {
   },
 };
 
-export const DocumentUpload = Template.bind({});
-DocumentUpload.args = {
-  title: 'Upload Your Documents',
-  hint: 'Click or drag documents to this area',
-  buttonText: 'Submit Documents',
-  accept: '.pdf,.doc,.docx',
-  maxFileSize: 20 * 1024 * 1024,
-  title2: 'Imagen Cargada'
-};
-DocumentUpload.parameters = {
-  docs: {
-    description: {
-      story: 'Configuración específica para subida de documentos con formatos limitados.',
-    },
-  },
-};
-
-export const CustomValidation = Template.bind({});
-CustomValidation.args = {
-  title: 'Upload Images Only',
-  accept: 'image/jpeg,image/png',
-  maxFileSize: 2 * 1024 * 1024,
-};
-CustomValidation.parameters = {
-  docs: {
-    description: {
-      story: 'Ejemplo con validación estricta solo para imágenes JPG/PNG con tamaño máximo de 2MB.',
-    },
-  },
-};

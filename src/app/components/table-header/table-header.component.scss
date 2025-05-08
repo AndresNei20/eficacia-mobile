@@ -1,0 +1,24 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.container {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 38px;
+    justify-content: space-between;
+    align-items: center;
+
+    .header {
+        margin: 0;
+        width:100%;
+        font-size: typography.$text-subtitle-size;
+        font-weight: typography.$text-subtitle-weight;
+        color: colors.$color-text-titles;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+}

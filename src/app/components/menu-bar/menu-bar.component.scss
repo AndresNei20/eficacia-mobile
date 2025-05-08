@@ -1,0 +1,15 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/shadow' as shadow;
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem; 
+    background-color: colors.$sh-white; 
+    padding: spacings.$padding-xs spacings.$padding-sm;
+    box-shadow: shadow.$drop-shadow;
+
+}
+

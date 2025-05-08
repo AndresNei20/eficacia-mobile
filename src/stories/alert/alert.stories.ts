@@ -1,43 +1,58 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { AlertComponent } from '../../app/components/alert/alert.component';
 
-const meta: Meta<AlertComponent> = {
-  title: 'Components/Alertas/Estado',
+export default {
+  title: 'Components/Alerts/Alert',
   component: AlertComponent,
   tags: ['autodocs'],
-};
+  parameters: {
+    docs: {
+      description: {
+        component: `
+# Alert
 
-export default meta;
+## Uso
+
+- Permite mostrar estados de éxito, advertencia o error.
+- Incluye un círculo a la izquierda con un ícono representativo.
+- El color del fondo de la alerta y del círculo se controlan por separado.
+- Botón de cierre opcional en la derecha.
+
+---
+## Elementos clave
+
+- **Style:** Cambia el fondo general de la alerta (default, success, warning, error).
+- **Type:** Cambia el ícono dentro del círculo (void, alert, check, close).
+- **Color:** Cambia el color del círculo (green, yellow, red).
+        `,
+      },
+    },
+  },
+  argTypes: {
+    textAlert: { control: 'text' },
+    showIcon: { control: 'boolean' },
+    style: {
+      control: 'select',
+      options: ['default', 'success', 'warning', 'error'],
+    },
+    type: {
+      control: 'select',
+      options: ['alert', 'check', 'close'],
+    },
+    color: {
+      control: 'select',
+      options: ['green', 'yellow', 'red'],
+    },
+  },
+  args: {
+    textAlert: 'Estado',
+    showIcon: true,
+    style: 'default',
+    type: 'alert',
+    color: 'green',
+  },
+} as Meta<AlertComponent>;
+
 type Story = StoryObj<AlertComponent>;
 
-export const Verde: Story = {
-  args: {
-    label: 'Estado',
-    color: 'success',
-    showClose: true,
-  },
-};
-
-export const Amarillo: Story = {
-  args: {
-    label: 'Estado',
-    color: 'warning',
-    showClose: true,
-  },
-};
-
-export const Rojo: Story = {
-  args: {
-    label: 'Estado',
-    color: 'danger',
-    showClose: true,
-  },
-};
-
-export const Blanco: Story = {
-  args: {
-    label: 'Estado',
-    color: 'light',
-    showClose: true,
-  },
-};
+export const Default: Story = {};

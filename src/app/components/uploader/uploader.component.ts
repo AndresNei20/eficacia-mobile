@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
+import { IconComponents } from '../../../utils/icons';
 
 @Component({
   selector: 'app-file-uploader',
@@ -22,6 +23,7 @@ export class FileUploaderComponent {
   
   @Output() filesSelected = new EventEmitter<File[]>();
   @Output() filesUploaded = new EventEmitter<File[]>();
+  @Output() removeFiles = new EventEmitter<File[]>();
   
   isDragOver = false;
   files: File[] = [];
@@ -85,6 +87,7 @@ export class FileUploaderComponent {
   removeFile(file: File, event: Event) {
     event.stopPropagation();
     this.files = this.files.filter(f => f !== file);
+    this.removeFiles.emit(this.files);
   }
 
   uploadFiles() {

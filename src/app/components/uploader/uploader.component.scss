@@ -1,15 +1,20 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+
 .uploader-container {
     cursor: pointer;
     display: flex;
     width: 342px;
     height:54px;
     transition: all 0.3s ease;
-    background-color: #F4F7F9;
+    background-color: colors.$primary-white-bg;
     border-radius: 8px;
 
-    &.drag-over {
-      background-color: rgba(0, 61, 160, 0.1);
-    }
+    // &.drag-over {
+    //   background-color: rgba(0, 61, 160, 0.1);
+    // }
   }
 
   .overlay {
@@ -25,6 +30,7 @@
   .newcontent {
     display: flex;
     padding-top: 4px;
+    gap: 4px;
   }
 
   .icon {
@@ -40,18 +46,59 @@
     flex-direction: column;
 
     p {
-      font-size: small;
+      font-size: typography.$text-caption-size;
       margin: 0%;
       color: #696969;
-      font-weight: 400;
+      font-weight: typography.$text-caption-weight;
     }
 
     .hint {
       padding-top: 6px;
-      font-size: medium;
+      font-size: typography.$text-btn-size;
       color: #696969;
-      font-weight: 600;
+      font-weight: typography.$text-subtitle-weight;
+    }
+
+    
+  }
+
+  .file-names {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px;
+    max-height: 100%;
+    align-items: center;
+  }
+  
+  .file-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    max-width: 200px;
+    text-overflow: ellipsis;
+
+    .file-name-text {
+      max-width: 150px;
+      overflow: hidden;
+      color: colors.$blue-scale-500;
+      font-weight: typography.$text-subtitle-weight;
+      font-size: typography.$text-btn-size;
     }
   }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 4px;
+  }
+  
+  // .remove-btn:hover {
+  //   color: #cc0000;
+  // }
   
   

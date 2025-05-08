@@ -1,0 +1,21 @@
+@use "../../../styles/colors" as colors;
+@use '../../../styles/spacings' as spacings;
+@use '../../../styles/typography' as typography;
+
+.container {
+    display: flex;
+    padding: spacings.$padding-xl;
+    margin: 0;
+    gap: spacings.$padding-lg;
+    width: 361px;
+    height: 514px;
+    background-color: white;
+    border-radius: 16px;
+
+    .header {
+        margin: 0;
+        font-size: typography.$text-h4-size ;
+        font-weight: typography.$text-h4-weight;
+        color: colors.$color-texts-body;
+    }
+}
