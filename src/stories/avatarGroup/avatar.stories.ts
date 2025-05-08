@@ -5,7 +5,7 @@ const meta: Meta<AvatarGroupComponent> = {
   title: 'Components/Avatar/Avatar Group',
   component: AvatarGroupComponent,
   parameters: {
-    layout: 'padded', // Mejor para visualizar grupos
+    layout: 'padded',
     docs: {
       description: {
         component: 'Muestra un grupo de avatares con un máximo configurable. Los excedentes se muestran como un contador.'
@@ -15,28 +15,53 @@ const meta: Meta<AvatarGroupComponent> = {
   tags: ['autodocs'],
   argTypes: {
     size: {
-      control: 'radio',
+      control: { type: 'radio' },
       options: ['large', 'medium', 'small'],
-      description: 'Tamaño de los avatares',
+      description: 'Tamaño uniforme para todos los avatares del grupo. Afecta tanto a las imágenes como a los avatares de texto',
       table: {
-        defaultValue: { summary: 'medium' }
+        type: { summary: 'string' },
+        defaultValue: { summary: 'medium' },
+        category: 'Layout'
       }
     },
     spacing: {
-      control: 'radio',
+      control: { type: 'radio' },
       options: ['medium', 'small'],
-      description: 'Espaciado entre avatares',
+      description: 'Espacio entre avatares. **Medium** para separación estándar, **Small** para grupos superpuestos',
       table: {
-        defaultValue: { summary: 'medium' }
+        type: { summary: 'string' },
+        defaultValue: { summary: 'medium' },
+        category: 'Layout'
       }
     },
     maxDisplay: {
-      control: 'number',
-      description: 'Máximo de avatares a mostrar antes del contador',
+      control: { 
+        type: 'number',
+        min: 1,
+        max: 10,
+        step: 1
+      },
+      description: 'Número máximo de avatares visibles antes de mostrar el contador (+X). Valor recomendado entre 3-5',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: '5' },
+        category: 'Behavior'
+      }
     },
     avatars: {
-      control: 'object',
-      description: 'Array de avatares (image o text)'
+      control: { type: 'object' },
+      description: 'Lista de avatares. Cada objeto debe tener:',
+      table: {
+        type: { 
+          summary: `{
+      content: 'image'|'text',
+      image?: string,
+      avatarText?: string
+    }[]` 
+        },
+        defaultValue: { summary: '[]' },
+        category: 'Content'
+      }
     }
   },
   args: {
