@@ -1,4 +1,4 @@
-<div class="input-container">
+<div class="input-container" [style.width]="width">
 
     <label class="input-label">{{label}}
       @if (showRequired) {
@@ -37,6 +37,6 @@
   }
 
   @if (ShowAlert) {
-    <div class="error-message">{{alertText}}</div>
+    <app-form-alert textAlert={{alertText}} />
   }
 </div>
