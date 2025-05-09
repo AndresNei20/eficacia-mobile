@@ -1,0 +1,67 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
+
+.actions-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: colors.$sh-white;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 360px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: typography.$text-body-size;
+  color: colors.$ns-gray-subtitle;
+}
+
+.status-text {
+  margin: 0;
+  font-size: typography.$text-h3-size;
+  font-weight: typography.$text-h3-weight;
+  color: colors.$ps-yellow; // o el color que quieras para “Pendiente”
+}
+
+.forms-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-label {
+  margin: 8px 0 4px;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
+  color: colors.$color-texts-body;
+}
+
+.placeholder-graphic {
+  width: 100%;
+  height: 100px;
+  background-color: colors.$blue-scale-100;
+  border-radius: 4px;
+}
+
+.buttons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-link {
+  text-align: center;
+  font-size: typography.$text-body-sm-size;
+  color: colors.$sh-red;
+  text-decoration: underline;
+  cursor: pointer;
+}
