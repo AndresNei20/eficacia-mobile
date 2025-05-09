@@ -1,49 +1,52 @@
 <div class="actions-card">
+  <img
+    *ngIf="showImage"
+    src="/assets/images/actions-card-img.png"
+    alt="Illustration"
+    class="illustration"
+  />
+
+  <p class="subtitle">¿Tienes algún problema?</p>
+
+  <h3 *ngIf="showTitle" class="status-text">Pendiente</h3>
+
+  <app-progress-card
+    *ngIf="showProgressCard"
+    headLeftText="Faltan 2 actividades"
+    headRightText="Meta 34"
+    [percentValue]="32"
+    [showPercent]="true"
+    activitiesText="Faltan 2 actividades"
+    goalsText="Meta 34"
+    [showArrow]="true"
+    [showCheck]="true"
+  ></app-progress-card>
+
+  <div *ngIf="showForms" class="forms-section">
+    <app-input label="Título del input" placeholder="Texto input"></app-input>
+    <app-input
+      label="Título del input *"
+      placeholder="Texto input"
+    ></app-input>
+
+    <label class="section-label">Encabezado</label>
     <img
-      *ngIf="showImage"
-      src="assets/images/actions-card-img.png"
-      alt="Illustration"
+      src="/assets/images/void-action-card.png"
+      alt="Placeholder gráfico"
       class="illustration"
     />
-  
-    <p class="subtitle">¿Tienes algún problema?</p>
-  
-    <h3 *ngIf="showTitle" class="status-text">Pendiente</h3>
-  
-    <app-progress-card
-      *ngIf="showProgressCard"
-      headLeftText="Faltan 2 actividades"
-      headRightText="Meta 34"
-      [percentValue]="32"
-      [showPercent]="true"
-      activitiesText="Faltan 2 actividades"
-      goalsText="Meta 34"
-      [showArrow]="true"
-      [showCheck]="true"
-    ></app-progress-card>
-  
-    <div *ngIf="showForms" class="forms-section">
-      <app-input label="Título del input" placeholder="Texto input"></app-input>
-      <app-input
-        label="Título del input *"
-        placeholder="Texto input"
-      ></app-input>
-  
-      <label class="section-label">Encabezado</label>
-      <div class="placeholder-graphic"></div>
-    </div>
-  
-    <div class="buttons-section">
-      <app-button children="button" appearance="filled"></app-button>
-      <app-button
-        *ngIf="showButton2"
-        children="button"
-        appearance="filled"
-      ></app-button>
-    </div>
-  
-    <a *ngIf="showLink" href="#" class="card-link">
-      Continuar sin complementar
-    </a>
   </div>
-  
+
+  <div class="buttons-section">
+    <app-button children="button" appearance="filled"></app-button>
+    <app-button
+      *ngIf="showButton2"
+      children="button"
+      appearance="filled"
+    ></app-button>
+  </div>
+
+  <a *ngIf="showLink" href="#" class="card-link">
+    Continuar sin complementar
+  </a>
+</div>

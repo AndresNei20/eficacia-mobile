@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ProgressCardComponent } from '../progress-card/progress-card.component';
 import { InputComponent } from '../input/input.component';
 import { ButtonComponent } from '../button/button.component';
-import { IconComponent } from '../icon-button/icon.component';
 
 @Component({
   selector: 'app-actions-card',
