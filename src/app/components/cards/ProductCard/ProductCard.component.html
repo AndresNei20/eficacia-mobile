@@ -1,0 +1,62 @@
+<div class="product-card" [ngSwitch]="type">
+
+    <!-- ✅ PRODUCT TYPE -->
+    <div *ngSwitchCase="'product'" class="card product">
+      <storybook-checkbox *ngIf="showCheckbox" class="checkbox"></storybook-checkbox>
+      <div class="text">
+        <h3 class="title">Nombre del producto 1</h3>
+        <p class="subtitle">Categoría</p>
+      </div>
+      <div *ngIf="showNumbers" class="numbers">
+        <span>5000</span>
+        <span>5000</span>
+      </div>
+      <app-icon name="basketIcon" class="icon"></app-icon>
+    </div>
+  
+    <!-- ✅ FLOATING TYPE -->
+    <div *ngSwitchCase="'floating'" class="card floating">
+      <div class="left">
+        <app-icon *ngIf="showIcon" name="tag" class="icon"></app-icon>
+        <span class="text">{{ text }}</span>
+      </div>
+      <app-icon name="close" class="icon right-icon"></app-icon>
+    </div>
+  
+    <!-- ✅ LITTLE CARD TYPE -->
+    <div *ngSwitchCase="'little'" class="card little">
+      <div class="left">
+        <app-icon name="checkCircle" fill="currentColor" class="icon primary"></app-icon>
+        <div class="info">
+          <span class="title">{{ title }}</span>
+          <span class="caption">{{ caption }}</span>
+        </div>
+      </div>
+      <div class="right">
+        <ng-container *ngIf="showIcon1">
+          <app-icon name="basketIcon" class="icon"></app-icon>
+          <span class="info-num">({{ information1 }})</span>
+        </ng-container>
+        <ng-container *ngIf="showIcon2">
+          <app-icon name="basketIcon" class="icon"></app-icon>
+          <span class="info-num">({{ information2 }})</span>
+        </ng-container>
+        <ng-container *ngIf="showIcon3">
+          <app-icon name="basketIcon" class="icon"></app-icon>
+          <span class="info-num">({{ information3 }})</span>
+        </ng-container>
+        <app-icon *ngIf="showArrow" name="arrowRight" class="icon arrow"></app-icon>
+      </div>
+    </div>
+  
+    <!-- ✅ PRICE CARD TYPE -->
+    <div *ngSwitchCase="'price'" class="card price">
+      <div class="left">
+        <app-icon name="tag" class="icon"></app-icon>
+        <span class="product">{{ product }}</span>
+      </div>
+      <span class="price">{{ price }}</span>
+    </div>
+  
+  </div>
+  

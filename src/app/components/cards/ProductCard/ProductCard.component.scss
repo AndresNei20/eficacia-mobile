@@ -1,0 +1,133 @@
+@use "../../../../styles/colors" as colors;
+@use '../../../../styles/spacings' as spacings;
+@use '../../../../styles/typography' as typography;
+@use '../../../../styles/shadow' as shadows;
+@use '../../../../styles/radius' as radius;
+
+.product-card {
+    width: 100%;
+    min-width: 360px;
+    min-height: 60px;
+  
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border-radius: radius.$radiues-sm;
+      padding: 12px 16px;
+      box-shadow: shadows.$drop-shadow;
+      gap: spacings.$spacing-sm;
+  
+      &.product {
+        .text {
+          flex-grow: 1;
+          .title {
+            color: colors.$ns-gray;
+            font-weight: 600;
+            font-size: typography.$text-body-size;
+          }
+          .subtitle {
+            font-size: typography.$text-caption-size;
+            color: colors.$ns-gray;
+          }
+        }
+  
+        .numbers {
+          display: flex;
+          gap: spacings.$spacing-sm;
+          color: colors.$ns-gray;
+          font-weight: 600;
+          font-size: typography.$text-caption-size;
+        }
+
+        .icon{
+            color: colors.$blue-scale-500;
+        }
+      }
+  
+      &.floating {
+        .left {
+          display: flex;
+          align-items: center;
+          gap: spacings.$spacing-sm;
+          .text {
+            color: colors.$ns-gray;
+          }
+        }
+
+        .icon{
+            color: colors.$blue-scale-500;
+        }
+  
+        .right-icon {
+          color: colors.$blue-scale-500;
+        }
+      }
+  
+      &.little {
+        flex-direction: row;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          align-items: center;
+          gap: spacings.$spacing-sm;
+          .info {
+            display: flex;
+            flex-direction: column;
+            .title {
+              color: colors.$ns-gray;
+              font-size: typography.$text-caption-size;
+            }
+            .caption {
+              font-size: typography.$text-caption-size;
+              color: colors.$ns-gray;
+            }
+          }
+        }
+
+        .icon{
+            color: colors.$blue-scale-500;
+        }
+
+        .right {
+          display: flex;
+          align-items: center;
+          gap: spacings.$spacing-sm;
+  
+          .info-num {
+            font-size: typography.$text-caption-size;
+            color: colors.$ns-gray;
+          }
+  
+          .arrow {
+            color: #0040c1;
+            font-size: 20px;
+          }
+        }
+      }
+  
+      &.price {
+        justify-content: space-between;
+        .left {
+          display: flex;
+          align-items: center;
+          gap: spacings.$spacing-sm;
+          .product {
+            font-size: typography.$text-body-size;
+            color: colors.$ns-gray;
+          }
+        }
+
+        .icon{
+            color: colors.$blue-scale-500;
+        }
+
+        .price {
+          font-size: typography.$text-body-size;
+          color: colors.$sh-red;
+        }
+      }
+    }
+  }
+  
