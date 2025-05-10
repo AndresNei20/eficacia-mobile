@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/angular';
 import { InfoCardComponent } from '../../app/components/info-card/info-card.component';
 
 export default {
-  title: 'Components/InfoCard/InfoCard',
+  title: 'Components/CategoryCard/CategoryCard',
   component: InfoCardComponent,
   tags: ['autodocs'],
   parameters: {

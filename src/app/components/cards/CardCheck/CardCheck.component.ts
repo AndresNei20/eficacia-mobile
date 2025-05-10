@@ -41,4 +41,6 @@ export class CardCheckComponent {
 
   @Input() showCheckbox = true;
   @Input() checked = false;
+
+  @Input() disabled = false; // ✅ nuevo input
 }

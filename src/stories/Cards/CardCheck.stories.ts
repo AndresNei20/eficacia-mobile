@@ -9,22 +9,11 @@ export default {
     showIcon: { control: 'boolean' },
     iconName: {
       control: 'select',
-      options: [ 'inicio',
-        'agenda',
-        'add',
-     'arrowRight',
-        'shop',
-        'gestion',
-        'portafolio',
-        'perfil',
-        'question',
-        'completed',
-        'error',
-        'started',
-        'finished',
-        'triangle',
-        'logout',
-        'mosaic'], 
+      options: [
+        'inicio', 'agenda', 'add', 'arrowRight', 'shop', 'gestion',
+        'portafolio', 'perfil', 'question', 'completed', 'error',
+        'started', 'finished', 'triangle', 'logout', 'mosaic'
+      ]
     },
     showTitle: { control: 'boolean' },
     title: { control: 'text' },
@@ -34,14 +23,14 @@ export default {
     number: { control: 'number' },
     showCheckbox: { control: 'boolean' },
     checked: { control: 'boolean' },
+    disabled: { control: 'boolean' }  // ✅ agregado
   },
   parameters: {
     layout: 'centered',
     docs: {
       description: {
         component: `
-
-Componente flexible tipo tarjeta que permite visualizar información agrupada con controles configurables: íconos, títulos, etiquetas, número, y checkbox.
+Componente flexible tipo tarjeta que permite visualizar información agrupada con controles configurables: íconos, títulos, etiquetas, número y checkbox.
 
 ---
 
@@ -59,6 +48,7 @@ Componente flexible tipo tarjeta que permite visualizar información agrupada co
 | \`number\`     | number    | Número a mostrar                                    |
 | \`showCheckbox\` | boolean| Muestra u oculta el componente Checkbox             |
 | \`checked\`    | boolean   | Estado del checkbox                                |
+| \`disabled\`   | boolean   | Desactiva el componente visual y funcionalmente    |
         `,
       },
     },
@@ -78,6 +68,17 @@ export const Default: Story = {
     showNumber: true,
     number: 2,
     showCheckbox: true,
+    checked: false,
+    disabled: false,
+  },
+};
+
+export const DisabledCard: Story = {
+  args: {
+    ...Default.args,
+    disabled: true,
+    title: 'Categoría 1',
+    number: 0,
     checked: false,
   },
 };

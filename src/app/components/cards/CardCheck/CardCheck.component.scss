@@ -5,59 +5,74 @@
 @use '../../../../styles/radius' as radius;
 
 .card-check {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: radius.$radiues-sm;
-    background: white;
-    box-shadow: shadows.$drop-shadow;
-    width: 100%;
-    max-width: 100%;
-    min-width: 285px;
-    gap: spacings.$spacing-sm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: radius.$radiues-sm;
+  background: white;
+  box-shadow: shadows.$drop-shadow;
+  width: 100%;
+  max-width: 100%;
+  min-width: 285px;
+  gap: spacings.$spacing-sm;
+
+  // Estado habilitado (por defecto)
+  .icon {
+    font-size: 24px;
+    color: colors.$blue-scale-500; // Color azul activo
   }
-  
-  .left-content {
-    display: flex;
-    align-items: center;
-    gap: spacings.$spacing-sm;
-  
-    .icon {
-      font-size: 24px;
-      color: colors.$blue-scale-500;
-    }
-  
-    .text-content {
-      display: flex;
-      align-items: center;
-      gap: spacings.$spacing-xs;
-  
-      .title {
-        font-size: typography.$text-body-size;
-        color: colors.$ns-gray;
-      }
-  
-      .label {
-        font-size: typography.$text-caption-size;
-        color: colors.$ns-gray;
-      }
-    }
+
+  .arrow {
+    font-size: 20px;
+    color: colors.$blue-scale-500;
   }
-  
-  .right-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  
+
+  .title {
+    font-size: typography.$text-body-size;
+    color: colors.$ns-gray;
+  }
+
+  .label {
+    font-size: typography.$text-caption-size;
+    color: colors.$ns-gray;
+  }
+
+  .number {
+    font-size: typography.$text-subtitle-size;
+    color: colors.$ns-gray;
+  }
+
+  // Estado deshabilitado
+  &.disabled {
+    background: #E6E8EA;
+    opacity: 0.6;
+    pointer-events: none;
+
+    .icon,
+    .arrow,
+    .title,
+    .label,
     .number {
-      font-size: typography.$text-subtitle-size;;
-      color: colors.$ns-gray;
-    }
-  
-    .arrow {
-      font-size: 20px;
-      color: colors.$blue-scale-500;
+      color: colors.$ns-gray; // Color gris para todos los elementos
     }
   }
-  
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: spacings.$spacing-sm;
+}
+
+.text-content {
+  display: flex;
+  align-items: center;
+  gap: spacings.$spacing-xs;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

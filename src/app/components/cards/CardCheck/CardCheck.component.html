@@ -1,17 +1,27 @@
-<div class="card-check">
-    <div class="left-content">
-      <app-icon *ngIf="showIcon" [name]="'mosaic'" class="icon"></app-icon>
-  
-      <div class="text-content">
-        <span *ngIf="showTitle" class="title">{{ title }}</span>
-        <span *ngIf="showLabel" class="label">| {{ label }}</span>
-      </div>
-    </div>
-  
-    <div class="right-content">
-      <span *ngIf="showNumber" class="number">{{ number }}</span>
-      <storybook-checkbox *ngIf="showCheckbox" [checked]="checked" class="checkbox"></storybook-checkbox>
-      <span class="arrow"><app-icon name="arrowRight" fill="currentColor"></app-icon></span>
+<div class="card-check" [class.disabled]="disabled">
+  <div class="left-content">
+    <app-icon
+      *ngIf="showIcon"
+      [name]="iconName || 'mosaic'"
+      class="icon"
+      fill="currentColor"
+    ></app-icon>
+
+    <div class="text-content">
+      <span *ngIf="showTitle" class="title">{{ title }}</span>
+      <span *ngIf="showLabel" class="label">| {{ label }}</span>
     </div>
   </div>
-  
+
+  <div class="right-content">
+    <span *ngIf="showNumber" class="number">{{ number }}</span>
+    <storybook-checkbox
+      *ngIf="showCheckbox"
+      [checked]="checked"
+      class="checkbox"
+    ></storybook-checkbox>
+    <span class="arrow">
+      <app-icon name="arrowRight" fill="currentColor"></app-icon>
+    </span>
+  </div>
+</div>
