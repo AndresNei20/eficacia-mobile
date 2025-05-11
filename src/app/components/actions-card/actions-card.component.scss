@@ -5,10 +5,9 @@
 .actions-card {
   display: flex;
   flex-direction: column;
-  gap: spacings.$spacing-lg;
+  gap: spacings.$spacing-md;
   background-color: colors.$sh-white;
-  border-radius: spacings.$radius-md;
-  padding: spacings.$spacing-lg;
+  border-radius: spacings.$radius-sm;
   max-width: 360px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
@@ -24,6 +23,8 @@
   display: flex;
   align-items: center;
   gap: spacings.$spacing-md;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
   width: 100%;
   margin: 0;
 }
@@ -50,32 +51,43 @@
   text-align: center;
 }
 
+.progress-section {
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
+}
+
 .forms-section {
   display: flex;
   flex-direction: column;
   gap: spacings.$spacing-md;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
 }
 
 .section-label {
-  margin: spacings.$spacing-md 0 spacings.$spacing-xs;
-  font-size: typography.$text-body-sm-size;
-  font-weight: typography.$text-body-sm-weight;
-  color: colors.$color-texts-body;
+  font-size: typography.$text-subtitle-size;
+  font-weight: typography.$text-subtitle-weight;
+  color: colors.$color-text-titles;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
 }
 
 .buttons-section {
   display: flex;
   flex-direction: column;
   gap: spacings.$spacing-sm;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
 }
 
 .card-link {
   display: block;
-  margin-top: spacings.$spacing-md;
+  margin-bottom: spacings.$spacing-md;
   text-align: center;
-  font-size: typography.$text-body-sm-size;
-  font-weight: typography.$text-body-sm-weight;
+  font-size: typography.$text-body-size;
+  font-weight: typography.$text-body-weight;
   color: colors.$sh-red;
-  text-decoration: underline;
   cursor: pointer;
+  padding-left: spacings.$padding-lg;
+  padding-right: spacings.$padding-lg;
 }

@@ -15,7 +15,8 @@
   transition: all 0.3s ease;
   gap: spacings.$padding-sm;
   border: 1px solid transparent;
-  width: 338px;
+  max-width: 338px;
+  width: 100%;
 }
 
 .content {

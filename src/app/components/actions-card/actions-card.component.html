@@ -14,6 +14,7 @@
 
   <h3 *ngIf="showTitle" class="status-text">Pendiente</h3>
 
+  <div class="progress-section">
   <app-progress-card
     *ngIf="showProgressCard"
     [showHeadText]="false"
@@ -26,6 +27,7 @@
     goalsText="Meta 34"
     status="yellow"
   ></app-progress-card>
+  </div>
 
   <div *ngIf="showForms" class="forms-section">
     <app-input
@@ -46,13 +48,14 @@
       [showRequired]="false"
     ></app-input>
 
-    <label class="section-label">Encabezado</label>
-    <img
+  </div>
+
+  <label class="section-label">Encabezado</label>
+  <img
       src="/assets/images/void-action-card.png"
       alt="Placeholder gráfico"
       class="illustration"
-    />
-  </div>
+  />
 
   <div class="buttons-section">
     <app-button
