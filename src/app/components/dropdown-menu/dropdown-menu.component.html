@@ -1,27 +1,40 @@
-<div class="dropdown-container">
+<div
+  class="dropdown-container"
+  [class.error]="error"
+  (click)="$event.stopPropagation()"
+>
   <label class="dropdown-label">{{ textField }}</label>
 
-  <div class="dropdown-wrapper" [class.open]="isOpen">
-    <div class="dropdown-header" (click)="toggleDropdown()">
-      <span class="dropdown-placeholder" [class.selected]="selectedOption">
-        {{ selectedOption || textField }}
-      </span>
-      <app-icon
-        name="arrowDrop"
-        fill="#0041A3"
-        class="dropdown-icon"
-        [class.open]="isOpen"
-      />
-    </div>
+  <div
+    class="dropdown-wrapper"
+    [class.open]="isOpen"
+    (click)="toggleDropdown()"
+  >
+    <span
+      class="dropdown-placeholder"
+      [class.selected]="!!selectedOption"
+    >
+      {{ selectedOption || textField }}
+    </span>
+    <app-icon
+      name="arrowDrop"
+      [fill]="error ? '#CA4949' : '#0041A3'"
+      class="dropdown-icon"
+      [class.open]="isOpen"
+    ></app-icon>
+  </div>
 
-    <ul class="dropdown-list" *ngIf="isOpen">
-      <li
-        class="dropdown-item"
-        *ngFor="let option of options"
-        (click)="selectOption(option)"
-      >
-        {{ option }}
-      </li>
-    </ul>
+  <ul *ngIf="isOpen" class="dropdown-list">
+    <li
+      *ngFor="let option of options"
+      class="dropdown-item"
+      (click)="selectOption(option)"
+    >
+      {{ option }}
+    </li>
+  </ul>
+
+  <div *ngIf="error" class="dropdown-error">
+    {{ errorText }}
   </div>
 </div>

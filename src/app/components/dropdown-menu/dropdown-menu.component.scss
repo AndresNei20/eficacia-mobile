@@ -1,75 +1,99 @@
 @use "../../../styles/colors" as colors;
 @use "../../../styles/typography" as typography;
-@use "../../../styles/radius" as radius;
 @use "../../../styles/spacings" as spacings;
 
 .dropdown-container {
+  position: relative;
   width: 100%;
-  max-width: 336px;
+  max-width: 300px;
+
+  &.error {
+    .dropdown-label {
+      color: colors.$sh-red;
+    }
+    .dropdown-wrapper {
+      border-color: colors.$sh-red;
+      .dropdown-placeholder,
+      .dropdown-icon {
+        color: colors.$sh-red;
+      }
+    }
+    .dropdown-list {
+      border-color: colors.$sh-red;
+    }
+    .dropdown-error {
+      color: colors.$sh-red;
+    }
+  }
 }
 
 .dropdown-label {
   display: block;
-  margin-bottom: 8px;
-  font-size: typography.$text-body-size;
-  font-weight: typography.$text-body-weight;
-  color: colors.$color-text-titles;
+  margin-bottom: spacings.$spacing-xs;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
+  color: colors.$primary-blue;
 }
 
 .dropdown-wrapper {
-  border: 1px solid colors.$blue-scale-300;
-  border-radius: radius.$radiues-xs;
-  background-color: colors.$sh-white;
-  overflow: hidden; 
-  transition: all 0.2s ease-in-out;
-
-  &.open {
-    border-radius: radius.$radiues-xs; 
-  }
-}
-
-.dropdown-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: spacings.$padding-md;
+  padding: spacings.$spacing-sm spacings.$spacing-md;
+  border: 1px solid colors.$blue-scale-300;
+  border-radius: spacings.$radius-sm;
+  background-color: colors.$sh-white;
   cursor: pointer;
-}
 
-.dropdown-placeholder {
-  color: colors.$blue-scale-300;
-  font-size: typography.$text-body-sm-size;
-  font-weight: typography.$text-body-sm-weight;
-
-  &.selected {
-    color: colors.$primary-blue;
+  &.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
-.dropdown-icon {
-  transition: transform 0.3s ease;
+.dropdown-placeholder {
+  font-size: typography.$text-body-sm-size;
+  color: colors.$blue-scale-300;
+}
 
+.dropdown-icon {
+  transition: transform 0.2s ease;
   &.open {
     transform: rotate(180deg);
   }
 }
 
 .dropdown-list {
-  list-style: none;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
-  background-color: colors.$sh-white;
+  list-style: none;
+  background: colors.$sh-white;
+  border: 1px solid colors.$blue-scale-300;
+  border-top: none;
+  border-bottom-left-radius: spacings.$radius-sm;
+  border-bottom-right-radius: spacings.$radius-sm;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  .dropdown-item {
+    padding: spacings.$spacing-sm spacings.$spacing-md;
+    font-size: typography.$text-body-sm-size;
+    color: colors.$blue-scale-300;
+    cursor: pointer;
+    &:hover {
+      background-color: colors.$blue-scale-100;
+    }
+  }
 }
 
-
-.dropdown-item {
-  padding: 8px 16px;
-  font-size: typography.$text-body-sm-size;
-  font-weight: typography.$text-body-sm-weight;
-  color: colors.$blue-scale-300;
-  cursor: pointer;
-
-  &:hover {
-    background-color: colors.$blue-scale-100;
-  }
+.dropdown-error {
+  margin-top: spacings.$spacing-xs;
+  font-size: typography.$text-caption-size;
+  color: colors.$sh-red;
 }

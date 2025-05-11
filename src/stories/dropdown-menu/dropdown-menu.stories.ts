@@ -5,50 +5,48 @@ export default {
   title: 'Components/Dropdown/DropdownMenu',
   component: DropdownMenuComponent,
   tags: ['autodocs'],
+  argTypes: {
+    textField: { control: 'text'},
+    options: { control: 'object'},
+    expanded: { control: 'boolean'},
+    error: { control: 'boolean'},
+    errorText: { control: 'text'},
+  },
+  args: {
+    textField: 'Título dropdown',
+    options: ['Label 1', 'Label 2', 'Label 3'],
+    expanded: false,
+    error: false,
+    errorText: 'Label-error',
+  },
   parameters: {
     docs: {
       description: {
         component: `
-## Variables
+## Dropdown
 
-Este componente está estructurado con variantes para manejar su estado desplegable.
+**Variables**
 
-Es ideal para menús de navegación, listas de selección y configuraciones dentro de la interfaz.
+- **textField:** Texto cuando está cerrado.  
+- **options:** Lista de opciones.  
+- **expanded:** Booleano para controlar abierto/cerrado.  
+- **error:** Activa estado de error.  
+- **errorText:** Mensaje debajo en rojo.
 
----
+**Uso**
 
-## Uso
+- Usa \`[expanded]\` / \`(expandedChange)\` para two-way binding si quieres controlar desde una variable.  
+- Se cierra al clicar fuera.  
 
-- Este componente está estructurado con variantes para manejar su estado desplegable.
-- Es ideal para menús de navegación, listas de selección y configuraciones dentro de la interfaz.
+**Elementos clave**
 
----
-
-## Elementos clave
-
-- **Contenedor del botón:** Estructura rectangular que define su tamaño y forma.
-- **Ícono de flecha:** Elemento gráfico que indica que el campo es un desplegable.
-- **Estado:** Variantes como *desplegado* y *colapsado* definen el comportamiento del componente.
-        `
-      }
-    }
-  },
-  argTypes: {
-    state: {
-      control: 'radio',
-      options: ['label', 'select'],
+- Contenedor principal.  
+- Wrapper clicable con flecha.  
+- Lista en overlay (no empuja contenido).  
+- Estado de error pinta todo de rojo.
+        `,
+      },
     },
-    textField: {
-      control: 'text',
-    },
-    options: {
-      control: 'object',
-    },
-  },
-  args: {
-    state: 'label',
-    textField: 'Label',
-    options: ['Label 1', 'Label 2', 'Label 3'],
   },
 } as Meta<DropdownMenuComponent>;
 
