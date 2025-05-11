@@ -29,7 +29,8 @@ export type IconName =
   | 'x'
   | 'mosaic'
   | 'oro'
-  | 'star';
+  | 'star'
+  | 'void';
 
 export interface IconProps {
   fill: string;

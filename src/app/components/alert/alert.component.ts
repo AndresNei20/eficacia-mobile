@@ -13,9 +13,9 @@ export class AlertComponent {
   @Input() textAlert: string = 'Estado';
   @Input() showIcon: boolean = true;
 
-  @Input() style: 'default' | 'success' | 'warning' | 'error' = 'default'; // Fondo de la alerta
-  @Input() type: 'alert' | 'check' | 'x' = 'alert'; // Tipo de ícono en el círculo
-  @Input() color: 'green' | 'yellow' | 'red' = 'green'; // Color del círculo
+  @Input() style: 'default' | 'success' | 'warning' | 'error' = 'default';
+  @Input() type: 'void' | 'check' | 'x' | 'alert' = 'void';
+  @Input() color: 'green' | 'yellow' | 'red' = 'green';
 
   @Output() onClose = new EventEmitter<void>();
 
@@ -25,27 +25,33 @@ export class AlertComponent {
 
   getStyleBackground(): string {
     switch (this.style) {
-      case 'success':
-        return '#3BD4AE';
-      case 'warning':
-        return '#FFCD00';
-      case 'error':
-        return '#CA4949';
-      default:
-        return '#FFFFFF';
+      case 'success': return '#3BD4AE';
+      case 'warning': return '#FFCD00';
+      case 'error':   return '#CA4949';
+      default:        return '#FFFFFF';
     }
   }
 
   getCircleColor(): string {
     switch (this.color) {
-      case 'green':
-        return '#3BD4AE';
-      case 'yellow':
-        return '#FFCD00';
-      case 'red':
-        return '#CA4949';
-      default:
-        return '#3BD4AE';
+      case 'green':  return '#3BD4AE';
+      case 'yellow': return '#FFCD00';
+      case 'red':    return '#CA4949';
+      default:       return '#3BD4AE';
     }
+  }
+
+  getIconName(): 'alert' | 'check' | 'x' | 'void' {
+    return this.type === 'x' ? 'x' : this.type;
+  }
+
+  getCloseIconColor(): string {
+    return this.style === 'default' ? '#0041A3' : '#FFFFFF';
+  }
+
+  getLabelColor(): string {
+    return this.style === 'default'
+      ? '#70777B'   
+      : '#FFFFFF';  
   }
 }

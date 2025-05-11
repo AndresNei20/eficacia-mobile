@@ -1,14 +1,23 @@
 <div class="alert" [style.backgroundColor]="getStyleBackground()">
-  <div class="circle" *ngIf="showIcon" [style.backgroundColor]="getCircleColor()">
-    <app-icon [name]="type" fill="#FFFFFF" class="circle-icon" />
-  </div>
+  <ng-container *ngIf="showIcon">
+    <app-icon
+      [name]="getIconName()"
+      [fill]="getCircleColor()"
+      class="circle-icon"
+    ></app-icon>
+  </ng-container>
 
-  <span class="label">{{ textAlert }}</span>
+  <span
+    class="label"
+    [style.color]="getLabelColor()"
+  >
+    {{ textAlert }}
+  </span>
 
   <app-icon
     name="close"
-    fill="#0041A3"
+    [fill]="getCloseIconColor()"
     class="close-icon"
     (click)="closeAlert()"
-  />
+  ></app-icon>
 </div>

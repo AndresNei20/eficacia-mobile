@@ -18,7 +18,6 @@ export default {
 - El color del fondo de la alerta y del círculo se controlan por separado.
 - Botón de cierre opcional en la derecha.
 
----
 ## Elementos clave
 
 - **Style:** Cambia el fondo general de la alerta (default, success, warning, error).
@@ -37,7 +36,7 @@ export default {
     },
     type: {
       control: 'select',
-      options: ['alert', 'check', 'close'],
+      options: ['void', 'alert', 'check', 'x'],
     },
     color: {
       control: 'select',
