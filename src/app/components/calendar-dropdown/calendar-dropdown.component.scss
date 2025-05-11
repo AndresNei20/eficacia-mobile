@@ -1,0 +1,61 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/typography" as typography;
+@use "../../../styles/spacings" as spacings;
+
+.calendar-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 334px;
+
+  .dropdown-label {
+    display: block;
+    margin-bottom: spacings.$spacing-xs;
+    font-size: typography.$text-body-sm-size;
+    font-weight: typography.$text-body-sm-weight;
+    color: colors.$color-texts-body;
+  }
+
+  .dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    padding: spacings.$spacing-sm spacings.$spacing-md;
+    border: 1px solid colors.$primary-blue;
+    border-radius: spacings.$radius-sm;
+    background-color: colors.$sh-white;
+    cursor: pointer;
+
+    &.open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .dropdown-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: typography.$text-body-sm-size;
+      color: colors.$blue-scale-700;
+    }
+
+    .calendar-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: spacings.$spacing-sm;
+    }
+  }
+
+  .calendar-overlay {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    background: colors.$sh-white;
+    border: 1px solid colors.$primary-blue;
+    border-top: none;
+    border-bottom-left-radius: spacings.$radius-sm;
+    border-bottom-right-radius: spacings.$radius-sm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+}

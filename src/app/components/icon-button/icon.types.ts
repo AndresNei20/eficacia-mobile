@@ -30,7 +30,8 @@ export type IconName =
   | 'mosaic'
   | 'oro'
   | 'star'
-  | 'void';
+  | 'void'
+  | 'calendar';
 
 export interface IconProps {
   fill: string;

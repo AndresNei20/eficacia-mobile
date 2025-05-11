@@ -1,0 +1,25 @@
+<div class="calendar-dropdown" (click)="$event.stopPropagation()">
+  <label class="dropdown-label">{{ textField }}</label>
+  
+  <div
+    class="dropdown-wrapper"
+    [class.open]="isOpen"
+    (click)="toggle()"
+  >
+    <input
+      class="dropdown-input"
+      type="text"
+      [placeholder]="textField"
+      readonly
+    />
+    <app-icon
+      name="calendar"
+      fill="#0041A3"
+      class="calendar-icon"
+    ></app-icon>
+  </div>
+
+  <div *ngIf="isOpen" class="calendar-overlay">
+    <storybook-calendar></storybook-calendar>
+  </div>
+</div>
