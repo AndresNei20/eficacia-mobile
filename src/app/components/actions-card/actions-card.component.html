@@ -6,27 +6,44 @@
     class="illustration"
   />
 
-  <p class="subtitle">¿Tienes algún problema?</p>
+  <div class="line-text">
+    <div class="line"></div>
+    <span class="text">¿Tienes algún problema?</span>
+    <div class="line"></div>
+  </div>
 
   <h3 *ngIf="showTitle" class="status-text">Pendiente</h3>
 
   <app-progress-card
     *ngIf="showProgressCard"
-    headLeftText="Faltan 2 actividades"
-    headRightText="Meta 34"
+    [showHeadText]="false"
+    [showTitle]="false"
+    [showCheck]="false"
+    [showArrow]="false"
     [percentValue]="32"
-    [showPercent]="true"
+    [showPercent]="false"
     activitiesText="Faltan 2 actividades"
     goalsText="Meta 34"
-    [showArrow]="true"
-    [showCheck]="true"
+    status="yellow"
   ></app-progress-card>
 
   <div *ngIf="showForms" class="forms-section">
-    <app-input label="Título del input" placeholder="Texto input"></app-input>
     <app-input
-      label="Título del input *"
+      type="textField"
+      state="enable"
+      label="Título del input"
       placeholder="Texto input"
+      [showIcon]="true"
+      [showRequired]="true"
+    ></app-input>
+
+    <app-input
+      type="multiline"
+      state="enable"
+      label="Título del input"
+      placeholder="Texto input"
+      [showIcon]="false"
+      [showRequired]="false"
     ></app-input>
 
     <label class="section-label">Encabezado</label>
@@ -38,15 +55,29 @@
   </div>
 
   <div class="buttons-section">
-    <app-button children="button" appearance="filled"></app-button>
+    <app-button
+      label="button"
+      size="small"
+      styles="filled"
+      color="primary"
+      state="active"
+      orientation="center"
+      [showIconStart]="false"
+      [showIconEnd]="false"
+    ></app-button>
+
     <app-button
       *ngIf="showButton2"
-      children="button"
-      appearance="filled"
+      label="button"
+      size="small"
+      styles="filled"
+      color="primary"
+      state="active"
+      orientation="center"
+      [showIconStart]="false"
+      [showIconEnd]="false"
     ></app-button>
   </div>
 
-  <a *ngIf="showLink" href="#" class="card-link">
-    Continuar sin complementar
-  </a>
+  <a *ngIf="showLink" href="#" class="card-link">Continuar sin complementar</a>
 </div>

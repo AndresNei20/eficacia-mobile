@@ -8,13 +8,13 @@
     <section class="card-title" *ngIf="showTitle">
       <h4>{{ title }}</h4>
       <div *ngIf="showCheck" class="check-icon">
-        <app-icon name="completed" fill="#0041A3"></app-icon>
+        <app-icon name="check" fill="#FFFFFF"></app-icon>
       </div>
     </section>
 
     <app-progress-bar
       [value]="percentValue"
-      color="green"
+      [status]="status"
       [showPercent]="showPercent"
     ></app-progress-bar>
 

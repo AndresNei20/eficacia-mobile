@@ -5,10 +5,10 @@
 .actions-card {
   display: flex;
   flex-direction: column;
-  gap: spacings.$spacing-lg;          // 16px
+  gap: spacings.$spacing-lg;
   background-color: colors.$sh-white;
-  border-radius: spacings.$radius-md; // 8px
-  padding: spacings.$spacing-lg;      // 16px
+  border-radius: spacings.$radius-md;
+  padding: spacings.$spacing-lg;
   max-width: 360px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
@@ -17,55 +17,64 @@
   width: 100%;
   max-height: 200px;
   object-fit: cover;
-  border-radius: spacings.$radius-sm; // 4px
+  border-radius: spacings.$radius-sm;
 }
 
-.subtitle {
+.line-text {
+  display: flex;
+  align-items: center;
+  gap: spacings.$spacing-md;
+  width: 100%;
   margin: 0;
-  font-size: typography.$text-body-size;   // 14px
-  font-weight: typography.$text-body-weight; // 500
-  color: colors.$ns-gray-subtitle;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: colors.$color-texts-captions;
+  min-width: 45px;
+}
+
+.text {
+  white-space: nowrap;
+  font-size: typography.$text-overline-size;
+  font-weight: typography.$text-overline-weight;
+  color: colors.$color-texts-captions;
 }
 
 .status-text {
   margin: 0;
-  font-size: typography.$text-h3-size;    // 24px
-  font-weight: typography.$text-h3-weight;  // 700
+  font-size: typography.$text-h3-size;
+  font-weight: typography.$text-h3-weight;
   color: colors.$ps-yellow;
+  text-align: center;
 }
 
 .forms-section {
   display: flex;
   flex-direction: column;
-  gap: spacings.$spacing-md;         // 12px
+  gap: spacings.$spacing-md;
 }
 
 .section-label {
-  margin: spacings.$spacing-md 0 spacings.$spacing-xs; // 12px 0 4px
-  font-size: typography.$text-body-sm-size;    // 12px
-  font-weight: typography.$text-body-sm-weight; // 500
+  margin: spacings.$spacing-md 0 spacings.$spacing-xs;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
   color: colors.$color-texts-body;
-}
-
-.placeholder-graphic {
-  width: 100%;
-  height: 100px;
-  background-color: colors.$blue-scale-100;
-  border-radius: spacings.$radius-sm; // 4px
 }
 
 .buttons-section {
   display: flex;
   flex-direction: column;
-  gap: spacings.$spacing-sm;         // 8px
+  gap: spacings.$spacing-sm;
 }
 
 .card-link {
   display: block;
-  margin-top: spacings.$spacing-md;  // 12px
+  margin-top: spacings.$spacing-md;
   text-align: center;
-  font-size: typography.$text-body-sm-size;    // 12px
-  font-weight: typography.$text-body-sm-weight; // 500
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
   color: colors.$sh-red;
   text-decoration: underline;
   cursor: pointer;

@@ -9,7 +9,7 @@ const meta: Meta<ButtonComponent> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    style: {
+    styles: {
       control: {
         type: 'radio'
       },
@@ -72,7 +72,7 @@ type Story = StoryObj<ButtonComponent>;
 
 export const Primary: Story = {
   args: {
-    style: 'filled',
+    styles: 'filled',
     color: 'primary',
     size: 'small',
     orientation: 'center',
@@ -84,7 +84,7 @@ export const Primary: Story = {
 
 export const Error: Story = {
   args: {
-    style: 'filled',
+    styles: 'filled',
     color: 'error',
     size: 'small',
     orientation: 'center',

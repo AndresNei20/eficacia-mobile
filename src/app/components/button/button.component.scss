@@ -36,9 +36,9 @@
   }
 }
 
-@mixin button-states($color, $style) {
+@mixin button-states($color, $styles) {
   &.active {
-    @if $style == 'filled' {
+    @if $styles == 'filled' {
       background-color: map-get((
         'primary': colors.$primary-blue,
         'error': colors.$sh-red
@@ -46,7 +46,7 @@
       color: colors.$sh-white;
     }
 
-    @if $style == 'outline' {
+    @if $styles == 'outline' {
       background-color: transparent;
       border-color: map-get((
         'primary': colors.$blue-scale-600,
@@ -58,7 +58,7 @@
       ), $color);
     }
 
-    @if $style == 'text' {
+    @if $styles == 'text' {
       background-color: transparent;
       border: none;
       color: map-get((
@@ -69,7 +69,7 @@
   }
 
   &.pressed {
-    @if $style == 'filled' {
+    @if $styles == 'filled' {
       background-color: map-get((
         'primary': colors.$blue-scale-600,
         'error': colors.$sh-red-pressed
@@ -78,7 +78,7 @@
       transform: translateY(1px);
     }
 
-    @if $style == 'outline' {
+    @if $styles == 'outline' {
       background-color: map-get((
         'primary': rgba(colors.$primary-blue, 0.2),
         'error': rgba(colors.$sh-red, 0.2)
@@ -93,7 +93,7 @@
       ), $color);
     }
 
-    @if $style == 'text' {
+    @if $styles == 'text' {
       background-color: map-get((
         'primary': rgba(colors.$primary-blue, 0.2),
         'error': rgba(colors.$sh-red, 0.2)
@@ -107,7 +107,7 @@
   }
 
   &.disabled {
-    @if $style == 'filled' {
+    @if $styles == 'filled' {
       background-color: map-get((
         'primary': colors.$sh-gray,
         'error': colors.$sh-gray
@@ -116,7 +116,7 @@
       transform: translateY(1px);
     }
 
-    @if $style == 'outline' {
+    @if $styles == 'outline' {
       background-color: transparent;
       border-color: map-get((
         'primary': colors.$sh-gray,
@@ -125,7 +125,7 @@
       color: colors.$ns-gray;
     }
 
-    @if $style == 'text' {
+    @if $styles == 'text' {
       background-color: transparent;
       border: none;
       color: colors.$ns-gray;
@@ -134,8 +134,8 @@
   }
 }
 
-@mixin button-color($color, $style) {
-  @include button-states($color, $style);
+@mixin button-color($color, $styles) {
+  @include button-states($color, $styles);
 }
 
 .button {
@@ -159,9 +159,9 @@
 }
 
 @each $color in ('primary', 'error') {
-  @each $style in ('filled', 'outline', 'text') {
-    .button.#{$color}.#{$style} {
-      @include button-color($color, $style);
+  @each $styles in ('filled', 'outline', 'text') {
+    .button.#{$color}.#{$styles} {
+      @include button-color($color, $styles);
     }
   }
 }

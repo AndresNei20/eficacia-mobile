@@ -26,4 +26,6 @@ export class ProgressCardComponent {
   @Input() goalsText: string = '';
 
   @Input() showArrow: boolean = true;
+
+  @Input() status: 'green' | 'yellow' | 'red' = 'green';
 }

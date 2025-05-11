@@ -14,7 +14,7 @@ export class ButtonComponent {
   @Input() label?: string; 
   @Input() size!: 'small' | 'medium';
   @Input() color!: 'primary' | 'error';
-  @Input() style!: 'filled' | 'outline' | 'text';
+  @Input() styles!: 'filled' | 'outline' | 'text';
   @Input() state!: 'active' | 'disabled' | 'pressed';
   @Input() orientation: 'center' | 'left' = 'center';
   @Input() iconStart?: 'add' | 'arrowLeft' | 'shop' = 'arrowLeft' ;
@@ -33,7 +33,7 @@ export class ButtonComponent {
     iconEnd?: 'add' | 'arrowRight' | 'shop' ,
     showIconStart?: boolean,
     showIconEnd?: boolean,
-    style?: 'filled' | 'outline' | 'text',
+    styles?: 'filled' | 'outline' | 'text',
   ): string {
     return [
       'button',
@@ -45,7 +45,7 @@ export class ButtonComponent {
       iconEnd,
       showIconEnd,
       showIconStart,
-      style
+      styles
     ].filter(Boolean).join(' ');
   }
 }

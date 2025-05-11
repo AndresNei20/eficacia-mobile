@@ -14,6 +14,10 @@ export default {
     showCheck: { control: 'boolean' },
     percentValue: { control: { type: 'range', min: 0, max: 100 } },
     showPercent: { control: 'boolean' },
+    status: {
+      control: 'radio',
+      options: ['green', 'yellow', 'red'],
+    },
     activitiesText: { control: 'text' },
     goalsText: { control: 'text' },
     showArrow: { control: 'boolean' },
@@ -27,6 +31,7 @@ export default {
     showCheck: true,
     percentValue: 65,
     showPercent: true,
+    status: 'green',
     activitiesText: 'Faltan 2 actividades',
     goalsText: 'Meta 34',
     showArrow: true,
