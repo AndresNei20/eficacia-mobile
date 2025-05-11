@@ -1,0 +1,61 @@
+<div class="image-popup">
+  <div class="popup-container">
+    <button class="close-btn">
+      <app-icon name="close" fill="#0041A3"></app-icon>
+    </button>
+
+    <div class="images-wrapper" *ngIf="imageSrc">
+      <img [src]="imageSrc" alt="Pop up image" class="popup-image" />
+    </div>
+
+    <div *ngIf="showGroupDescription" class="group-description">
+      <div class="line"></div>
+      <span class="group-text">{{ groupDescription }}</span>
+      <div class="line"></div>
+    </div>
+
+    <app-progress-card
+      class="popup-progress-card"
+      [showHeadText]="false"
+      [showTitle]="true"
+      [title]="title"
+      [showCheck]="true"
+      [percentValue]="percentValue"
+      [showPercent]="false"
+      [activitiesText]="activitiesText"
+      [goalsText]="goalsText"
+      [showArrow]="false"
+    ></app-progress-card>
+
+    <h2 *ngIf="showTitle" class="popup-title">{{ title }}</h2>
+    <p *ngIf="showDescription" class="popup-description">
+      {{ description }}
+    </p>
+
+    <div class="buttons-section">
+      <app-button
+        *ngIf="showMobileButtons1"
+        label="{{ mobileButton1Label }}"
+        size="medium"
+        color="primary"
+        styles="filled"
+        state="active"
+        orientation="center"
+      ></app-button>
+
+      <app-button
+        *ngIf="showMobileButtons2"
+        label="{{ mobileButton2Label }}"
+        size="medium"
+        color="primary"
+        styles="filled"
+        state="active"
+        orientation="center"
+      ></app-button>
+    </div>
+
+    <a *ngIf="showLinkMessage" class="link-message">
+      {{ linkMessageText }}
+    </a>
+  </div>
+</div>
