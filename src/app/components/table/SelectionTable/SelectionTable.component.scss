@@ -1,0 +1,16 @@
+@use "../../../../styles/colors" as colors;
+@use "../../../../styles/spacings" as spacings;
+@use "../../../../styles/radius" as radius ;
+@use "../../../../styles/typography" as typography;
+@use "../../../../styles/shadow" as shadow;
+
+.selection-table {
+    min-width: 360px;
+  
+    .table-title {
+      font-size: typography.$text-h3-size;
+      font-weight: typography.$text-h3-weight;
+      color: colors.$blue-scale-500;
+      margin-bottom: spacings.$spacing-lg;
+    }
+  }

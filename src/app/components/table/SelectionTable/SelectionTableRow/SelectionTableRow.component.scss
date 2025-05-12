@@ -1,0 +1,26 @@
+@use "../../../../../styles/colors" as colors;
+@use "../../../../../styles/spacings" as spacings;
+@use "../../../../../styles/radius" as radius ;
+@use "../../../../../styles/typography" as typography;
+@use "../../../../../styles/shadow" as shadow;
+
+.row {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr;
+  align-items: center;
+  padding: spacings.$padding-lg;
+  border-bottom: 1px solid colors.$sh-gray;
+
+  .label {
+    font-size: typography.$text-body-sm-size;
+    font-weight: typography.$text-body-sm-weight;
+    color: colors.$blue-scale-500;
+    text-align: center;
+  }
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

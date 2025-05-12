@@ -1,0 +1,24 @@
+@use "../../../../../styles/colors" as colors;
+@use "../../../../../styles/spacings" as spacings;
+@use "../../../../../styles/radius" as radius ;
+@use "../../../../../styles/typography" as typography;
+@use "../../../../../styles/shadow" as shadow;
+
+.table-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr;
+  align-items: center;
+  gap: spacings.$spacing-md;
+  margin-bottom: spacings.$spacing-md;
+  font-size: typography.$text-body-sm-size;
+  font-weight: typography.$text-body-sm-weight;
+  color: colors.$blue-scale-500;
+
+  .header-spacer {
+    width: 100%;
+  }
+
+  .column-title {
+    text-align: center;
+  }
+}
