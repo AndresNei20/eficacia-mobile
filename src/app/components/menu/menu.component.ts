@@ -19,8 +19,8 @@ export class MenuComponent {
   @Input() showBadge!: boolean;
   @Input() avatarText?: string = 'AA';
   @Input() image?: string = this.defaultImage;
-  @Input() width: string = '222px'; // Valor por defecto
-  @Input() height: string = '40px'; // Valor por defecto
+  @Input() width: string = '375px'; // Valor por defecto
+  @Input() height: string = '67px'; // Valor por defecto
 
   @Output() searchChange = new EventEmitter<string>();
   @Output() onClickBell = new EventEmitter<Event>();
