@@ -2,13 +2,17 @@
 @use '../../../styles/spacings' as spacings;
 
 .all-container {
+    --width: 375px; 
+    --height: 67px; 
+    
+    height: var(--height);
+    width: var(--width);
+    
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     padding: 16px;
-    width: 375px;
-    height: 67px;
     margin: 0;
     background-color: colors.$blue-scale-500;
     align-items: center;

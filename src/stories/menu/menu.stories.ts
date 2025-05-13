@@ -48,6 +48,22 @@ export default {
       control: 'text',
       description: 'Image URL for the user profile avatar',
     },
+    width: {
+      description: 'Ancho del campo de búsqueda (ej: "300px", "50%")',
+      control: 'text',
+      table: {
+        category: 'Styling',
+        defaultValue: { summary: '222px' },
+      },
+    },
+    height: {
+      description: 'Altura del campo de búsqueda (ej: "40px", "2rem")',
+      control: 'text',
+      table: {
+        category: 'Styling',
+        defaultValue: { summary: '40px' },
+      },
+    },
     searchChange: {
       description: 'Evento emitted when search value changes',
       table: {
