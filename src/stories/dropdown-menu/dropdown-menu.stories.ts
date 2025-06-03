@@ -23,8 +23,6 @@ export default {
     docs: {
       description: {
         component: `
-## Dropdown
-
 **Variables**
 
 - **textField:** Texto cuando está cerrado.  

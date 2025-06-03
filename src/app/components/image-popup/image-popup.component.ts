@@ -12,7 +12,6 @@ import { ProgressCardComponent } from '../progress-card/progress-card.component'
   styleUrls: ['./image-popup.component.scss'],
 })
 export class ImagePopupComponent {
-  @Input() imageSrc: string = '/assets/images/popup-default.png';
 
   @Input() groupDescription: string = 'Debes completar las preguntas (*)';
   @Input() showGroupDescription: boolean = true;

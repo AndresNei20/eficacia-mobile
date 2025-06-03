@@ -20,9 +20,7 @@ import { CalendarComponent } from '../dropdown/Calendar.component';
   styleUrls: ['./calendar-dropdown.component.scss'],
 })
 export class CalendarDropdownComponent implements OnInit, OnChanges {
-  /** Etiqueta/placeholder cuando está cerrado */
   @Input() textField: string = 'Selecciona fecha';
-  /** Controla abierto (true) / cerrado (false) */
   @Input() expanded: boolean = false;
   @Output() expandedChange = new EventEmitter<boolean>();
 

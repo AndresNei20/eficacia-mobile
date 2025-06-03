@@ -5,9 +5,28 @@ const meta: Meta<ImagePopupComponent> = {
   title: 'Components/Popups/ImagePopup',
   component: ImagePopupComponent,
   tags: ['autodocs'],
-  argTypes: {
-    imageSrc: { control: 'text', description: 'Ruta de la imagen superior' },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## Uso
 
+- Muestra un mensaje de advertencia cuando el usuario tiene tareas pendientes.
+- Se utiliza en validaciones donde se requiere completar información antes de avanzar.
+
+---
+
+## Elementos clave
+
+- **Imagen ilustrativa:** Refuerza visualmente el estado de alerta.
+- **Mensaje de advertencia:** Explica la razón del pop-up.
+- **Botones de acción:** Permiten al usuario continuar o corregir la acción requerida.
+- **Botón de cierre:** Posibilita cerrar la ventana emergente sin continuar.
+        `,
+      },
+    },
+  },
+  argTypes: {
     groupDescription: {
       control: 'text',
       description: 'Texto central con líneas a los lados',
@@ -35,8 +54,6 @@ const meta: Meta<ImagePopupComponent> = {
     showLinkMessage: { control: 'boolean' },
   },
   args: {
-    imageSrc: '/assets/images/popup-default.png',
-
     groupDescription: 'Debes completar las preguntas (*)',
     showGroupDescription: true,
 
