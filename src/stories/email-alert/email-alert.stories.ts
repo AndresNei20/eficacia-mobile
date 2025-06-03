@@ -9,20 +9,22 @@ export default {
     docs: {
       description: {
         component: `
-# Email alert
-
 ## Uso
 
-Se utiliza para mostrar información de contacto del usuario de forma destacada,
-con opción de descartar la alerta.
+- Visualizar los correos electrónicos seleccionados dentro de un formulario o proceso.
+- Identificar claramente a cada destinatario con nombre y correo.
+- Permitir la eliminación de un correo agregado de manera sencilla.
+- Usado comúnmente en la selección de múltiples usuarios para envío de alertas, notificaciones o asignaciones.
 
 ---
 
 ## Elementos clave
 
-- **Nombre:** Nombre del usuario.
-- **Email:** Correo electrónico del usuario.
-- **Botón de cierre:** Permite eliminar la alerta.
+- **Nombre del usuario (ej. Daniela Perez):** Texto principal que identifica al destinatario.
+- **Dirección de correo electrónico secundaria:** Ubicada justo debajo del nombre para mayor claridad.
+- **Botón de cierre (❌):** Permite eliminar el ítem de la lista con un solo clic.
+- **Estilo pill o tag:** Fondo sólido (azul oscuro), esquinas redondeadas, diseño compacto.
+- **Contraste adecuado:** Asegura legibilidad entre el texto y el fondo del tag.
         `,
       },
     },

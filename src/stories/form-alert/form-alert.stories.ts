@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormAlertComponent } from '../../app/components/form-alert/form-alert.component';
 
-export default {
+const meta: Meta<FormAlertComponent> = {
   title: 'Components/Alerts/FormAlert',
   component: FormAlertComponent,
   tags: ['autodocs'],
@@ -21,20 +21,22 @@ export default {
 
 - **Mensaje de error o validación:** Proporciona una explicación clara del problema (ejemplo: “El correo ingresado no es válido”).
 - **Relación con el campo afectado:** Se posiciona directamente debajo del input para que sea evidente a qué campo hace referencia.
-        `
-      }
-    }
+        `,
+      },
+    },
   },
   argTypes: {
     textAlert: {
       control: 'text',
+      description: 'Texto del mensaje de error o validación',
     },
   },
   args: {
     textAlert: 'Participación diferente de lo esperado',
   },
-} as Meta<FormAlertComponent>;
+};
 
+export default meta;
 type Story = StoryObj<FormAlertComponent>;
 
 export const Default: Story = {};
