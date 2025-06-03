@@ -17,10 +17,25 @@ import { ButtonComponent } from '../button/button.component';
   styleUrls: ['./actions-card.component.scss'],
 })
 export class ActionsCardComponent {
-  @Input() showTitle: boolean = true;
-  @Input() showProgressCard: boolean = true;
-  @Input() showForms: boolean = true;
   @Input() showImage: boolean = true;
+
+  @Input() showTitle: boolean = true;
+
+  @Input() titleText: string = 'Pendiente';
+
+  @Input() showProgressCard: boolean = true;
+
+  @Input() progressValue: number = 32;
+
+  @Input() activitiesText: string = 'Faltan 2 actividades';
+
+  @Input() goalsText: string = 'Meta 34';
+
+  @Input() progressStatus: 'green' | 'yellow' | 'red' = 'yellow';
+
+  @Input() showForms: boolean = true;
+
   @Input() showButton2: boolean = true;
+
   @Input() showLink: boolean = true;
 }

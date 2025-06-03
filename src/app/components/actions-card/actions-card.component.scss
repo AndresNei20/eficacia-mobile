@@ -10,21 +10,26 @@
   border-radius: spacings.$radius-sm;
   max-width: 360px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .illustration {
   width: 100%;
   max-height: 200px;
-  object-fit: cover;
-  border-radius: spacings.$radius-sm;
+}
+
+.illustration2 {
+  width: 88%;
+  max-height: 200px;
+  align-self: center;
 }
 
 .line-text {
   display: flex;
   align-items: center;
   gap: spacings.$spacing-md;
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
   width: 100%;
   margin: 0;
 }
@@ -52,32 +57,32 @@
 }
 
 .progress-section {
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
 }
 
 .forms-section {
   display: flex;
   flex-direction: column;
   gap: spacings.$spacing-md;
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
 }
 
 .section-label {
   font-size: typography.$text-subtitle-size;
   font-weight: typography.$text-subtitle-weight;
   color: colors.$color-text-titles;
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
 }
 
 .buttons-section {
   display: flex;
   flex-direction: column;
   gap: spacings.$spacing-sm;
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
 }
 
 .card-link {
@@ -88,6 +93,6 @@
   font-weight: typography.$text-body-weight;
   color: colors.$sh-red;
   cursor: pointer;
-  padding-left: spacings.$padding-lg;
-  padding-right: spacings.$padding-lg;
+  padding-left: spacings.$spacing-lg;
+  padding-right: spacings.$spacing-lg;
 }

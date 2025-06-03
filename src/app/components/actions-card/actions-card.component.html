@@ -1,7 +1,7 @@
 <div class="actions-card">
   <img
     *ngIf="showImage"
-    src="/assets/images/actions-card-img.png"
+    src="/images/actions-card-img.png"
     alt="Illustration"
     class="illustration"
   />
@@ -12,21 +12,21 @@
     <div class="line"></div>
   </div>
 
-  <h3 *ngIf="showTitle" class="status-text">Pendiente</h3>
+  <h3 *ngIf="showTitle" class="status-text">{{ titleText }}</h3>
 
   <div class="progress-section">
-  <app-progress-card
-    *ngIf="showProgressCard"
-    [showHeadText]="false"
-    [showTitle]="false"
-    [showCheck]="false"
-    [showArrow]="false"
-    [percentValue]="32"
-    [showPercent]="false"
-    activitiesText="Faltan 2 actividades"
-    goalsText="Meta 34"
-    status="yellow"
-  ></app-progress-card>
+    <app-progress-card
+      *ngIf="showProgressCard"
+      [showHeadText]="false"
+      [showTitle]="false"
+      [showCheck]="false"
+      [showArrow]="false"
+      [percentValue]="progressValue"
+      [showPercent]="false"
+      [activitiesText]="activitiesText"
+      [goalsText]="goalsText"
+      [status]="progressStatus"
+    ></app-progress-card>
   </div>
 
   <div *ngIf="showForms" class="forms-section">
@@ -47,14 +47,13 @@
       [showIcon]="false"
       [showRequired]="false"
     ></app-input>
-
   </div>
 
   <label class="section-label">Encabezado</label>
   <img
-      src="/assets/images/void-action-card.png"
-      alt="Placeholder gráfico"
-      class="illustration"
+    src="/images/void-action-card.png"
+    alt="Placeholder gráfico"
+    class="illustration2"
   />
 
   <div class="buttons-section">
@@ -82,5 +81,7 @@
     ></app-button>
   </div>
 
-  <a *ngIf="showLink" href="#" class="card-link">Continuar sin complementar</a>
+  <a *ngIf="showLink" href="#" class="card-link"
+    >Continuar sin complementar</a
+  >
 </div>
